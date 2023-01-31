@@ -1,4 +1,5 @@
-
+<?php $active = $_SERVER['REQUEST_URI'] ;
+?>
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
           <div class="app-brand demo">
             <a href="index.html" class="app-brand-link">
@@ -14,8 +15,8 @@
 
           <ul class="menu-inner py-1">
             <!-- Dashboard -->
-            <li class="menu-item active">
-              <a href="index.html" class="menu-link">
+            <li class="menu-item" id= 'dashboard'>
+              <a href="dashboard" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Dashboard</div>
               </a>
@@ -60,7 +61,7 @@
             <li class="menu-header small text-uppercase">
               <span class="menu-header-text">Plantel</span>
             </li>
-            <li class="menu-item">
+            <li class="menu-item" id="especies">
               <a href="especies" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-dock-top"></i>
                 <div data-i18n="">Espécies</div>
@@ -335,3 +336,9 @@
             </li>
           </ul>
         </aside>
+
+        <script>
+          var active = "<?=$active?>".split('/')[1];
+          console.log(document.getElementById(active).classList.add('active'));
+
+        </script>

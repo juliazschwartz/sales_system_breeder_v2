@@ -368,12 +368,12 @@ var nome_popular = res.nome_popular.replace('Ã©', 'é');
 nome_popular = nome_popular.replace('Ã§', 'ç');
 
 
-            $('tbody').append("<tr <tr data-id='<?=$especie['id_especie']?>' data-codigo='<?=$especie['cod']?>' data-cientifico='<?=$especie['nome_cientifico']?>' data-popular='<?=$especie['nome_popular']?>' data-descricao='<?=$especie['desc_nota']?>' data-ncm='<?=$especie['ncm']?>' data-marcacao='<?=$especie['tipo_marcacao']?>' data-base='<?=$especie['base_calculo']?>'>><td>"+res.cod+"</td><td><strong>"+res.nome_cientifico+"<strong></td><td><strong>"+nome_popular+"<strong></td><td>indefinido</td><td>indefinido</td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-edit-alt  me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalCenter'></i> </a> </td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-trash me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalToggle'></i> </a> </td></tr>")});
+            $('tbody').append("<tr <tr data-id='"+res.id_especie+"' data-codigo='"+res.cod+"' data-cientifico='"+res.nome_cientifico+"' data-popular='"+res.nome_popular+"' data-descricao='"+res.nome_descricao+"' data-ncm='"+res.ncm+"' data-marcacao='"+res.marcacao+"' data-base='"+res.base_calculo+"'>><td>"+res.cod+"</td><td><strong>"+res.nome_cientifico+"<strong></td><td><strong>"+nome_popular+"<strong></td><td>indefinido</td><td>indefinido</td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-edit-alt  me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalCenter'></i> </a> </td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-trash me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalToggle'></i> </a> </td></tr>")});
             $('tbody').html(tbody);
             
-            clickEdit();
           }
           else $(html).insertAfter('.align-items-baseline');
+          clickEdit();
        }
    });
 }

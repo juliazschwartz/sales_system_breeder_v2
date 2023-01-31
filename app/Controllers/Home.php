@@ -16,8 +16,16 @@ class Home extends BaseController
     public function especies()
     {
     // $especieModel = new App\Models\Especie_Model();
+    $par = 'cod';
+    $order = '';
+    if(!empty($_GET)){
+        $order = $_GET['order'];
+        $par = $_GET['par'];
+        // $order = "ORDER BY $par $order"
+    };
+    
     $db = \Config\Database::connect('default',true);
-      $especies = ['especies' => $db->query("SELECT * FROM especies")->getResultArray()];
+      $especies = ['especies' => $db->query("SELECT * FROM especies ORDER BY $par $order")->getResultArray()];
         return view('especies',$especies);
      
     }

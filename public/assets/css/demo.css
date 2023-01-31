@@ -2,6 +2,9 @@
 * demo.css
 * File include item demo only specific css only
 ******************************************************************************/
+.bx-sort{
+  cursor:pointer
+}
 .icone-tabela{
   font-size: 25px;
 }

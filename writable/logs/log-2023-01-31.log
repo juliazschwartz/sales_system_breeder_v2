@@ -924,3 +924,204 @@ in APPPATH\Views\especies.php on line 251.
  7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
  8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-31 20:36:23 --> syntax error, unexpected '}'
+in APPPATH\Controllers\Home.php on line 24.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Home.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 4 [internal function]: spl_autoload_call('App\\Controllers\\Home')
+ 5 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\Home', true)
+ 6 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-31 20:36:52 --> syntax error, unexpected '}'
+in APPPATH\Controllers\Home.php on line 26.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Home.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 4 [internal function]: spl_autoload_call('App\\Controllers\\Home')
+ 5 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\Home', true)
+ 6 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-31 20:37:02 --> syntax error, unexpected '}'
+in APPPATH\Controllers\Home.php on line 24.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Home.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 4 [internal function]: spl_autoload_call('App\\Controllers\\Home')
+ 5 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\Home', true)
+ 6 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-31 20:37:40 --> syntax error, unexpected '}'
+in APPPATH\Controllers\Home.php on line 24.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Home.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 4 [internal function]: spl_autoload_call('App\\Controllers\\Home')
+ 5 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\Home', true)
+ 6 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-31 20:37:55 --> syntax error, unexpected '}'
+in APPPATH\Controllers\Home.php on line 24.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Home.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 4 [internal function]: spl_autoload_call('App\\Controllers\\Home')
+ 5 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\Home', true)
+ 6 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-01-31 20:38:25 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'asc' at line 1 in C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT * FROM e...', 0)
+#1 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM e...')
+#2 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM e...')
+#3 C:\laragon\www\sistema_vendas_comfauna_2.0\app\Controllers\Home.php(28): CodeIgniter\Database\BaseConnection->query('SELECT * FROM e...')
+#4 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(934): App\Controllers\Home->especies()
+#5 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\sistema_vendas_comfauna_2.0\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-01-31 20:38:25 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'asc' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 APPPATH\Controllers\Home.php(28): CodeIgniter\Database\BaseConnection->query('SELECT * FROM especies asc')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-01-31 20:39:20 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'asc' at line 1 in C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT * FROM e...', 0)
+#1 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM e...')
+#2 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM e...')
+#3 C:\laragon\www\sistema_vendas_comfauna_2.0\app\Controllers\Home.php(28): CodeIgniter\Database\BaseConnection->query('SELECT * FROM e...')
+#4 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(934): App\Controllers\Home->especies()
+#5 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\sistema_vendas_comfauna_2.0\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-01-31 20:39:20 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'asc' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 APPPATH\Controllers\Home.php(28): CodeIgniter\Database\BaseConnection->query('SELECT * FROM especies ORDER BY asc')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-01-31 20:39:26 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'asc' at line 1 in C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT * FROM e...', 0)
+#1 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM e...')
+#2 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM e...')
+#3 C:\laragon\www\sistema_vendas_comfauna_2.0\app\Controllers\Home.php(28): CodeIgniter\Database\BaseConnection->query('SELECT * FROM e...')
+#4 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(934): App\Controllers\Home->especies()
+#5 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\sistema_vendas_comfauna_2.0\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-01-31 20:39:26 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'asc' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 APPPATH\Controllers\Home.php(28): CodeIgniter\Database\BaseConnection->query('SELECT * FROM especies ORDER BY asc')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-01-31 20:39:26 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'asc' at line 1 in C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT * FROM e...', 0)
+#1 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM e...')
+#2 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM e...')
+#3 C:\laragon\www\sistema_vendas_comfauna_2.0\app\Controllers\Home.php(28): CodeIgniter\Database\BaseConnection->query('SELECT * FROM e...')
+#4 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(934): App\Controllers\Home->especies()
+#5 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\sistema_vendas_comfauna_2.0\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-01-31 20:39:26 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'asc' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 APPPATH\Controllers\Home.php(28): CodeIgniter\Database\BaseConnection->query('SELECT * FROM especies ORDER BY asc')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-01-31 20:39:26 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'asc' at line 1 in C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT * FROM e...', 0)
+#1 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM e...')
+#2 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM e...')
+#3 C:\laragon\www\sistema_vendas_comfauna_2.0\app\Controllers\Home.php(28): CodeIgniter\Database\BaseConnection->query('SELECT * FROM e...')
+#4 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(934): App\Controllers\Home->especies()
+#5 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\sistema_vendas_comfauna_2.0\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-01-31 20:39:26 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'asc' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 APPPATH\Controllers\Home.php(28): CodeIgniter\Database\BaseConnection->query('SELECT * FROM especies ORDER BY asc')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-01-31 20:39:33 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'asc' at line 1 in C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT * FROM e...', 0)
+#1 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM e...')
+#2 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM e...')
+#3 C:\laragon\www\sistema_vendas_comfauna_2.0\app\Controllers\Home.php(28): CodeIgniter\Database\BaseConnection->query('SELECT * FROM e...')
+#4 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(934): App\Controllers\Home->especies()
+#5 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\sistema_vendas_comfauna_2.0\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-01-31 20:39:33 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'asc' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 APPPATH\Controllers\Home.php(28): CodeIgniter\Database\BaseConnection->query('SELECT * FROM especies ORDER BY asc')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-31 20:40:22 --> Undefined variable: _get
+in APPPATH\Controllers\Home.php on line 21.
+ 1 APPPATH\Controllers\Home.php(21): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: _get', 'APPPATH\\Controllers\\Home.php', 21, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-31 20:43:55 --> syntax error, unexpected '{'
+in APPPATH\Views\especies.php on line 2.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('especies', [], true)
+ 3 APPPATH\Controllers\Home.php(29): view('especies', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-31 20:44:06 --> syntax error, unexpected '{'
+in APPPATH\Views\especies.php on line 2.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('especies', [], true)
+ 3 APPPATH\Controllers\Home.php(29): view('especies', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-31 20:44:15 --> syntax error, unexpected '}'
+in APPPATH\Views\especies.php on line 4.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('especies', [], true)
+ 3 APPPATH\Controllers\Home.php(29): view('especies', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-31 20:44:22 --> syntax error, unexpected '}'
+in APPPATH\Views\especies.php on line 4.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('especies', [], true)
+ 3 APPPATH\Controllers\Home.php(29): view('especies', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

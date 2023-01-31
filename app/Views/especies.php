@@ -1,3 +1,8 @@
+<?php 
+if(!empty($_GET)){
+  $_GET['order'] == 'asc' ? $order = 'desc' : $order = 'asc';
+}
+?>
 <!DOCTYPE html>
 
 <html
@@ -253,9 +258,9 @@
                   <table class="table table-striped">
                     <thead>
                       <tr>
-                        <th>Código</th>
-                        <th>Nome Científico</th>
-                        <th>Nome Popular</th>
+                        <th>Código <a class='bx bx-sort' href="?par=cod&order=<?=$order?>" ></a></th>
+                        <th>Nome Científico <a class='bx bx-sort' href="?par=nome_cientifico&order=<?=$order?>" ></a></th></th>
+                        <th>Nome Popular <a class='bx bx-sort' href="?par=nome_popular&order=<?=$order?>" ></a></th></th>
                         <th>Marcação</th>
                         <th>Preço Médio</th>
                         <th></th>

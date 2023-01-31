@@ -31,6 +31,7 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/dashboard', 'Home::index');
 $routes->get('/especies', 'Home::especies');
+$routes->post('/buscaEspecies', 'Plantel::BuscaEspecies');
 
 /*
  * --------------------------------------------------------------------

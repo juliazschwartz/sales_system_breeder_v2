@@ -157,8 +157,15 @@
 
               <!-- Striped Rows -->
               <div class="card">
-                <h5 class="card-header"><button type="button" class="btn btn-primary">Nova Espécie</button></h5>
+                <div class = "d-flex align-items-baseline "><h5 class="card-header"><button type="button" class="btn btn-primary">Nova Espécie</button></h5>
+                <span class = "w-75 mx-2">
+                  <form class="d-flex" id="formBuscaEspecies" method="post">
+                      <input class="form-control me-2 p-2" type="search" placeholder="Buscar" aria-label="Search" name="busca">
+                      <button class="btn btn-outline-primary" type="submit">Buscar</button>
+                    </form></span>
+</div>
                 <div class="table-responsive text-nowrap">
+              
                   <table class="table table-striped">
                     <thead>
                       <tr>
@@ -242,3 +249,31 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
   </body>
 </html>
+
+
+<script>
+  $('#formBuscaEspecies').submit(function(e)
+  {
+    e.preventDefault();
+    var url = $(this).closest('form').attr('action'),
+    data = $(this).closest('form').serialize();
+    $.ajax({
+        url: "buscaEspecies",
+        type: 'post',
+        data: data,
+        success: function(resposta){
+          // var tbody = "<tr><td></td><td><strong><strong></td> <td><strong><strong></td><td>Indefinido</td><td>Indefinido</td><td><a class='text-center' href='javascript:void(0);'><i class='bx bx-edit-alt me-1 icone-tabela'></i> </a  ></td> <td>  <a class='text-center' href='javascript:void(0);'><i class='bx bx-trash me-1 icone-tabela'></i> </a></td></tr>"
+          $('tbody').html('');
+          
+          var html = "<div class='alert alert-dark alert-dismissible m-2' role='alert'> Nenhum Registro Encontrado <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
+           if(resposta!= '[]'){
+            var tbody = JSON.parse(resposta).forEach((res)=>$('tbody').append("<tr><td>"+res.cod+"</td><td><strong>"+res.nome_cientifico+"<strong></td><td><strong>"+unescape(res.nome_popular.replace('Ã©', "é"))+"<strong></td><td>indefinido</td><td>indefinido</td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-edit-alt me-1 icone-tabela'></i> </a> </td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-trash me-1 icone-tabela'></i> </a> </td></tr>"));
+            $('tbody').html(tbody);
+            
+          }
+          else $(html).insertAfter('.align-items-baseline');
+       }
+   });
+}
+  )
+  </script>

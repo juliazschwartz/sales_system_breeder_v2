@@ -84,7 +84,7 @@
                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
                   <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                     <div class="avatar avatar-online">
-                      <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                      <img src="../assets/img/avatar.jpeg" alt class="w-px-40 h-auto rounded-circle" />
                     </div>
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
@@ -93,12 +93,12 @@
                         <div class="d-flex">
                           <div class="flex-shrink-0 me-3">
                             <div class="avatar avatar-online">
-                              <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                              <img src="../assets/img/avatar.jpeg" alt class="w-px-40 h-auto rounded-circle" />
                             </div>
                           </div>
                           <div class="flex-grow-1">
-                            <span class="fw-semibold d-block">John Doe</span>
-                            <small class="text-muted">Admin</small>
+                            <span class="fw-semibold d-block">Julia</span>
+                            <small class="text-muted">Administrador</small>
                           </div>
                         </div>
                       </a>
@@ -109,31 +109,23 @@
                     <li>
                       <a class="dropdown-item" href="#">
                         <i class="bx bx-user me-2"></i>
-                        <span class="align-middle">My Profile</span>
+                        <span class="align-middle">Meu Perfil</span>
                       </a>
                     </li>
                     <li>
                       <a class="dropdown-item" href="#">
                         <i class="bx bx-cog me-2"></i>
-                        <span class="align-middle">Settings</span>
+                        <span class="align-middle">Configurações</span>
                       </a>
                     </li>
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <span class="d-flex align-items-center align-middle">
-                          <i class="flex-shrink-0 bx bx-credit-card me-2"></i>
-                          <span class="flex-grow-1 align-middle">Billing</span>
-                          <span class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
-                        </span>
-                      </a>
-                    </li>
+                
                     <li>
                       <div class="dropdown-divider"></div>
                     </li>
                     <li>
                       <a class="dropdown-item" href="auth-login-basic.html">
                         <i class="bx bx-power-off me-2"></i>
-                        <span class="align-middle">Log Out</span>
+                        <span class="align-middle">Sair</span>
                       </a>
                     </li>
                   </ul>
@@ -157,13 +149,105 @@
 
               <!-- Striped Rows -->
               <div class="card">
-                <div class = "d-flex align-items-baseline "><h5 class="card-header"><button type="button" class="btn btn-primary">Nova Espécie</button></h5>
+                <div class = "d-flex align-items-baseline "><h5 class="card-header"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCenter" >Nova Espécie</button></h5>
+               
                 <span class = "w-75 mx-2">
                   <form class="d-flex" id="formBuscaEspecies" method="post">
                       <input class="form-control me-2 p-2" type="search" placeholder="Buscar" aria-label="Search" name="busca">
                       <button class="btn btn-outline-primary" type="submit">Buscar</button>
                     </form></span>
 </div>
+<div class="modal fade " id="modalCenter" tabindex="-1"  aria-hidden="true" role="dialog">
+                          <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="modalCenterTitle">Nova Espécie</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+                                <div class="row">
+                                  <div class="col mb-3">
+                                    <label for="nameWithTitle" class="form-label" >Nome Científico</label>
+                                    <input type="text"  class="form-control" id = "cientifico">
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col mb-3">
+                                    <label for="nameWithTitle" class="form-label" >Nome Popular</label>
+                                    <input type="text"  class="form-control" placeholder="" id = "popular">
+                                  </div>
+                                </div>
+                                
+                                <div class="row">
+                                  <div class="col mb-3">
+                                    <label for="nameWithTitle" class="form-label" >Tipo de Marcação</label>
+                                    <input type="text"  class="form-control" placeholder="" id = "marcacao">
+                                  </div>
+                                </div>
+                                
+                                <div class="row">
+                                  <div class="col mb-3">
+                                    <label for="nameWithTitle" class="form-label" id = "codigo">Código</label>
+                                    <input type="text"  class="form-control" placeholder="" id = "codigo">
+                                  </div>
+                                </div>
+                                
+                                <div class="row">
+                                  <div class="col mb-3">
+                                    <label for="nameWithTitle" class="form-label" >NCM</label>
+                                    <input type="text"  class="form-control" placeholder="" id = "ncm">
+                                  </div>
+                                </div>
+                                
+                                <div class="row">
+                                  <div class="col mb-3">
+                                    <label for="nameWithTitle" class="form-label">Base de Cálculo NCM</label>
+                                    <input type="text"  class="form-control" placeholder=""  id = "base">
+                                  </div>
+                                </div>
+                                <div>
+                        <label for="exampleFormControlTextarea1" class="form-label" >Descrição da Nota</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" id = "descricao"></textarea>
+                      </div>
+                                
+                                <!-- <div class="row g-2">
+                                  <div class="col mb-0">
+                                    <label for="emailWithTitle" class="form-label">Email</label>
+                                    <input type="text" id="emailWithTitle" class="form-control" placeholder="xxxx@xxx.xx">
+                                  </div>
+                                  <div class="col mb-0">
+                                    <label for="dobWithTitle" class="form-label">DOB</label>
+                                    <input type="text" id="dobWithTitle" class="form-control" placeholder="DD / MM / YY">
+                                  </div>
+                                </div> -->
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                                  Fechar
+                                </button>
+                                <button type="button" class="btn btn-primary">Cadastrar</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <div class="modal fade" id="modalToggle" aria-labelledby="modalToggleLabel" tabindex="-1" aria-hidden="true" role="dialog">
+                          <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="modalToggleLabel">Deletar Espécie</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">Tem certeza que deseja deletar esse registro de espécie?.</div>
+                              <div class="modal-footer">
+                                <button class="btn btn-danger" data-bs-target="#modalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">
+                                  Deletar
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                 <div class="table-responsive text-nowrap">
               
                   <table class="table table-striped">
@@ -181,7 +265,7 @@
                     <tbody class="table-border-bottom-0">
                         <?php foreach($especies as $especie){
 ?>
-<tr>
+<tr data-id=<?=$especie['id_especie']?> data-codigo="<?=$especie['cod']?>" data-cientifico="<?=$especie['nome_cientifico']?>" data-popular="<?=$especie['nome_popular']?>" data-descricao="<?=$especie['desc_nota']?>" data-ncm="<?=$especie['ncm']?>" data-marcacao="<?=$especie['tipo_marcacao']?>" data-base="<?=$especie['base_calculo']?>">
                         <td><?= $especie['cod']?></td>
                         <td><strong><?= utf8_decode($especie['nome_cientifico'])?><strong></td>
                         <td><strong><?= utf8_decode($especie['nome_popular'])?><strong></td>
@@ -189,11 +273,11 @@
                         <td>Indefinido</td>
                         <td>
                         <a class="text-center" href="javascript:void(0);"
-                                ><i class="bx bx-edit-alt me-1 icone-tabela"></i> </a  >
+                                ><i class="bx bx-edit-alt me-1 icone-tabela" data-bs-toggle="modal" data-bs-target="#modalCenter"></i> </a  >
                         </td>
 
                         <td>  
-                        <a class="text-center" href="javascript:void(0);"
+                        <a class="text-center" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modalToggle"
                                 ><i class="bx bx-trash me-1 icone-tabela"></i> </a
                               ></td>
                       </tr>
@@ -254,6 +338,11 @@
 <script>
   $('#formBuscaEspecies').submit(function(e)
   {
+//     var mapObj = {
+//     Ã©:"é",
+//     Ã§:"Ç"
+// };
+
     e.preventDefault();
     var url = $(this).closest('form').attr('action'),
     data = $(this).closest('form').serialize();
@@ -265,9 +354,15 @@
           // var tbody = "<tr><td></td><td><strong><strong></td> <td><strong><strong></td><td>Indefinido</td><td>Indefinido</td><td><a class='text-center' href='javascript:void(0);'><i class='bx bx-edit-alt me-1 icone-tabela'></i> </a  ></td> <td>  <a class='text-center' href='javascript:void(0);'><i class='bx bx-trash me-1 icone-tabela'></i> </a></td></tr>"
           $('tbody').html('');
           
-          var html = "<div class='alert alert-dark alert-dismissible m-2' role='alert'> Nenhum Registro Encontrado <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
+          var html = "<div class='alert alert-dark alert-dismissible m-3' role='alert'> Nenhum Registro Encontrado <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
            if(resposta!= '[]'){
-            var tbody = JSON.parse(resposta).forEach((res)=>$('tbody').append("<tr><td>"+res.cod+"</td><td><strong>"+res.nome_cientifico+"<strong></td><td><strong>"+unescape(res.nome_popular.replace('Ã©', "é"))+"<strong></td><td>indefinido</td><td>indefinido</td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-edit-alt me-1 icone-tabela'></i> </a> </td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-trash me-1 icone-tabela'></i> </a> </td></tr>"));
+            var tbody = JSON.parse(resposta).forEach((res)=> {
+            
+var nome_popular = res.nome_popular.replace('Ã©', 'é');
+nome_popular = nome_popular.replace('Ã§', 'ç');
+
+
+            $('tbody').append("<tr><td>"+res.cod+"</td><td><strong>"+res.nome_cientifico+"<strong></td><td><strong>"+nome_popular+"<strong></td><td>indefinido</td><td>indefinido</td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-edit-alt me-1 icone-tabela'></i> </a> </td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-trash me-1 icone-tabela'></i> </a> </td></tr>")});
             $('tbody').html(tbody);
             
           }
@@ -276,4 +371,20 @@
    });
 }
   )
+
+  $('.bx-edit-alt').click(function(e){
+    e.preventDefault;
+    var linha = $(this).parent().parent().parent().data();
+    for (const [key, value] of Object.entries(linha)) {
+     $('#'+key+'').val(value);
+      } 
+    // $('#cientifico').val(linha.data('cientifico'));
+    // $('#cientifico').val(linha.data('cientifico'));
+    // $('#cientifico').val(linha.data('cientifico'));
+    // $('#cientifico').val(linha.data('cientifico'));
+    // $('#cientifico').val(linha.data('cientifico'));
+    // $('#cientifico').val(linha.data('cientifico'));
+    // $('#cientifico').val(linha.data('cientifico'));
+    // $('#cientifico').val(linha.data('cientifico'));
+  }) 
   </script>

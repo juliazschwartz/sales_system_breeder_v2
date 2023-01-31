@@ -902,3 +902,25 @@ in SYSTEMPATH\Database\BaseConnection.php on line 645.
  3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Plantel))
  4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-31 17:16:47 --> Undefined index: cientifico
+in APPPATH\Views\especies.php on line 251.
+ 1 APPPATH\Views\especies.php(251): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: cientifico', 'APPPATH\\Views\\especies.php', 251, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\especies.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('especies', [], true)
+ 5 APPPATH\Controllers\Home.php(21): view('especies', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-31 17:17:06 --> Undefined index: tipo-marcacao
+in APPPATH\Views\especies.php on line 251.
+ 1 APPPATH\Views\especies.php(251): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: tipo-marcacao', 'APPPATH\\Views\\especies.php', 251, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\especies.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('especies', [], true)
+ 5 APPPATH\Controllers\Home.php(21): view('especies', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

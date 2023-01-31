@@ -24,13 +24,14 @@ class Database extends Config
     /**
      * The default database connection.
      */
+   
     public array $default = [
         'DSN'      => '',
         'hostname' => 'localhost',
-        'username' => '',
+        'username' => 'root',
         'password' => '',
-        'database' => '',
-        'DBDriver' => 'MySQLi',
+        'database' => 'aves_legais',
+        'DBDriver' => 'mysqli',
         'DBPrefix' => '',
         'pConnect' => false,
         'DBDebug'  => true,

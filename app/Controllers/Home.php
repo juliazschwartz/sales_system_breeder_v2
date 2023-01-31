@@ -8,4 +8,19 @@ class Home extends BaseController
     {
         return view('dashboard');
     }
+
+    public function especies()
+    {
+      $db = \Config\Database::connect('default',true);
+      $especies = ['especies' => $db->query("SELECT * FROM especies")->getResultArray()];
+    
+        return view('especies',$especies);
+     
+    }
+    
+    public function aside()
+    {
+        return view('componentes/aside');
+    }
+    
 }

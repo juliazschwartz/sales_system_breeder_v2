@@ -2,9 +2,12 @@
 * demo.css
 * File include item demo only specific css only
 ******************************************************************************/
-
+.icone-tabela{
+  font-size: 25px;
+}
 .menu .app-brand.demo {
   height: 150px;
+  z-index: 99;
 }
 
 .app-brand-logo.demo svg {

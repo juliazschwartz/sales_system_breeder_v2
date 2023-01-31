@@ -1,4 +1,5 @@
 <?php 
+$order = '';
 if(!empty($_GET)){
   $_GET['order'] == 'asc' ? $order = 'desc' : $order = 'asc';
 }
@@ -367,9 +368,10 @@ var nome_popular = res.nome_popular.replace('Ã©', 'é');
 nome_popular = nome_popular.replace('Ã§', 'ç');
 
 
-            $('tbody').append("<tr><td>"+res.cod+"</td><td><strong>"+res.nome_cientifico+"<strong></td><td><strong>"+nome_popular+"<strong></td><td>indefinido</td><td>indefinido</td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-edit-alt me-1 icone-tabela'></i> </a> </td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-trash me-1 icone-tabela'></i> </a> </td></tr>")});
+            $('tbody').append("<tr <tr data-id='<?=$especie['id_especie']?>' data-codigo='<?=$especie['cod']?>' data-cientifico='<?=$especie['nome_cientifico']?>' data-popular='<?=$especie['nome_popular']?>' data-descricao='<?=$especie['desc_nota']?>' data-ncm='<?=$especie['ncm']?>' data-marcacao='<?=$especie['tipo_marcacao']?>' data-base='<?=$especie['base_calculo']?>'>><td>"+res.cod+"</td><td><strong>"+res.nome_cientifico+"<strong></td><td><strong>"+nome_popular+"<strong></td><td>indefinido</td><td>indefinido</td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-edit-alt  me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalCenter'></i> </a> </td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-trash me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalToggle'></i> </a> </td></tr>")});
             $('tbody').html(tbody);
             
+            clickEdit();
           }
           else $(html).insertAfter('.align-items-baseline');
        }
@@ -377,19 +379,20 @@ nome_popular = nome_popular.replace('Ã§', 'ç');
 }
   )
 
+function clickEdit(){
   $('.bx-edit-alt').click(function(e){
     e.preventDefault;
     var linha = $(this).parent().parent().parent().data();
-    for (const [key, value] of Object.entries(linha)) {
-     $('#'+key+'').val(value);
-      } 
-    // $('#cientifico').val(linha.data('cientifico'));
-    // $('#cientifico').val(linha.data('cientifico'));
-    // $('#cientifico').val(linha.data('cientifico'));
-    // $('#cientifico').val(linha.data('cientifico'));
-    // $('#cientifico').val(linha.data('cientifico'));
-    // $('#cientifico').val(linha.data('cientifico'));
-    // $('#cientifico').val(linha.data('cientifico'));
-    // $('#cientifico').val(linha.data('cientifico'));
-  }) 
+    for (var [key, value] of Object.entries(linha)) {
+        value = value.toString().replace('Ã©', 'é');
+        value = value.replace('Ã§', 'ç');
+       $('#'+key+'').val(value);
+        } 
+    }) 
+
+  }
+
+  $(document).ready(function(){
+    clickEdit();
+  })
   </script>

@@ -29,8 +29,8 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/dashboard', 'Home::index');
 $routes->get('/especies', 'Home::especies');
+$routes->get('/produtos', 'Home::produtos');
 $routes->post('/buscaEspecies', 'Plantel::BuscaEspecies');
 $routes->post('/editaEspecies', 'Plantel::EditaEspecies');
 $routes->post('/excluiEspecies', 'Plantel::ExcluiEspecies');

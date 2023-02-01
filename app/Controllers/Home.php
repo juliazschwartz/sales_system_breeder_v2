@@ -12,7 +12,12 @@ class Home extends BaseController
     {
         return view('dashboard');
     }
-
+    
+    public function aside()
+    {
+        return view('componentes/aside');
+    }
+    
     public function especies()
     {
     // $especieModel = new App\Models\Especie_Model();
@@ -29,10 +34,12 @@ class Home extends BaseController
         return view('especies',$especies);
      
     }
-    
-    public function aside()
+    public function produtos()
     {
-        return view('componentes/aside');
+   
+      
+        return view('produtos');
+     
     }
     
 }

@@ -540,3 +540,25 @@ in APPPATH\Controllers\Plantel.php on line 42.
  6 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
  7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-01 23:16:08 --> Undefined variable: especies
+in APPPATH\Views\produtos.php on line 296.
+ 1 APPPATH\Views\produtos.php(296): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: especies', 'APPPATH\\Views\\produtos.php', 296, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\produtos.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('produtos', [], true)
+ 5 APPPATH\Controllers\Home.php(41): view('produtos')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->produtos()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-01 23:16:56 --> Undefined variable: order
+in APPPATH\Views\produtos.php on line 283.
+ 1 APPPATH\Views\produtos.php(283): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: order', 'APPPATH\\Views\\produtos.php', 283, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\produtos.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('produtos', [], true)
+ 5 APPPATH\Controllers\Home.php(41): view('produtos')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->produtos()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

@@ -2,6 +2,9 @@
 * demo.css
 * File include item demo only specific css only
 ******************************************************************************/
+.embreve{
+  font-size:10px
+}
 .bx-sort{
   cursor:pointer
 }

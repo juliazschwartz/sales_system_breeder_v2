@@ -15,10 +15,14 @@
 
           <ul class="menu-inner py-1">
             <!-- Dashboard -->
+            
+            <li class="menu-header small text-uppercase">
+              <span class="menu-header-text">Financeiro</span>
+            </li>
             <li class="menu-item" id= 'dashboard'>
               <a href="dashboard" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                <div data-i18n="Analytics">Dashboard</div>
+                <div data-i18n="Analytics"></div>
               </a>
             </li>
 
@@ -126,12 +130,13 @@
               </ul>
             </li>
             <!-- Components -->
-            <li class="menu-header small text-uppercase"><span class="menu-header-text"></span></li>
+            <li class="menu-header small text-uppercase"><span class="menu-header-text">vendas</span></li>
             <!-- Cards -->
-            <li class="menu-item">
-              <a href="cards-basic.html" class="menu-link">
+            <li class="menu-item"  id = "produtos">
+              <a href="produtos" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-collection"></i>
-                <div data-i18n="Basic"></div>
+                <div data-i18n="Basic">Produtos</div>
+                <span class="badge rounded-pill bg-label-danger embreve mx-2">Em breve</span>
               </a>
             </li>
             <!-- User interface -->
@@ -267,7 +272,7 @@
             </li>
 
             <!-- Forms & Tables -->
-            <li class="menu-header small text-uppercase"><span class="menu-header-text"></span></li>
+            <li class="menu-header small text-uppercase"><span class="menu-header-text">Controle de Usuários</span></li>
             <!-- Forms -->
             <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
@@ -313,27 +318,7 @@
               </a>
             </li>
             <!-- Misc -->
-            <li class="menu-header small text-uppercase"><span class="menu-header-text"></span></li>
-            <li class="menu-item">
-              <a
-                href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
-                target="_blank"
-                class="menu-link"
-              >
-                <i class="menu-icon tf-icons bx bx-support"></i>
-                <div data-i18n="Support"></div>
-              </a>
-            </li>
-            <li class="menu-item">
-              <a
-                href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"
-                target="_blank"
-                class="menu-link"
-              >
-                <i class="menu-icon tf-icons bx bx-file"></i>
-                <div data-i18n="Documentation"></div>
-              </a>
-            </li>
+        
           </ul>
         </aside>
 

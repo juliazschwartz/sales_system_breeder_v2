@@ -187,44 +187,50 @@ position: absolute;">
                               </div>
                               <form id="formEditaEspecies">
                               <div class="modal-body">
+                                <div class="row d-none">
+                                  <div class="col mb-3">
+                                    <label for="nameWithTitle" class="form-label" ></label>
+                                    <input type="hidden"  class="form-control" id = "id_animal" name="id_animal">
+                                  </div>
+                                </div>
                                 <div class="row">
                                   <div class="col mb-3">
                                     <label for="nameWithTitle" class="form-label" >Nome Científico</label>
-                                    <input type="text"  class="form-control" id = "cientifico">
+                                    <input type="text"  class="form-control" id = "cientifico" name="cientifico">
                                   </div>
                                 </div>
                                 <div class="row">
                                   <div class="col mb-3">
                                     <label for="nameWithTitle" class="form-label" >Nome Popular</label>
-                                    <input type="text"  class="form-control" placeholder="" id = "popular">
+                                    <input type="text"  class="form-control" placeholder="" id = "popular" name="popular">
                                   </div>
                                 </div>
                                 
                                 <div class="row">
                                   <div class="col mb-3">
                                     <label for="nameWithTitle" class="form-label" >Tipo de Marcação</label>
-                                    <input type="text"  class="form-control" placeholder="" id = "marcacao">
+                                    <input type="text"  class="form-control" placeholder="" id = "marcacao" name="marcacao">
                                   </div>
                                 </div>
                                 
                                 <div class="row">
                                   <div class="col mb-3">
                                     <label for="nameWithTitle" class="form-label">Código</label>
-                                    <input type="text"  class="form-control" placeholder="" id = "codigo">
+                                    <input type="text"  class="form-control" placeholder="" id = "codigo" name = "codigo">
                                   </div>
                                 </div>
                                 
                                 <div class="row">
                                   <div class="col mb-3">
                                     <label for="nameWithTitle" class="form-label" >NCM</label>
-                                    <input type="text"  class="form-control" placeholder="" id = "ncm">
+                                    <input type="text"  class="form-control" placeholder="" id = "ncm" name ="ncm">
                                   </div>
                                 </div>
                                 
                                 <div class="row">
                                   <div class="col mb-3">
                                     <label for="nameWithTitle" class="form-label">Base de Cálculo NCM</label>
-                                    <input type="text"  class="form-control" placeholder=""  id = "base">
+                                    <input type="text"  class="form-control" placeholder=""  id = "base" name ="base">
                                   </div>
                                 </div>
                                 <div class = "row">
@@ -401,18 +407,20 @@ nome_popular = nome_popular.replace('Ã§', 'ç');
 
   $('#formEditaEspecies').submit(function(e){
     e.preventDefault();
-    inputs = {};
-    data =  $('#formEditaEspecies').find('.modal-body').children().children().children('textarea, input');
-    delete data.length ;
-    delete data.prevObject ;
-    for (var [key, value] of Object.entries(data)) {
-       var id =  value.getAttribute('id');
-       inputs[id] = $('#'+id+'').val();
-    }
+    data = $(this).closest('form').serialize();
+    // console.log(data)
+    // inputs = {};
+    // data =  $('#formEditaEspecies').find('.modal-body').children().children().children('textarea, input');
+    // delete data.length ;
+    // delete data.prevObject ;
+    // for (var [key, value] of Object.entries(data)) {
+    //    var id =  value.getAttribute('id');
+    //    inputs[id] = $('#'+id+'').val();
+    // }
        $.ajax({
            url: "editaEspecies",
            type: 'post',
-           data: inputs,
+           data,
            success: function(resposta){
             $('.bs-toast').removeClass('d-none');
             if(resposta=='true'){

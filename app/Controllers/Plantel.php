@@ -18,6 +18,7 @@ class Plantel extends BaseController
     {
         $request = \Config\Services::request();
         $cod = $request->getPost('codigo'); 
+        $id = $request->getPost('id'); 
         $ncm = $request->getPost('ncm'); 
         $nome_popular = $request->getPost('popular'); 
         $nome_cientifico = $request->getPost('cientifico'); 
@@ -25,13 +26,21 @@ class Plantel extends BaseController
         $base = $request->getPost('base'); 
         $descricao = $request->getPost('descricao'); 
       
-        if (empty($cod)) {
+        if(empty($cod)){
+           return false;
         }
-
+        
         $db = \Config\Database::connect('default',true);
-        $query = $db->query("UPDATE especies SET cod = '$cod', ncm='$ncm', nome_popular = '$nome_popular', 
+        if(!empty($id)){
+            $query = $db->query("UPDATE especies SET cod = '$cod', ncm='$ncm', nome_popular = '$nome_popular', 
         nome_cientifico='$nome_cientifico', tipo_marcacao = '$marcacao', desc_nota= '$descricao', base_calculo='$base'
-        WHERE cod = '$cod'");
+        WHERE id_especie = '$id'");
+    }
+
+        else{
+            $query = $db->query("INSERT INTO especies ( cod , ncm, nome_popular, nome_cientifico, tipo_marcacao , desc_nota, base_calculo)
+            VALUES('$cod','$ncm', '$nome_popular',  '$nome_cientifico', '$marcacao', '$descricao','$base')");
+        }
 
         return json_encode($query);
     }

@@ -170,7 +170,7 @@ position: absolute;">
 
               <!-- Striped Rows -->
               <div class="card">
-                <div class = "d-flex align-items-baseline "><h5 class="card-header"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCenter" >Nova Espécie</button></h5>
+                <div class = "d-flex align-items-baseline "><h5 class="card-header"><button type="button" class="btn btn-primary nova_especie" data-bs-toggle="modal" data-bs-target="#modalCenter">Nova Espécie</button></h5>
                
                 <span class = "w-75 mx-2">
                   <form class="d-flex" id="formBuscaEspecies" method="post">
@@ -190,7 +190,7 @@ position: absolute;">
                                 <div class="row d-none">
                                   <div class="col mb-3">
                                     <label for="nameWithTitle" class="form-label" ></label>
-                                    <input type="hidden"  class="form-control" id = "id_animal" name="id_animal">
+                                    <input type="hidden"  class="form-control" id = "id" name="id">
                                   </div>
                                 </div>
                                 <div class="row">
@@ -408,7 +408,7 @@ nome_popular = nome_popular.replace('Ã§', 'ç');
   $('#formEditaEspecies').submit(function(e){
     e.preventDefault();
     data = $(this).closest('form').serialize();
-    // console.log(data)
+  
     // inputs = {};
     // data =  $('#formEditaEspecies').find('.modal-body').children().children().children('textarea, input');
     // delete data.length ;
@@ -427,7 +427,7 @@ nome_popular = nome_popular.replace('Ã§', 'ç');
               setTimeout(reload, 1000);
             }
             else {
-            errorMessage('Ops.Não foi possível salvar as alterações. Tente novamente ou entre em contato com o desenvolvedor');
+            errorMessage('Ops.Não foi possível salvar as alterações. Certifique-se que o campo de código da espécie esteja preenchido.');
             }
           },
           error: function(resposta){
@@ -497,5 +497,9 @@ function clickDelete(){
     
       
       }) 
+
+      $('.nova_especie').click(function(){
+          document.getElementById('formEditaEspecies').reset();
+      })
   })
   </script>

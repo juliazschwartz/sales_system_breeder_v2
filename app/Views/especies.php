@@ -170,6 +170,7 @@ if(!empty($_GET)){
                                 <h5 class="modal-title" id="modalCenterTitle">Nova Espécie</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                               </div>
+                              <form id="formEditaEspecies">
                               <div class="modal-body">
                                 <div class="row">
                                   <div class="col mb-3">
@@ -211,10 +212,12 @@ if(!empty($_GET)){
                                     <input type="text"  class="form-control" placeholder=""  id = "base">
                                   </div>
                                 </div>
-                                <div>
+                                <div class = "row">
+                                <div class="col mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label" >Descrição da Nota</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" id = "descricao"></textarea>
                       </div>
+</div>
                                 
                                 <!-- <div class="row g-2">
                                   <div class="col mb-0">
@@ -231,8 +234,9 @@ if(!empty($_GET)){
                                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
                                   Fechar
                                 </button>
-                                <button type="button" class="btn btn-primary">Cadastrar</button>
+                                <button type="submit" class="btn btn-primary editarEspecie">Cadastrar</button>
                               </div>
+                            </form>
                             </div>
                           </div>
                         </div>
@@ -379,15 +383,33 @@ nome_popular = nome_popular.replace('Ã§', 'ç');
 }
   )
 
+
+  $('#formEditaEspecies').submit(function(e){
+    e.preventDefault();
+    data =  $('#formEditaEspecies').find('.modal-body').children().children().children('textarea, input');
+       $.ajax({
+           url: "editaEspecies",
+           type: 'post',
+           data: data,
+           success: function(resposta){
+             console.log('alterado')
+          }
+      });
+  });
+  
+
+  
 function clickEdit(){
   $('.bx-edit-alt').click(function(e){
     e.preventDefault;
     var linha = $(this).parent().parent().parent().data();
+    $('.editarEspecie').attr('data-cod', linha.codigo)
     for (var [key, value] of Object.entries(linha)) {
         value = value.toString().replace('Ã©', 'é');
         value = value.replace('Ã§', 'ç');
        $('#'+key+'').val(value);
         } 
+    
     }) 
 
   }

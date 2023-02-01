@@ -17,16 +17,23 @@ class Plantel extends BaseController
     public function EditaEspecies()		
     {
         $request = \Config\Services::request();
-        // $cod = $request->getPost('cod'); 
-        // $nome_popular = $request->getPost('nome_popular'); 
-        // $nome_cientifico = $request->getPost('nome_cientifico'); 
-        // $ncm = $request->getPost('cod'); 
-        // $cod = $request->getPost('cod'); 
-        // if (empty($cod)) {
-        // }
-        // $db = \Config\Database::connect('default',true);
-        // $especiesEncontradas = $db->query("UPDATE especies WHERE cod = $cod")->getResultArray();
-        // return json_encode($especiesEncontradas);
+        $cod = $request->getPost('codigo'); 
+        $ncm = $request->getPost('ncm'); 
+        $nome_popular = $request->getPost('popular'); 
+        $nome_cientifico = $request->getPost('cientifico'); 
+        $marcacao = $request->getPost('marcacao'); 
+        $base = $request->getPost('base'); 
+        $descricao = $request->getPost('descricao'); 
+      
+        if (empty($cod)) {
+        }
+
+        $db = \Config\Database::connect('default',true);
+        $query = $db->query("UPDATE especies SET cod = '$cod', ncm='$ncm', nome_popular = '$nome_popular', 
+        nome_cientifico='$nome_cientifico', tipo_marcacao = '$marcacao', desc_nota= '$descricao', base_calculo='$base'
+        WHERE cod = '$cod'");
+
+        return json_encode($query);
 }
     public function ExcluiEspecies()		
     {

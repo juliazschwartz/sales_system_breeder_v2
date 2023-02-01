@@ -194,7 +194,7 @@ if(!empty($_GET)){
                                 
                                 <div class="row">
                                   <div class="col mb-3">
-                                    <label for="nameWithTitle" class="form-label" id = "codigo">Código</label>
+                                    <label for="nameWithTitle" class="form-label">Código</label>
                                     <input type="text"  class="form-control" placeholder="" id = "codigo">
                                   </div>
                                 </div>
@@ -214,8 +214,8 @@ if(!empty($_GET)){
                                 </div>
                                 <div class = "row">
                                 <div class="col mb-3">
-                        <label for="exampleFormControlTextarea1" class="form-label" >Descrição da Nota</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" id = "descricao"></textarea>
+                        <label for="exampleFormControlTextarea1" class="form-label" >Descrição na Nota</label>
+                        <textarea class="form-control" rows="3" id = "descricao"></textarea>
                       </div>
 </div>
                                 
@@ -267,7 +267,6 @@ if(!empty($_GET)){
                         <th>Nome Científico <a class='bx bx-sort' href="?par=nome_cientifico&order=<?=$order?>" ></a></th></th>
                         <th>Nome Popular <a class='bx bx-sort' href="?par=nome_popular&order=<?=$order?>" ></a></th></th>
                         <th>Marcação</th>
-                        <th>Preço Médio</th>
                         <th></th>
                         <th></th>
                       </tr>
@@ -280,7 +279,7 @@ if(!empty($_GET)){
                         <td><strong><?= utf8_decode($especie['nome_cientifico'])?><strong></td>
                         <td><strong><?= utf8_decode($especie['nome_popular'])?><strong></td>
                         <td>Indefinido</td>
-                        <td>Indefinido</td>
+                        
                         <td>
                         <a class="text-center" href="javascript:void(0);"
                                 ><i class="bx bx-edit-alt me-1 icone-tabela" data-bs-toggle="modal" data-bs-target="#modalCenter"></i> </a  >
@@ -372,7 +371,7 @@ var nome_popular = res.nome_popular.replace('Ã©', 'é');
 nome_popular = nome_popular.replace('Ã§', 'ç');
 
 
-            $('tbody').append("<tr <tr data-id='"+res.id_especie+"' data-codigo='"+res.cod+"' data-cientifico='"+res.nome_cientifico+"' data-popular='"+res.nome_popular+"' data-descricao='"+res.nome_descricao+"' data-ncm='"+res.ncm+"' data-marcacao='"+res.marcacao+"' data-base='"+res.base_calculo+"'>><td>"+res.cod+"</td><td><strong>"+res.nome_cientifico+"<strong></td><td><strong>"+nome_popular+"<strong></td><td>indefinido</td><td>indefinido</td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-edit-alt  me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalCenter'></i> </a> </td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-trash me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalToggle'></i> </a> </td></tr>")});
+            $('tbody').append("<tr <tr data-id='"+res.id_especie+"' data-codigo='"+res.cod+"' data-cientifico='"+res.nome_cientifico+"' data-popular='"+res.nome_popular+"' data-descricao='"+res.nome_descricao+"' data-ncm='"+res.ncm+"' data-marcacao='"+res.marcacao+"' data-base='"+res.base_calculo+"'>><td>"+res.cod+"</td><td><strong>"+res.nome_cientifico+"<strong></td><td><strong>"+nome_popular+"<strong></td><td>indefinido</td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-edit-alt  me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalCenter'></i> </a> </td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-trash me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalToggle'></i> </a> </td></tr>")});
             $('tbody').html(tbody);
             
           }
@@ -386,11 +385,18 @@ nome_popular = nome_popular.replace('Ã§', 'ç');
 
   $('#formEditaEspecies').submit(function(e){
     e.preventDefault();
+    inputs = {};
     data =  $('#formEditaEspecies').find('.modal-body').children().children().children('textarea, input');
+    delete data.length ;
+    delete data.prevObject ;
+    for (var [key, value] of Object.entries(data)) {
+       var id =  value.getAttribute('id');
+       inputs[id] = $('#'+id+'').val();
+    }
        $.ajax({
            url: "editaEspecies",
            type: 'post',
-           data: data,
+           data: inputs,
            success: function(resposta){
              console.log('alterado')
           }
@@ -403,7 +409,6 @@ function clickEdit(){
   $('.bx-edit-alt').click(function(e){
     e.preventDefault;
     var linha = $(this).parent().parent().parent().data();
-    $('.editarEspecie').attr('data-cod', linha.codigo)
     for (var [key, value] of Object.entries(linha)) {
         value = value.toString().replace('Ã©', 'é');
         value = value.replace('Ã§', 'ç');

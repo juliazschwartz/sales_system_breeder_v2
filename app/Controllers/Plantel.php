@@ -43,6 +43,7 @@ class Plantel extends BaseController
         }
         $db = \Config\Database::connect('default',true);
         $especieDeletada = $db->query("DELETE  FROM especies WHERE cod = $cod ");
+    
         return json_encode($especieDeletada);
 }
 

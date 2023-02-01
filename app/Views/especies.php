@@ -473,8 +473,18 @@ function clickDelete(){
            type: 'post',
            data : {'codigo':codigo},
            success: function(resposta){
-             console.log('deletado')
+            $('.bs-toast').removeClass('d-none');
+            if(resposta=='true'){
+              setTimeout(reload, 1000);
+            }
+            else {
+            errorMessage('Ops.Não foi deletar o registro. Tente novamente ou entre em contato com o desenvolvedor');
+            }
+          },
+          error: function(resposta){
+          errorMessage('Ops.Não foi possível deletar o registro por erro interno do sistema. Entre em contato com o desenvolvedor');
           }
+          
       });
     
       

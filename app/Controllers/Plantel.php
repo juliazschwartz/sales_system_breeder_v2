@@ -34,7 +34,7 @@ class Plantel extends BaseController
         WHERE cod = '$cod'");
 
         return json_encode($query);
-}
+    }
     public function ExcluiEspecies()		
     {
         $request = \Config\Services::request();

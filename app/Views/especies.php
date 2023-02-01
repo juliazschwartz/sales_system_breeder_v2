@@ -58,6 +58,7 @@ if(!empty($_GET)){
   </head>
 
   <body>
+    
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">
       <div class="layout-container">
@@ -142,13 +143,27 @@ if(!empty($_GET)){
           </nav>
 
           <!-- / Navbar -->
-
+          <div class="bs-toast toast fade show bg-success d-none" role="alert" aria-live="assertive" aria-atomic="true" style = "z-index: 99999;align-self:center;
+margin-top: 97px;
+position: absolute;">
+                        <div class="toast-header">
+                          <i class="bx bx-bell me-2"></i>
+                          <div class="me-auto fw-semibold">Mensagem</div>
+                         
+                          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                        <div class="toast-body">
+                          Operação realizada com sucesso.
+                        </div>
+                      </div>
           <!-- Content wrapper -->
           <div class="content-wrapper">
             <!-- Content -->
+           
 
             <div class="container-xxl flex-grow-1 container-p-y">
               <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Plantel /</span> Espécies</h4>
+              
 
  
           
@@ -399,12 +414,30 @@ nome_popular = nome_popular.replace('Ã§', 'ç');
            type: 'post',
            data: inputs,
            success: function(resposta){
-             console.log('alterado')
+            $('.bs-toast').removeClass('d-none');
+            if(resposta=='true'){
+              setTimeout(reload, 1000);
+            }
+            else {
+            errorMessage('Ops.Não foi possível salvar as alterações. Tente novamente ou entre em contato com o desenvolvedor');
+            }
+          },
+          error: function(resposta){
+          errorMessage('Ops.Não foi possível salvar as alterações por erro interno do sistema. Entre em contato com o desenvolvedor');
           }
+            
       });
   });
-  
+  function reload(){
+    window.location.reload(true);
+  }
 
+  function errorMessage(mensagem){
+    $('.bs-toast').removeClass('d-none');
+    $('.bs-toast').removeClass('bg-sucess');
+    $('.bs-toast').addClass('bg-danger');
+    $('.toast-body').text(mensagem);
+  }
   
 function clickEdit(){
   $('.bx-edit-alt').click(function(e){

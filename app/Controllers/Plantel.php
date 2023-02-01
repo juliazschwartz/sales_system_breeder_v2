@@ -38,12 +38,12 @@ class Plantel extends BaseController
     public function ExcluiEspecies()		
     {
         $request = \Config\Services::request();
-        $busca = $request->getPost('busca'); 
-        if (empty($busca)) {
+        $cod = $request->getPost('codigo'); 
+        if (empty($cod)) {
         }
         $db = \Config\Database::connect('default',true);
-        $especiesEncontradas = $db->query("SELECT * FROM especies WHERE cod like '%$busca%' OR nome_cientifico like '%$busca%' OR nome_popular like '%$busca%' ")->getResultArray();
-        return json_encode($especiesEncontradas);
+        $especieDeletada = $db->query("DELETE  FROM especies WHERE cod = $cod ");
+        return json_encode($especieDeletada);
 }
 
 }

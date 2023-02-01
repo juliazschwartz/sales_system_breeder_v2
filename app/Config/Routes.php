@@ -33,6 +33,7 @@ $routes->get('/dashboard', 'Home::index');
 $routes->get('/especies', 'Home::especies');
 $routes->post('/buscaEspecies', 'Plantel::BuscaEspecies');
 $routes->post('/editaEspecies', 'Plantel::EditaEspecies');
+$routes->post('/excluiEspecies', 'Plantel::ExcluiEspecies');
 
 /*
  * --------------------------------------------------------------------

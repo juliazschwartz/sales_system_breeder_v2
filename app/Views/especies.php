@@ -251,7 +251,7 @@ if(!empty($_GET)){
                               </div>
                               <div class="modal-body">Tem certeza que deseja deletar esse registro de espécie?.</div>
                               <div class="modal-footer">
-                                <button class="btn btn-danger" data-bs-target="#modalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">
+                                <button class="btn btn-danger deletarEspecie" data-bs-target="#modalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">
                                   Deletar
                                 </button>
                               </div>
@@ -377,6 +377,7 @@ nome_popular = nome_popular.replace('Ã§', 'ç');
           }
           else $(html).insertAfter('.align-items-baseline');
           clickEdit();
+          clickDelete();
        }
    });
 }
@@ -418,8 +419,32 @@ function clickEdit(){
     }) 
 
   }
+function clickDelete(){
+  $('.bx-trash').click(function(e){
+    e.preventDefault;
+    var linha = $(this).parent().parent().parent().data('codigo');
+    $('.deletarEspecie').attr('data-codigo',linha)
+    
+    }) 
+
+  }
 
   $(document).ready(function(){
     clickEdit();
+    clickDelete();
+    $('.deletarEspecie').click(function(e){
+      e.preventDefault;
+      var codigo = $(this).data('codigo'); 
+      $.ajax({
+           url: "excluiEspecies",
+           type: 'post',
+           data : {'codigo':codigo},
+           success: function(resposta){
+             console.log('deletado')
+          }
+      });
+    
+      
+      }) 
   })
   </script>

@@ -23,20 +23,25 @@ class Home extends BaseController
     // $especieModel = new App\Models\Especie_Model();
     $par = 'cod';
     $order = '';
-    if(isset($_GET['order'])){
+    $page = 1;
+  
+    if(!empty($_GET['order'])){
         $order = $_GET['order'];
         $par = $_GET['par'];
         // $order = "ORDER BY $par $order"
     };
-
-    
+    if(!empty($_GET['page'])){
+        
+        $page = $_GET['page'];
+    };
     $db = \Config\Database::connect('default',true);
     $count = $db->query("SELECT COUNT(cod) as count FROM especies")->getResultArray();
     $limit = 10;
     $total = $count[0]['count'] ;
     $pages = ceil((int)$total / $limit);
-    $page = $_GET['page'];
     $offset = ($page - 1)  * $limit;
+
+    
     
     $start = $offset + 1;
     $end = min(($offset + $limit), $total);

@@ -31,6 +31,11 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/especies', 'Home::especies');
 $routes->get('/produtos', 'Home::produtos');
+$routes->get('/clientes', 'Home::clientes');
+$routes->get('/compras', 'Home::compras');
+$routes->get('/estoque', 'Home::estoque');
+$routes->get('/nfe', 'Home::nfe');
+$routes->get('/vendas', 'Home::vendas');
 $routes->post('/buscaEspecies', 'Plantel::BuscaEspecies');
 $routes->post('/editaEspecies', 'Plantel::EditaEspecies');
 $routes->post('/excluiEspecies', 'Plantel::ExcluiEspecies');

@@ -67,11 +67,11 @@
             </li>
             <li class="menu-item" id="especies">
               <a href="especies" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-dock-top"></i>
+                <i class="menu-icon tf-icons bx bx-folder-open"></i>
                 <div data-i18n="">Espécies</div>
               </a>
               <ul class="menu-sub">
-                <li class="menu-item">
+                <li class="menu-item" >
                   <a href="pages-account-settings-account.html" class="menu-link">
                     <div data-i18n="Account"></div>
                   </a>
@@ -88,49 +88,22 @@
                 </li>
               </ul>
             </li>
-            <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
+            <li class="menu-item" id="estoque">
+              <a href="estoque" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-folder-open"></i>Estoque de Animais
                 <div data-i18n="Authentications"></div>
               </a>
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="auth-login-basic.html" class="menu-link" target="_blank">
-                    <div data-i18n="Basic"></div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="auth-register-basic.html" class="menu-link" target="_blank">
-                    <div data-i18n="Basic"></div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="auth-forgot-password-basic.html" class="menu-link" target="_blank">
-                    <div data-i18n="Basic"></div>
-                  </a>
-                </li>
-              </ul>
+           
             </li>
-            <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-cube-alt"></i>
-                <div data-i18n="Misc"></div>
+            <li class="menu-item" id="compras">
+              <a href="compras" class="menu-link ">
+                <i class="menu-icon tf-icons bx bxs-cart-add"></i>Compra de Animais
+                <div data-i18n="Extended UI"></div>
               </a>
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="pages-misc-error.html" class="menu-link">
-                    <div data-i18n="Error"></div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="pages-misc-under-maintenance.html" class="menu-link">
-                    <div data-i18n="Under Maintenance"></div>
-                  </a>
-                </li>
-              </ul>
             </li>
+     
             <!-- Components -->
-            <li class="menu-header small text-uppercase"><span class="menu-header-text">vendas</span></li>
+            <li class="menu-header small text-uppercase"><span class="menu-header-text">Loja</span></li>
             <!-- Cards -->
             <li class="menu-item"  id = "produtos">
               <a href="produtos" class="menu-link">
@@ -140,133 +113,26 @@
               </a>
             </li>
             <!-- User interface -->
-            <li class="menu-item">
-              <a href="javascript:void(0)" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-box"></i>
+            <li class="menu-item" id="clientes">
+              <a href="clientes" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-group"></i>Clientes
                 <div data-i18n="User interface"></div>
               </a>
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="ui-accordion.html" class="menu-link">
-                    <div data-i18n="Accordion"></div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-alerts.html" class="menu-link">
-                    <div data-i18n="Alerts"></div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-badges.html" class="menu-link">
-                    <div data-i18n="Badges"></div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-buttons.html" class="menu-link">
-                    <div data-i18n="Buttons"></div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-carousel.html" class="menu-link">
-                    <div data-i18n="Carousel"></div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-collapse.html" class="menu-link">
-                    <div data-i18n="Collapse"></div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-dropdowns.html" class="menu-link">
-                    <div data-i18n="Dropdowns"></div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-footer.html" class="menu-link">
-                    <div data-i18n="Footer"></div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-list-groups.html" class="menu-link">
-                    <div data-i18n="List Groups"></div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-modals.html" class="menu-link">
-                    <div data-i18n="Modals"></div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-navbar.html" class="menu-link">
-                    <div data-i18n="Navbar"></div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-offcanvas.html" class="menu-link">
-                    <div data-i18n="Offcanvas"></div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-pagination-breadcrumbs.html" class="menu-link">
-                    <div data-i18n="Pagination &amp; Breadcrumbs">  </div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-progress.html" class="menu-link">
-                    <div data-i18n="Progress"></div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-spinners.html" class="menu-link">
-                    <div data-i18n="Spinners"></div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-tabs-pills.html" class="menu-link">
-                    <div data-i18n="Tabs &amp; Pills"></div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-toasts.html" class="menu-link">
-                    <div data-i18n="Toasts"></div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-tooltips-popovers.html" class="menu-link">
-                    <div data-i18n="Tooltips & Popovers"></div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-typography.html" class="menu-link">
-                    <div data-i18n="Typography"></div>
-                  </a>
-                </li>
-              </ul>
+              
+            </li>
+            <li class="menu-item" id="vendas">
+              <a href="vendas" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-dollar-circle"></i>Vendas
+                <div data-i18n="Boxicons"></div>
+              </a>
             </li>
 
             <!-- Extended components -->
-            <li class="menu-item">
-              <a href="javascript:void(0)" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-copy"></i>
-                <div data-i18n="Extended UI"></div>
-              </a>
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="extended-ui-perfect-scrollbar.html" class="menu-link">
-                    <div data-i18n="Perfect Scrollbar"></div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="extended-ui-text-divider.html" class="menu-link">
-                    <div data-i18n="Text Divider"></div>
-                  </a>
-                </li>
-              </ul>
-            </li>
+           
 
-            <li class="menu-item">
-              <a href="icons-boxicons.html" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-crown"></i>
+            <li class="menu-item" id="nfe">
+              <a href="nfe" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-receipt"></i>NFE
                 <div data-i18n="Boxicons"></div>
               </a>
             </li>

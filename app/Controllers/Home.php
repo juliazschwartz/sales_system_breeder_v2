@@ -36,10 +36,27 @@ class Home extends BaseController
     }
     public function produtos()
     {
-   
-      
         return view('produtos');
-     
+    }
+    public function clientes()
+    {
+        return view('clientes');
+    }
+    public function estoque()
+    {
+        return view('estoque');
+    }
+    public function compras()
+    {
+        return view('compras');
+    }
+    public function vendas()
+    {
+        return view('vendas');
+    }
+    public function nfe()
+    {
+        return view('nfe');
     }
     
 }

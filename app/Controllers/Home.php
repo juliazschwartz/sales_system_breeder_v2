@@ -23,15 +23,29 @@ class Home extends BaseController
     // $especieModel = new App\Models\Especie_Model();
     $par = 'cod';
     $order = '';
-    if(!empty($_GET)){
+    if(isset($_GET['order'])){
         $order = $_GET['order'];
         $par = $_GET['par'];
         // $order = "ORDER BY $par $order"
     };
+
     
     $db = \Config\Database::connect('default',true);
-      $especies = ['especies' => $db->query("SELECT * FROM especies ORDER BY $par $order")->getResultArray()];
-        return view('especies',$especies);
+    $count = $db->query("SELECT COUNT(cod) as count FROM especies")->getResultArray();
+    $limit = 10;
+    $total = $count[0]['count'] ;
+    $pages = ceil((int)$total / $limit);
+    $page = $_GET['page'];
+    $offset = ($page - 1)  * $limit;
+    
+    $start = $offset + 1;
+    $end = min(($offset + $limit), $total);
+    $array = ['especies' => $db->query("SELECT * FROM especies ORDER BY TRIM($par) $order LIMIT $limit OFFSET $offset")->getResultArray(), 'paginacao'=>[
+   'limit'=>$limit, 'total'=>$total, 'pages'=>$pages, 'page'=> $page, 'offset'=> $offset]
+
+];
+    
+      return view('especies',$array);
      
     }
     public function produtos()
@@ -40,7 +54,18 @@ class Home extends BaseController
     }
     public function clientes()
     {
-        return view('clientes');
+        $par = 'id_cliente';
+        $order = '';
+        if(!empty($_GET)){
+            $order = $_GET['order'];
+            $par = $_GET['par'];
+            // $order = "ORDER BY $par $order"
+        };
+        $db = \Config\Database::connect('default',true);
+      
+        $clientes = ['clientes' => $db->query("SELECT * FROM clientes ORDER BY TRIM($par) $order")->getResultArray()];
+       
+        return view('clientes',$clientes);
     }
     public function estoque()
     {

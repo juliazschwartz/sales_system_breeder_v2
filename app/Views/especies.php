@@ -1,6 +1,6 @@
 <?php 
 $order = '';
-if(!empty($_GET)){
+if(isset($_GET['order'])){
   $_GET['order'] == 'asc' ? $order = 'desc' : $order = 'asc';
 }
 ?>
@@ -247,7 +247,11 @@ position: absolute;">
                      
                     </tbody>
                   </table>
+                  <!-- footer -->
+
                 </div>
+                <?php include 'componentes/pagination.php'; ?>
+         
               </div>
               <!--/ Striped Rows -->
 
@@ -265,7 +269,7 @@ position: absolute;">
 
       <!-- Overlay -->
       <div class="layout-overlay layout-menu-toggle"></div>
-    </div>
+                      </div>
     <!-- / Layout wrapper -->
 
    

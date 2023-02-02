@@ -7,3 +7,722 @@ in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
  5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
  6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 12:41:42 --> Undefined variable: especies
+in APPPATH\Views\clientes.php on line 224.
+ 1 APPPATH\Views\clientes.php(224): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: especies', 'APPPATH\\Views\\clientes.php', 224, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\clientes.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('clientes', [], true)
+ 5 APPPATH\Controllers\Home.php(43): view('clientes')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->clientes()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-02-02 12:43:01 --> mysqli_sql_exception: Unknown column 'cod' in 'order clause' in C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT * FROM c...', 0)
+#1 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM c...')
+#2 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM c...')
+#3 C:\laragon\www\sistema_vendas_comfauna_2.0\app\Controllers\Home.php(51): CodeIgniter\Database\BaseConnection->query('SELECT * FROM c...')
+#4 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(934): App\Controllers\Home->clientes()
+#5 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\sistema_vendas_comfauna_2.0\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-02-02 12:43:01 --> Unknown column 'cod' in 'order clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 APPPATH\Controllers\Home.php(51): CodeIgniter\Database\BaseConnection->query('SELECT * FROM clientes ORDER BY cod ')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->clientes()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-02-02 12:43:02 --> mysqli_sql_exception: Unknown column 'cod' in 'order clause' in C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT * FROM c...', 0)
+#1 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM c...')
+#2 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM c...')
+#3 C:\laragon\www\sistema_vendas_comfauna_2.0\app\Controllers\Home.php(51): CodeIgniter\Database\BaseConnection->query('SELECT * FROM c...')
+#4 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(934): App\Controllers\Home->clientes()
+#5 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\sistema_vendas_comfauna_2.0\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-02-02 12:43:02 --> Unknown column 'cod' in 'order clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 APPPATH\Controllers\Home.php(51): CodeIgniter\Database\BaseConnection->query('SELECT * FROM clientes ORDER BY cod ')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->clientes()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-02-02 12:43:02 --> mysqli_sql_exception: Unknown column 'cod' in 'order clause' in C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT * FROM c...', 0)
+#1 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM c...')
+#2 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM c...')
+#3 C:\laragon\www\sistema_vendas_comfauna_2.0\app\Controllers\Home.php(51): CodeIgniter\Database\BaseConnection->query('SELECT * FROM c...')
+#4 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(934): App\Controllers\Home->clientes()
+#5 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\sistema_vendas_comfauna_2.0\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-02-02 12:43:02 --> Unknown column 'cod' in 'order clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 APPPATH\Controllers\Home.php(51): CodeIgniter\Database\BaseConnection->query('SELECT * FROM clientes ORDER BY cod ')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->clientes()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 12:43:47 --> Undefined index: id_especie
+in APPPATH\Views\clientes.php on line 226.
+ 1 APPPATH\Views\clientes.php(226): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: id_especie', 'APPPATH\\Views\\clientes.php', 226, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\clientes.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('clientes', [], true)
+ 5 APPPATH\Controllers\Home.php(53): view('clientes', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->clientes()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 13:06:39 --> Undefined index: id_especie
+in APPPATH\Views\clientes.php on line 226.
+ 1 APPPATH\Views\clientes.php(226): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: id_especie', 'APPPATH\\Views\\clientes.php', 226, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\clientes.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('clientes', [], true)
+ 5 APPPATH\Controllers\Home.php(53): view('clientes', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->clientes()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 13:13:10 --> Undefined index: id_especie
+in APPPATH\Views\clientes.php on line 226.
+ 1 APPPATH\Views\clientes.php(226): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: id_especie', 'APPPATH\\Views\\clientes.php', 226, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\clientes.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('clientes', [], true)
+ 5 APPPATH\Controllers\Home.php(53): view('clientes', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->clientes()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 13:22:12 --> Undefined index: id_especie
+in APPPATH\Views\clientes.php on line 226.
+ 1 APPPATH\Views\clientes.php(226): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: id_especie', 'APPPATH\\Views\\clientes.php', 226, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\clientes.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('clientes', [], true)
+ 5 APPPATH\Controllers\Home.php(53): view('clientes', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->clientes()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 13:26:07 --> Undefined index: telefone
+in APPPATH\Views\clientes.php on line 226.
+ 1 APPPATH\Views\clientes.php(226): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: telefone', 'APPPATH\\Views\\clientes.php', 226, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\clientes.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('clientes', [], true)
+ 5 APPPATH\Controllers\Home.php(53): view('clientes', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->clientes()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 13:30:34 --> Undefined index: telefone
+in APPPATH\Views\clientes.php on line 232.
+ 1 APPPATH\Views\clientes.php(232): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: telefone', 'APPPATH\\Views\\clientes.php', 232, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\clientes.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('clientes', [], true)
+ 5 APPPATH\Controllers\Home.php(53): view('clientes', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->clientes()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-02-02 13:45:47 --> mysqli_sql_exception: Unknown column 'nome_cientifico' in 'order clause' in C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT * FROM c...', 0)
+#1 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM c...')
+#2 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM c...')
+#3 C:\laragon\www\sistema_vendas_comfauna_2.0\app\Controllers\Home.php(51): CodeIgniter\Database\BaseConnection->query('SELECT * FROM c...')
+#4 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(934): App\Controllers\Home->clientes()
+#5 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\sistema_vendas_comfauna_2.0\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-02-02 13:45:47 --> Unknown column 'nome_cientifico' in 'order clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 APPPATH\Controllers\Home.php(51): CodeIgniter\Database\BaseConnection->query('SELECT * FROM clientes ORDER BY nome_cientifico ')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->clientes()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-02-02 16:38:03 --> mysqli_sql_exception: Unknown column 'nascimento' in 'order clause' in C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT * FROM c...', 0)
+#1 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM c...')
+#2 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM c...')
+#3 C:\laragon\www\sistema_vendas_comfauna_2.0\app\Controllers\Home.php(51): CodeIgniter\Database\BaseConnection->query('SELECT * FROM c...')
+#4 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(934): App\Controllers\Home->clientes()
+#5 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\sistema_vendas_comfauna_2.0\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-02-02 16:38:03 --> Unknown column 'nascimento' in 'order clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 APPPATH\Controllers\Home.php(51): CodeIgniter\Database\BaseConnection->query('SELECT * FROM clientes ORDER BY nascimento asc')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->clientes()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 16:45:09 --> utf8_decode() expects exactly 1 parameter, 3 given
+in APPPATH\Views\clientes.php on line 231.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'utf8_decode() expects exactly 1 parameter, 3 given', 'APPPATH\\Views\\clientes.php', 231, [...])
+ 2 APPPATH\Views\clientes.php(231): utf8_decode('Ã©', ' ALEXANDRE JOSÃ‰ QUADROS', 'é')
+ 3 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\clientes.php')
+ 4 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('clientes', [], true)
+ 6 APPPATH\Controllers\Home.php(53): view('clientes', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->clientes()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 16:45:31 --> utf8_decode() expects exactly 1 parameter, 3 given
+in APPPATH\Views\clientes.php on line 231.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'utf8_decode() expects exactly 1 parameter, 3 given', 'APPPATH\\Views\\clientes.php', 231, [...])
+ 2 APPPATH\Views\clientes.php(231): utf8_decode('é', ' ALEXANDRE JOSÃ‰ QUADROS', 'Ã©')
+ 3 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\clientes.php')
+ 4 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('clientes', [], true)
+ 6 APPPATH\Controllers\Home.php(53): view('clientes', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->clientes()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 16:45:32 --> utf8_decode() expects exactly 1 parameter, 3 given
+in APPPATH\Views\clientes.php on line 231.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'utf8_decode() expects exactly 1 parameter, 3 given', 'APPPATH\\Views\\clientes.php', 231, [...])
+ 2 APPPATH\Views\clientes.php(231): utf8_decode('é', ' ALEXANDRE JOSÃ‰ QUADROS', 'Ã©')
+ 3 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\clientes.php')
+ 4 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('clientes', [], true)
+ 6 APPPATH\Controllers\Home.php(53): view('clientes', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->clientes()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 16:45:32 --> utf8_decode() expects exactly 1 parameter, 3 given
+in APPPATH\Views\clientes.php on line 231.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'utf8_decode() expects exactly 1 parameter, 3 given', 'APPPATH\\Views\\clientes.php', 231, [...])
+ 2 APPPATH\Views\clientes.php(231): utf8_decode('é', ' ALEXANDRE JOSÃ‰ QUADROS', 'Ã©')
+ 3 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\clientes.php')
+ 4 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('clientes', [], true)
+ 6 APPPATH\Controllers\Home.php(53): view('clientes', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->clientes()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 16:45:32 --> utf8_decode() expects exactly 1 parameter, 3 given
+in APPPATH\Views\clientes.php on line 231.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'utf8_decode() expects exactly 1 parameter, 3 given', 'APPPATH\\Views\\clientes.php', 231, [...])
+ 2 APPPATH\Views\clientes.php(231): utf8_decode('é', ' ALEXANDRE JOSÃ‰ QUADROS', 'Ã©')
+ 3 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\clientes.php')
+ 4 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('clientes', [], true)
+ 6 APPPATH\Controllers\Home.php(53): view('clientes', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->clientes()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-02-02 16:47:15 --> mysqli_sql_exception: Unknown column 'nascimento' in 'order clause' in C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT * FROM c...', 0)
+#1 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM c...')
+#2 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM c...')
+#3 C:\laragon\www\sistema_vendas_comfauna_2.0\app\Controllers\Home.php(51): CodeIgniter\Database\BaseConnection->query('SELECT * FROM c...')
+#4 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(934): App\Controllers\Home->clientes()
+#5 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\sistema_vendas_comfauna_2.0\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-02-02 16:47:15 --> Unknown column 'nascimento' in 'order clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 APPPATH\Controllers\Home.php(51): CodeIgniter\Database\BaseConnection->query('SELECT * FROM clientes ORDER BY nascimento desc')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->clientes()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-02-02 16:47:36 --> mysqli_sql_exception: Unknown column 'nascimento' in 'order clause' in C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT * FROM c...', 0)
+#1 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM c...')
+#2 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM c...')
+#3 C:\laragon\www\sistema_vendas_comfauna_2.0\app\Controllers\Home.php(51): CodeIgniter\Database\BaseConnection->query('SELECT * FROM c...')
+#4 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(934): App\Controllers\Home->clientes()
+#5 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\sistema_vendas_comfauna_2.0\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-02-02 16:47:36 --> Unknown column 'nascimento' in 'order clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 APPPATH\Controllers\Home.php(51): CodeIgniter\Database\BaseConnection->query('SELECT * FROM clientes ORDER BY nascimento desc')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->clientes()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 18:30:06 --> Undefined property: App\Controllers\Home::$load
+in APPPATH\Controllers\Home.php on line 24.
+ 1 APPPATH\Controllers\Home.php(24): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: App\\Controllers\\Home::$load', 'APPPATH\\Controllers\\Home.php', 24, [])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 18:34:54 --> Undefined property: CodeIgniter\Database\MySQLi\Result::$getResultArray
+in APPPATH\Controllers\Home.php on line 34.
+ 1 APPPATH\Controllers\Home.php(34): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: CodeIgniter\\Database\\MySQLi\\Result::$getResultArray', 'APPPATH\\Controllers\\Home.php', 34, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 18:35:31 --> Undefined property: CodeIgniter\Database\MySQLi\Result::$getResultArray
+in APPPATH\Controllers\Home.php on line 34.
+ 1 APPPATH\Controllers\Home.php(34): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: CodeIgniter\\Database\\MySQLi\\Result::$getResultArray', 'APPPATH\\Controllers\\Home.php', 34, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 18:35:42 --> Call to a member function paginate() on array
+in APPPATH\Controllers\Home.php on line 35.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 18:35:52 --> Call to a member function paginate() on array
+in APPPATH\Controllers\Home.php on line 34.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 18:36:10 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::paginate()
+in APPPATH\Controllers\Home.php on line 34.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 18:39:39 --> Unsupported operand types
+in APPPATH\Views\especies.php on line 8.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('especies', [], true)
+ 4 APPPATH\Controllers\Home.php(36): view('especies', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-02-02 18:40:18 --> mysqli_sql_exception: In aggregated query without GROUP BY, expression #1 of SELECT list contains nonaggregated column 'aves_legais.especies.id_especie'; this is incompatible with sql_mode=only_full_group_by in C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *, COUNT...', 0)
+#1 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, COUNT...')
+#2 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, COUNT...')
+#3 C:\laragon\www\sistema_vendas_comfauna_2.0\app\Controllers\Home.php(34): CodeIgniter\Database\BaseConnection->query('SELECT *, COUNT...')
+#4 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(934): App\Controllers\Home->especies()
+#5 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\sistema_vendas_comfauna_2.0\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-02-02 18:40:18 --> In aggregated query without GROUP BY, expression #1 of SELECT list contains nonaggregated column 'aves_legais.especies.id_especie'; this is incompatible with sql_mode=only_full_group_by
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 APPPATH\Controllers\Home.php(34): CodeIgniter\Database\BaseConnection->query('SELECT *, COUNT(*) FROM especies ORDER BY TRIM(cod) ')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-02-02 18:40:55 --> mysqli_sql_exception: In aggregated query without GROUP BY, expression #1 of SELECT list contains nonaggregated column 'aves_legais.especies.id_especie'; this is incompatible with sql_mode=only_full_group_by in C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *, COUNT...', 0)
+#1 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, COUNT...')
+#2 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, COUNT...')
+#3 C:\laragon\www\sistema_vendas_comfauna_2.0\app\Controllers\Home.php(34): CodeIgniter\Database\BaseConnection->query('SELECT *, COUNT...')
+#4 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(934): App\Controllers\Home->especies()
+#5 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\sistema_vendas_comfauna_2.0\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-02-02 18:40:55 --> In aggregated query without GROUP BY, expression #1 of SELECT list contains nonaggregated column 'aves_legais.especies.id_especie'; this is incompatible with sql_mode=only_full_group_by
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 APPPATH\Controllers\Home.php(34): CodeIgniter\Database\BaseConnection->query('SELECT *, COUNT(\'cod\') FROM especies ORDER BY TRIM(cod) ')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-02-02 18:40:56 --> mysqli_sql_exception: In aggregated query without GROUP BY, expression #1 of SELECT list contains nonaggregated column 'aves_legais.especies.id_especie'; this is incompatible with sql_mode=only_full_group_by in C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *, COUNT...', 0)
+#1 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, COUNT...')
+#2 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, COUNT...')
+#3 C:\laragon\www\sistema_vendas_comfauna_2.0\app\Controllers\Home.php(34): CodeIgniter\Database\BaseConnection->query('SELECT *, COUNT...')
+#4 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(934): App\Controllers\Home->especies()
+#5 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\sistema_vendas_comfauna_2.0\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-02-02 18:40:56 --> In aggregated query without GROUP BY, expression #1 of SELECT list contains nonaggregated column 'aves_legais.especies.id_especie'; this is incompatible with sql_mode=only_full_group_by
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 APPPATH\Controllers\Home.php(34): CodeIgniter\Database\BaseConnection->query('SELECT *, COUNT(\'cod\') FROM especies ORDER BY TRIM(cod) ')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-02-02 18:40:56 --> mysqli_sql_exception: In aggregated query without GROUP BY, expression #1 of SELECT list contains nonaggregated column 'aves_legais.especies.id_especie'; this is incompatible with sql_mode=only_full_group_by in C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *, COUNT...', 0)
+#1 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, COUNT...')
+#2 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, COUNT...')
+#3 C:\laragon\www\sistema_vendas_comfauna_2.0\app\Controllers\Home.php(34): CodeIgniter\Database\BaseConnection->query('SELECT *, COUNT...')
+#4 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(934): App\Controllers\Home->especies()
+#5 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\sistema_vendas_comfauna_2.0\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-02-02 18:40:56 --> In aggregated query without GROUP BY, expression #1 of SELECT list contains nonaggregated column 'aves_legais.especies.id_especie'; this is incompatible with sql_mode=only_full_group_by
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 APPPATH\Controllers\Home.php(34): CodeIgniter\Database\BaseConnection->query('SELECT *, COUNT(\'cod\') FROM especies ORDER BY TRIM(cod) ')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-02-02 18:40:56 --> mysqli_sql_exception: In aggregated query without GROUP BY, expression #1 of SELECT list contains nonaggregated column 'aves_legais.especies.id_especie'; this is incompatible with sql_mode=only_full_group_by in C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *, COUNT...', 0)
+#1 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *, COUNT...')
+#2 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *, COUNT...')
+#3 C:\laragon\www\sistema_vendas_comfauna_2.0\app\Controllers\Home.php(34): CodeIgniter\Database\BaseConnection->query('SELECT *, COUNT...')
+#4 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(934): App\Controllers\Home->especies()
+#5 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\sistema_vendas_comfauna_2.0\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-02-02 18:40:56 --> In aggregated query without GROUP BY, expression #1 of SELECT list contains nonaggregated column 'aves_legais.especies.id_especie'; this is incompatible with sql_mode=only_full_group_by
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 APPPATH\Controllers\Home.php(34): CodeIgniter\Database\BaseConnection->query('SELECT *, COUNT(\'cod\') FROM especies ORDER BY TRIM(cod) ')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 18:41:42 --> Unsupported operand types
+in APPPATH\Views\especies.php on line 8.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('especies', [], true)
+ 4 APPPATH\Controllers\Home.php(37): view('especies', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 18:41:58 --> Unsupported operand types
+in APPPATH\Views\especies.php on line 8.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('especies', [], true)
+ 4 APPPATH\Controllers\Home.php(37): view('especies', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 18:42:14 --> Unsupported operand types
+in APPPATH\Views\especies.php on line 8.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('especies', [], true)
+ 4 APPPATH\Controllers\Home.php(37): view('especies', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 18:46:11 --> Call to undefined function int()
+in APPPATH\Views\especies.php on line 8.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('especies', [], true)
+ 4 APPPATH\Controllers\Home.php(37): view('especies', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 18:46:52 --> syntax error, unexpected '$count' (T_VARIABLE), expecting ')'
+in APPPATH\Views\especies.php on line 8.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('especies', [], true)
+ 3 APPPATH\Controllers\Home.php(37): view('especies', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 18:47:08 --> Call to undefined function int()
+in APPPATH\Views\especies.php on line 8.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('especies', [], true)
+ 4 APPPATH\Controllers\Home.php(37): view('especies', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 18:47:24 --> Undefined index: count
+in APPPATH\Views\especies.php on line 8.
+ 1 APPPATH\Views\especies.php(8): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: count', 'APPPATH\\Views\\especies.php', 8, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\especies.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('especies', [], true)
+ 5 APPPATH\Controllers\Home.php(37): view('especies', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 18:50:50 --> Object of class stdClass could not be converted to int
+in APPPATH\Views\especies.php on line 8.
+ 1 APPPATH\Views\especies.php(8): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Object of class stdClass could not be converted to int', 'APPPATH\\Views\\especies.php', 8, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\especies.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('especies', [], true)
+ 5 APPPATH\Controllers\Home.php(37): view('especies', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 18:59:42 --> Undefined variable: INPUT_GET
+in APPPATH\Views\especies.php on line 15.
+ 1 APPPATH\Views\especies.php(15): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: INPUT_GET', 'APPPATH\\Views\\especies.php', 15, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\especies.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('especies', [], true)
+ 5 APPPATH\Controllers\Home.php(37): view('especies', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 19:01:03 --> Undefined index: order
+in APPPATH\Controllers\Home.php on line 28.
+ 1 APPPATH\Controllers\Home.php(28): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: order', 'APPPATH\\Controllers\\Home.php', 28, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 19:01:33 --> Undefined index: order
+in APPPATH\Views\especies.php on line 4.
+ 1 APPPATH\Views\especies.php(4): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: order', 'APPPATH\\Views\\especies.php', 4, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\especies.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('especies', [], true)
+ 5 APPPATH\Controllers\Home.php(37): view('especies', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 19:01:53 --> Undefined index: order
+in APPPATH\Controllers\Home.php on line 27.
+ 1 APPPATH\Controllers\Home.php(27): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: order', 'APPPATH\\Controllers\\Home.php', 27, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 19:02:06 --> Undefined index: order
+in APPPATH\Views\especies.php on line 4.
+ 1 APPPATH\Views\especies.php(4): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: order', 'APPPATH\\Views\\especies.php', 4, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\especies.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('especies', [], true)
+ 5 APPPATH\Controllers\Home.php(37): view('especies', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 19:02:42 --> Undefined index: order
+in APPPATH\Views\especies.php on line 4.
+ 1 APPPATH\Views\especies.php(4): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: order', 'APPPATH\\Views\\especies.php', 4, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\especies.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('especies', [], true)
+ 5 APPPATH\Controllers\Home.php(37): view('especies', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 19:03:01 --> Undefined index: order
+in APPPATH\Views\especies.php on line 4.
+ 1 APPPATH\Views\especies.php(4): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: order', 'APPPATH\\Views\\especies.php', 4, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\especies.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('especies', [], true)
+ 5 APPPATH\Controllers\Home.php(37): view('especies', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 19:04:47 --> Undefined variable: total
+in APPPATH\Views\especies.php on line 21.
+ 1 APPPATH\Views\especies.php(21): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: total', 'APPPATH\\Views\\especies.php', 21, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\especies.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('especies', [], true)
+ 5 APPPATH\Controllers\Home.php(36): view('especies', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 22:50:47 --> Function name must be a string
+in APPPATH\Controllers\Home.php on line 49.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 22:51:41 --> Function name must be a string
+in APPPATH\Controllers\Home.php on line 49.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 22:51:47 --> Function name must be a string
+in APPPATH\Controllers\Home.php on line 49.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 22:55:02 --> Undefined variable: limit
+in APPPATH\Controllers\Home.php on line 34.
+ 1 APPPATH\Controllers\Home.php(34): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: limit', 'APPPATH\\Controllers\\Home.php', 34, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 22:55:23 --> Undefined variable: count
+in APPPATH\Controllers\Home.php on line 35.
+ 1 APPPATH\Controllers\Home.php(35): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: count', 'APPPATH\\Controllers\\Home.php', 35, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 23:01:19 --> syntax error, unexpected ','
+in APPPATH\Controllers\Home.php on line 44.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Home.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 4 [internal function]: spl_autoload_call('App\\Controllers\\Home')
+ 5 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\Home', true)
+ 6 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 23:01:35 --> syntax error, unexpected ';', expecting ']'
+in APPPATH\Controllers\Home.php on line 44.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Home.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 4 [internal function]: spl_autoload_call('App\\Controllers\\Home')
+ 5 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\Home', true)
+ 6 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 23:01:36 --> syntax error, unexpected ';', expecting ']'
+in APPPATH\Controllers\Home.php on line 44.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Home.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 4 [internal function]: spl_autoload_call('App\\Controllers\\Home')
+ 5 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\Home', true)
+ 6 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 23:01:47 --> Undefined variable: count
+in APPPATH\Views\componentes\pagination.php on line 1.
+ 1 APPPATH\Views\componentes\pagination.php(1): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: count', 'APPPATH\\Views\\componentes\\pagination.php', 1, [...])
+ 2 APPPATH\Views\especies.php(251): include('APPPATH\\Views\\componentes\\pagination.php')
+ 3 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\especies.php')
+ 4 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('especies', [], true)
+ 6 APPPATH\Controllers\Home.php(48): view('especies', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 23:04:38 --> Undefined variable: pages
+in APPPATH\Views\componentes\pagination.php on line 4.
+ 1 APPPATH\Views\componentes\pagination.php(4): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: pages', 'APPPATH\\Views\\componentes\\pagination.php', 4, [...])
+ 2 APPPATH\Views\especies.php(251): include('APPPATH\\Views\\componentes\\pagination.php')
+ 3 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\especies.php')
+ 4 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('especies', [], true)
+ 6 APPPATH\Controllers\Home.php(48): view('especies', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 23:05:06 --> Invalid argument supplied for foreach()
+in APPPATH\Views\componentes\pagination.php on line 4.
+ 1 APPPATH\Views\componentes\pagination.php(4): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argument supplied for foreach()', 'APPPATH\\Views\\componentes\\pagination.php', 4, [...])
+ 2 APPPATH\Views\especies.php(251): include('APPPATH\\Views\\componentes\\pagination.php')
+ 3 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\especies.php')
+ 4 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('especies', [], true)
+ 6 APPPATH\Controllers\Home.php(48): view('especies', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 23:05:27 --> Invalid argument supplied for foreach()
+in APPPATH\Views\componentes\pagination.php on line 4.
+ 1 APPPATH\Views\componentes\pagination.php(4): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argument supplied for foreach()', 'APPPATH\\Views\\componentes\\pagination.php', 4, [...])
+ 2 APPPATH\Views\especies.php(251): include('APPPATH\\Views\\componentes\\pagination.php')
+ 3 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\especies.php')
+ 4 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('especies', [], true)
+ 6 APPPATH\Controllers\Home.php(48): view('especies', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 23:05:28 --> Invalid argument supplied for foreach()
+in APPPATH\Views\componentes\pagination.php on line 4.
+ 1 APPPATH\Views\componentes\pagination.php(4): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argument supplied for foreach()', 'APPPATH\\Views\\componentes\\pagination.php', 4, [...])
+ 2 APPPATH\Views\especies.php(251): include('APPPATH\\Views\\componentes\\pagination.php')
+ 3 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\especies.php')
+ 4 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('especies', [], true)
+ 6 APPPATH\Controllers\Home.php(48): view('especies', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 23:05:28 --> Invalid argument supplied for foreach()
+in APPPATH\Views\componentes\pagination.php on line 4.
+ 1 APPPATH\Views\componentes\pagination.php(4): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argument supplied for foreach()', 'APPPATH\\Views\\componentes\\pagination.php', 4, [...])
+ 2 APPPATH\Views\especies.php(251): include('APPPATH\\Views\\componentes\\pagination.php')
+ 3 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\especies.php')
+ 4 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('especies', [], true)
+ 6 APPPATH\Controllers\Home.php(48): view('especies', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 23:05:29 --> Invalid argument supplied for foreach()
+in APPPATH\Views\componentes\pagination.php on line 4.
+ 1 APPPATH\Views\componentes\pagination.php(4): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argument supplied for foreach()', 'APPPATH\\Views\\componentes\\pagination.php', 4, [...])
+ 2 APPPATH\Views\especies.php(251): include('APPPATH\\Views\\componentes\\pagination.php')
+ 3 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\especies.php')
+ 4 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('especies', [], true)
+ 6 APPPATH\Controllers\Home.php(48): view('especies', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-02 23:05:34 --> syntax error, unexpected '>'
+in APPPATH\Views\componentes\pagination.php on line 4.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('especies', [], true)
+ 4 APPPATH\Controllers\Home.php(48): view('especies', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->especies()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

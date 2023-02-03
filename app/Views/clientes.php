@@ -1,8 +1,5 @@
 <?php 
-$order = '';
-if(!empty($_GET)){
-  $_GET['order'] == 'asc' ? $order = 'desc' : $order = 'asc';
-}
+include 'componentes/order.php';
 ?>
 <!DOCTYPE html>
 
@@ -262,6 +259,7 @@ nome_popular = nome_popular.replace('Ã§', 'ç'); -->
                     </tbody>
                   </table>
                 </div>
+                <?php include 'componentes/pagination.php'; ?>
               </div>
               <!--/ Striped Rows -->
 

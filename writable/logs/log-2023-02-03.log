@@ -1,0 +1,32 @@
+CRITICAL - 2023-02-03 00:02:26 --> Undefined variable: paginacao
+in APPPATH\Views\componentes\pagination.php on line 9.
+ 1 APPPATH\Views\componentes\pagination.php(9): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: paginacao', 'APPPATH\\Views\\componentes\\pagination.php', 9, [...])
+ 2 APPPATH\Views\clientes.php(262): include('APPPATH\\Views\\componentes\\pagination.php')
+ 3 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\clientes.php')
+ 4 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('clientes', [], true)
+ 6 APPPATH\Controllers\Home.php(83): view('clientes', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->clientes()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-03 00:06:13 --> syntax error, unexpected '}'
+in APPPATH\Views\componentes\pagination.php on line 20.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('clientes', [], true)
+ 4 APPPATH\Controllers\Home.php(84): view('clientes', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->clientes()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-03 00:10:49 --> syntax error, unexpected end of file
+in APPPATH\Views\componentes\pagination.php on line 40.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('clientes', [], true)
+ 4 APPPATH\Controllers\Home.php(84): view('clientes', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->clientes()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

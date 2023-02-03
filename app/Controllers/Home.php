@@ -40,9 +40,6 @@ class Home extends BaseController
     $total = $count[0]['count'] ;
     $pages = ceil((int)$total / $limit);
     $offset = ($page - 1)  * $limit;
-
-    
-    
     $start = $offset + 1;
     $end = min(($offset + $limit), $total);
     $array = ['especies' => $db->query("SELECT * FROM especies ORDER BY TRIM($par) $order LIMIT $limit OFFSET $offset")->getResultArray(), 'paginacao'=>[
@@ -61,14 +58,28 @@ class Home extends BaseController
     {
         $par = 'id_cliente';
         $order = '';
-        if(!empty($_GET)){
+        $page = 1;
+      
+        if(!empty($_GET['order'])){
             $order = $_GET['order'];
             $par = $_GET['par'];
             // $order = "ORDER BY $par $order"
         };
+        if(!empty($_GET['page'])){
+            
+            $page = $_GET['page'];
+        };
         $db = \Config\Database::connect('default',true);
+        $count = $db->query("SELECT COUNT(id_cliente) as count FROM clientes")->getResultArray();
+        $limit = 10;
+        $total = $count[0]['count'] ;
+        $pages = ceil((int)$total / $limit);
+        $offset = ($page - 1)  * $limit;
+        $start = $offset + 1;
+        $end = min(($offset + $limit), $total);
       
-        $clientes = ['clientes' => $db->query("SELECT * FROM clientes ORDER BY TRIM($par) $order")->getResultArray()];
+        $clientes = ['clientes' => $db->query("SELECT * FROM clientes ORDER BY TRIM($par) $order  LIMIT $limit OFFSET $offset")->getResultArray(), 'paginacao'=>[
+            'limit'=>$limit, 'total'=>$total, 'pages'=>$pages, 'page'=> $page, 'offset'=> $offset]];
        
         return view('clientes',$clientes);
     }

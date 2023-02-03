@@ -1,8 +1,5 @@
 <?php 
-$order = '';
-if(isset($_GET['order'])){
-  $_GET['order'] == 'asc' ? $order = 'desc' : $order = 'asc';
-}
+include 'componentes/order.php';
 ?>
 <!DOCTYPE html>
 

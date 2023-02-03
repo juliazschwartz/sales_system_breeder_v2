@@ -259,12 +259,13 @@ nome_popular = nome_popular.replace('Ã§', 'ç'); -->
                     </tbody>
                   </table>
                 </div>
-                <?php include 'componentes/pagination.php'; ?>
+   
               </div>
               <!--/ Striped Rows -->
-
+          
             </div>
             <!-- / Content -->
+            <?php include 'componentes/pagination.php'; ?>
 
             
 

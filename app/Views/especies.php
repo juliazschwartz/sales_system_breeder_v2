@@ -247,13 +247,13 @@ position: absolute;">
                   <!-- footer -->
 
                 </div>
-                <?php include 'componentes/pagination.php'; ?>
-         
+                
               </div>
               <!--/ Striped Rows -->
-
+              
             </div>
             <!-- / Content -->
+            <?php include 'componentes/pagination.php'; ?>
 
             
 

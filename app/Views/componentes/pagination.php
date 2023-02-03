@@ -2,8 +2,7 @@
 $order = $_GET['order'] ?? '';
 $par = $_GET['par'] ?? '';
 ?>
-<nav aria-label="Page navigation" style="align-self: center;
-margin: 10px auto;">
+<nav aria-label="Page navigation" style="align-self: center;">
   <ul class="pagination">
 <?php
 if($active > 1){

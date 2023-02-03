@@ -95,13 +95,14 @@ position: absolute;">
 
               <!-- Striped Rows -->
               <div class="card">
-                <div class = "d-flex align-items-baseline "><h5 class="card-header"><button type="button" class="btn btn-primary nova_especie" data-bs-toggle="modal" data-bs-target="#modalCenter">Novo Cliente</button></h5>
+                <div class = "d-flex align-items-center "><h5 class="card-header"><button type="button" class="btn btn-primary nova_especie" data-bs-toggle="modal" data-bs-target="#modalCenter">Novo Cliente</button></h5>
                
                 <span class = "w-75 mx-2">
                   <form class="d-flex" id="formBuscaEspecies" method="post">
                       <input class="form-control me-2 p-2" type="search" placeholder="Buscar" aria-label="Search" name="busca">
                       <button class="btn btn-outline-primary" type="submit">Buscar</button>
                     </form></span>
+                    <img src="/assets/img/excel.png" style="cursor:pointer" width=60px class="downloadPlanilha"></img>
 </div>
 <div class="modal fade " id="modalCenter" tabindex="-1"  aria-hidden="true" role="dialog">
                           <div class="modal-dialog modal-dialog-centered" role="document">
@@ -318,7 +319,7 @@ nome_popular = nome_popular.replace('Ã§', 'ç'); -->
     var url = $(this).closest('form').attr('action'),
     data = $(this).closest('form').serialize();
     $.ajax({
-        url: "buscaEspecies",
+        url: "buscaClientes",
         type: 'post',
         data: data,
         success: function(resposta){
@@ -329,11 +330,9 @@ nome_popular = nome_popular.replace('Ã§', 'ç'); -->
            if(resposta!= '[]'){
             var tbody = JSON.parse(resposta).forEach((res)=> {
             
-var nome_popular = res.nome_popular.replace('Ã©', 'é');
-nome_popular = nome_popular.replace('Ã§', 'ç');
-
-
-            $('tbody').append("<tr <tr data-id='"+res.id_especie+"' data-codigo='"+res.cod+"' data-cientifico='"+res.nome_cientifico+"' data-popular='"+res.nome_popular+"' data-descricao='"+res.nome_descricao+"' data-ncm='"+res.ncm+"' data-marcacao='"+res.marcacao+"' data-base='"+res.base_calculo+"'>><td>"+res.cod+"</td><td><strong>"+res.nome_cientifico+"<strong></td><td><strong>"+nome_popular+"<strong></td><td>indefinido</td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-edit-alt  me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalCenter'></i> </a> </td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-trash me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalToggle'></i> </a> </td></tr>")});
+// var nome_popular = res.nome_popular.replace('Ã©', 'é');
+// nome_popular = nome_popular.replace('Ã§', 'ç');
+            $('tbody').append("<tr data-id='"+res.nome+"' data-codigo='"+res.cpf_cnpj+"' data-cientifico='"+res.data_nascimento+"' data-popular='"+res.email+"' data-descricao='"+res.uf+"' data-ncm='"+res.cidade+"' data-marcacao='"+res.fone+"' data-base='"+res.celular+"'><td>"+res.nome+"</td><td><strong>"+res.cpf_cnpj+"<strong></td><td><strong>"+res.data_nascimento+"<strong></td><td>"+res.email+"</td><td>"+res.uf+"</td><td>"+res.cidade+"</td><td>"+res.fone+"</td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-edit-alt  me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalCenter'></i> </a> </td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-trash me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalToggle'></i> </a> </td></tr>")});
             $('tbody').html(tbody);
             
           }
@@ -377,6 +376,54 @@ nome_popular = nome_popular.replace('Ã§', 'ç');
             
       });
   });
+
+$('.downloadPlanilha').click(function(){
+  var dados = {};
+  var data = $('tbody').find('tr');
+    delete data.length ;
+    delete data.prevObject ;
+  for (var [key, value] of Object.entries(data)) {
+    dados[key]= {'nome;': value.getAttribute('data-nome')+';', 'cpf_cnpj;': value.getAttribute('data-cpf')+';','data_nascimento;' :  value.getAttribute('data-nascimento')+';' };
+      } ;
+      $.ajax({
+          url: "exportDataExcel?"+dados,
+          type: 'get',
+          data: dados,
+          beforeSend: function (jqXHR, settings) {
+         window.result_url = settings.url + "?" + settings.data;
+  },
+          success: function(resposta){
+            console.log(result_url);
+           $('.bs-toast').removeClass('d-none');
+           window.location.replace("https://sistema_vendas_comfauna_2.0.test/"+window.result_url);
+          //  window.location.replace("https://sistema_vendas_comfauna_2.0.test/exportDataExcel?0%5Bnome%3B%5D=ACACIA%20CHIQUITTI%3B&0%5Bcpf_cnpj%3B%5D=069.038.919-19%3B&0%5Bdata_nascimento%3B%5D=09%2F01%2F1989%3B&1%5Bnome%3B%5D=ADAN%20LUIZ%20BERLESI%3B&1%5Bcpf_cnpj%3B%5D=054.410.709-86%3B&1%5Bdata_nascimento%3B%5D=10%2F09%2F1985%3B&2%5Bnome%3B%5D=ADELSON%20DE%20OLIVEIRA%3B&2%5Bcpf_cnpj%3B%5D=816.234.459-49%3B&2%5Bdata_nascimento%3B%5D=01%2F01%2F1973%3B&3%5Bnome%3B%5D=ADEMIR%20SOUZA%20DO%20AMPARO%3B&3%5Bcpf_cnpj%3B%5D=045.243.969-85%3B&3%5Bdata_nascimento%3B%5D=09%2F10%2F1981%3B&4%5Bnome%3B%5D=ADENIR%20ANA%20PEGORARO%3B&4%5Bcpf_cnpj%3B%5D=822.638.099-53%3B&4%5Bdata_nascimento%3B%5D=21%2F04%2F1954%3B&5%5Bnome%3B%5D=ADILEUZA%20FAUSTINO%20DA%20SILVA%20%3B&5%5Bcpf_cnpj%3B%5D=041.781.679-01%3B&5%5Bdata_nascimento%3B%5D=10%2F06%2F1954%3B&6%5Bnome%3B%5D=ADILSON%20MARCELO%20CANTELLI%3B&6%5Bcpf_cnpj%3B%5D=045.598.219-84%3B&6%5Bdata_nascimento%3B%5D=23%2F01%2F1985%3B&7%5Bnome%3B%5D=ADRIANA%20DE%20F%C3%83%C2%81TIMA%20KRICHAK%3B&7%5Bcpf_cnpj%3B%5D=021.519.909-07%3B&7%5Bdata_nascimento%3B%5D=10%2F09%2F1976%3B&8%5Bnome%3B%5D=AFRANIO%20FERNANDES%20ROCHA%20%3B&8%5Bcpf_cnpj%3B%5D=725.794.636-15%3B&8%5Bdata_nascimento%3B%5D=04%2F07%2F1969%3B&9%5Bnome%3B%5D=AGRO%20AVES%20COMERCIO%20E%20REPRESENTA%C3%87OES%20LTDA%20ME%3B&9%5Bcpf_cnpj%3B%5D=79.526.059%2F0001-78%3B&9%5Bdata_nascimento%3B%5D=%3B");
+           
+          //  if(resposta=='true'){
+          //   //  setTimeout(reload, 1000);
+          //  }
+          //  else {
+          //  errorMessage('Ops.Não foi possível salvar as alterações. Certifique-se que o campo de código da espécie esteja preenchido.');
+          //  }
+         },
+        //  error: function(resposta){
+        //  errorMessage('Ops.Não foi possível salvar as alterações por erro interno do sistema. Entre em contato com o desenvolvedor');
+        //  }
+           
+      });
+});
+    // inputs = {};
+    // data =  $('#formEditaEspecies').find('.modal-body').children().children().children('textarea, input');
+    // delete data.length ;
+    // delete data.prevObject ;
+    // for (var [key, value] of Object.entries(data)) {
+    //    var id =  value.getAttribute('id');
+    //    inputs[id] = $('#'+id+'').val();
+    // }
+// }
+
+
+
+
   function reload(){
     window.location.reload(true);
   }

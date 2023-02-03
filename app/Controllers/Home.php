@@ -85,8 +85,11 @@ class Home extends BaseController
     }
     public function estoque()
     {
+       
         return view('estoque');
     }
+    
+      
     public function compras()
     {
         return view('compras');

@@ -35,10 +35,13 @@ $routes->get('/clientes', 'Home::clientes');
 $routes->get('/compras', 'Home::compras');
 $routes->get('/estoque', 'Home::estoque');
 $routes->get('/nfe', 'Home::nfe');
-$routes->get('/vendas', 'Home::vendas');
+$routes->get('/vendas', 'Home::vendas'); 
+$routes->get('/exportDataExcel', 'Plantel::exportData2Excel'); 
 $routes->post('/buscaEspecies', 'Plantel::BuscaEspecies');
 $routes->post('/editaEspecies', 'Plantel::EditaEspecies');
 $routes->post('/excluiEspecies', 'Plantel::ExcluiEspecies');
+$routes->post('/buscaClientes', 'Vendas::BuscaClientes');
+$routes->post('/exportDataExcel', 'Plantel::exportData2Excel');
 
 /*
  * --------------------------------------------------------------------

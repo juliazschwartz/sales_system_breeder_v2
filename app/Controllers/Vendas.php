@@ -2,20 +2,22 @@
 
 namespace App\Controllers;
 
-class Plantel extends BaseController
+class Vendas extends BaseController
 {
-    public function BuscaEspecies()		
+    public function BuscaClientes()		
     {
-       
         $request = \Config\Services::request();
         $busca = $request->getPost('busca'); 
         if (empty($busca)) {
         }
         $db = \Config\Database::connect('default',true);
-        $especiesEncontradas = $db->query("SELECT * FROM especies WHERE cod like '%$busca%' OR nome_cientifico like '%$busca%' OR nome_popular like '%$busca%' ")->getResultArray();
+     
+        $especiesEncontradas = $db->query("SELECT * FROM clientes WHERE email like '%$busca%' OR nome like '%$busca%'  OR cep like '%$busca%'  OR cidade like '%$busca%'
+        or fone like '%$busca%' or celular like '%$busca%' or data_nascimento like '%$busca%' or cpf_cnpj like '%$busca%' or logradouro like '%$busca%' or bairro like '%$busca%'
+        ")->getResultArray();
         return json_encode($especiesEncontradas);
 }
-    public function EditaEspecies()		
+    public function EditaClientes()		
     {
         $request = \Config\Services::request();
         $cod = $request->getPost('codigo'); 
@@ -45,7 +47,7 @@ class Plantel extends BaseController
 
         return json_encode($query);
     }
-    public function ExcluiEspecies()		
+    public function ExcluiClientes()		
     {
         $request = \Config\Services::request();
         $cod = $request->getPost('codigo'); 
@@ -55,39 +57,6 @@ class Plantel extends BaseController
         $especieDeletada = $db->query("DELETE  FROM especies WHERE cod = $cod ");
     
         return json_encode($especieDeletada);
-}
-
-public function filterData(&$str){ 
-    $str = preg_replace("/\t/", "\\t", $str); 
-    $str = preg_replace("/\r?\n/", "\\n", $str); 
-    if(strstr($str, '"')) $str = '"' . str_replace('"', '""', $str) . '"'; 
-}
-
-public function exportData2Excel(){
-    
-    // $request = \Config\Services::request();
-    // $data = $request->getPost(); 
-    $data = $_GET;
-   
-    $this->downloadExcel($data);
-}
-
-public function downloadExcel($data){
-    header('Content-Type: text/csv; charset=utf-8');
-    // $fileName = "codexworld_export_data-" . date('Ymd'); 
-    header('Content-Disposition: attachment; filename=csv_export.csv');
-    $flag = false; 
-    foreach($data as $row) { 
-        if(!$flag) { 
-            // display column names as first row 
-            echo implode("\t", array_keys($row)) . "\n"; 
-            $flag = true; 
-        } 
-        
-        array_walk($row, array($this, 'filterData')); 
-        echo implode("\t", array_values($row)) . "\n"; 
-        } 
-     
 }
 
 }

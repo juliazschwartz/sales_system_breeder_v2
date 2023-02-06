@@ -64,12 +64,13 @@ public function filterData(&$str){
 }
 
 public function exportData2Excel(){
-    
+
     $request = \Config\Services::request();
-    $data = $request->getPost(); 
-    // $data = $_GET;
+    $data = $request->getPost('content-excel'); 
+    $data = json_decode($data);
+    $data = json_decode(json_encode($data),true);
+  
     header('Content-Type: text/csv; charset=utf-8');
-    // $fileName = "codexworld_export_data-" . date('Ymd'); 
     header('Content-Disposition: attachment; filename=csv_export.csv');
     $flag = false; 
     foreach($data as $row) { 

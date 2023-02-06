@@ -102,7 +102,10 @@ position: absolute;">
                       <input class="form-control me-2 p-2" type="search" placeholder="Buscar" aria-label="Search" name="busca">
                       <button class="btn btn-outline-primary" type="submit">Buscar</button>
                     </form></span>
-                    <img src="/assets/img/excel.png" style="cursor:pointer" width=60px class="downloadPlanilha"></img>
+                    <form id="excel" method="post" action="exportDataExcel">
+                    <input type="hidden" id="content-excel" name="content-excel">
+                     <button type="submit"> <img src="/assets/img/excel.png" width=60px class="downloadPlanilha"></img></button>
+                    </form>
 </div>
 <div class="modal fade " id="modalCenter" tabindex="-1"  aria-hidden="true" role="dialog">
                           <div class="modal-dialog modal-dialog-centered" role="document">
@@ -318,6 +321,7 @@ nome_popular = nome_popular.replace('Ã§', 'ç'); -->
     e.preventDefault();
     var url = $(this).closest('form').attr('action'),
     data = $(this).closest('form').serialize();
+
     $.ajax({
         url: "buscaClientes",
         type: 'post',
@@ -339,8 +343,17 @@ nome_popular = nome_popular.replace('Ã§', 'ç'); -->
           else $(html).insertAfter('.align-items-baseline');
           clickEdit();
           clickDelete();
+          var dados = {};
+  var data = $('tbody').find('tr');
+    delete data.length ;
+    delete data.prevObject ;
+  for (var [key, value] of Object.entries(data)) {
+    dados[key]= {'nome;': value.getAttribute('data-nome')+';', 'cpf_cnpj;': value.getAttribute('data-cpf')+';','data_nascimento;' :  value.getAttribute('data-nascimento')+';' };
+      } ;
+$("#content-excel").val(JSON.stringify(dados));
        }
    });
+
 }
   )
 
@@ -377,42 +390,47 @@ nome_popular = nome_popular.replace('Ã§', 'ç'); -->
       });
   });
 
-$('.downloadPlanilha').click(function(){
-  var dados = {};
-  var data = $('tbody').find('tr');
-    delete data.length ;
-    delete data.prevObject ;
-  for (var [key, value] of Object.entries(data)) {
-    dados[key]= {'nome;': value.getAttribute('data-nome')+';', 'cpf_cnpj;': value.getAttribute('data-cpf')+';','data_nascimento;' :  value.getAttribute('data-nascimento')+';' };
-      } ;
-      $.ajax({
-          url: "exportDataExcel?",
-          type: 'post',
-          data: dados,
-          beforeSend: function (jqXHR, settings) {
-         window.result_url = settings.url + "?" + settings.data;
-  },
-          success: function(resposta){
-//             let r = new Response(1, {
-//   cache:'no-store'
-// , redirect:'follow'
-// , status: 301
-// , body:'<h1>response</h1>'
-// });
+// $('#excel').submit(function(e){
+//   // e.preventDefault();
+//   var dados = {};
+//   var data = $('tbody').find('tr');
+//     delete data.length ;
+//     delete data.prevObject ;
+//   for (var [key, value] of Object.entries(data)) {
+//     dados[key]= {'nome;': value.getAttribute('data-nome')+';', 'cpf_cnpj;': value.getAttribute('data-cpf')+';','data_nascimento;' :  value.getAttribute('data-nascimento')+';' };
+//       } ;
+//       var postData = $(this).serializeArray();
+//       // $("#content-excel").val(dados);
+//       // postData.push(dados);
+//       postData[0].value = dados;
+//       $.ajax({
+//           url: "exportDataExcel?",
+//           type: 'post',
+//           data: postData,
+//           beforeSend: function (jqXHR, settings) {
+//          window.result_url = settings.url + "?" + settings.data;
+//   },
+//           success: function(resposta){
+// //             let r = new Response(1, {
+// //   cache:'no-store'
+// // , redirect:'follow'
+// // , status: 301
+// // , body:'<h1>response</h1>'
+// // });
 
-// let w;
-// if (r.status === 301 && !r.ok) {
-  // w = window.open(URL.createObjectURL(new Blob()),  '_blank');
-  // w.document.write(result_url);
-// }
-            console.log(result_url);
-           $('.bs-toast').removeClass('d-none');
-          //  window.location.replace("https://sistema_vendas_comfauna_2.0.test/"+window.result_url);
-         },
+// // let w;
+// // if (r.status === 301 && !r.ok) {
+//   // w = window.open(URL.createObjectURL(new Blob()),  '_blank');
+//   // w.document.write(result_url);
+// // }
+//             console.log(result_url);
+//            $('.bs-toast').removeClass('d-none');
+//           //  window.location.replace("https://sistema_vendas_comfauna_2.0.test/"+window.result_url);
+//          },
       
            
-      });
-});
+//       });
+// });
     // inputs = {};
     // data =  $('#formEditaEspecies').find('.modal-body').children().children().children('textarea, input');
     // delete data.length ;

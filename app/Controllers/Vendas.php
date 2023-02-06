@@ -36,7 +36,8 @@ class Vendas extends BaseController
         $telefone = $request->getPost('telefone'); 
         $celular = $request->getPost('celular'); 
         $email = $request->getPost('email'); 
-      
+        $fisica_juridica = $request->getPost('fisica_juridica'); 
+     
         if(empty($nome)){
            return false;
         }
@@ -46,12 +47,17 @@ class Vendas extends BaseController
           
             $query = $db->query("UPDATE clientes SET nome = '$nome', data_nascimento='$nascimento', cpf_cnpj = '$cpf', 
         ie='$inscricao', reg_ibama = '$registro', cep= '$cep', uf='$uf', cidade= '$cidade', bairro= '$bairro', logradouro= '$logradouro',
-         numero= '$numero',  complemento= '$complemento',  fone= '$telefone',  celular= '$celular',  email= '$email'
+         numero= '$numero',  complemento= '$complemento',  fone= '$telefone',  celular= '$celular',  email= '$email', fisica_juridica='$fisica_juridica'
         WHERE id_cliente = '$id'");
     }
         else{
-            $query = $db->query("INSERT INTO especies ( nome , data_nascimento, cpf, inscricao, tipo_marcacao , cep, bao)
-            VALUES('$cod','$ncm', '$nome_popular',  '$nome_cientifico', '$marcacao', '$descricao','$base')");
+          
+            $query = $db->query("INSERT INTO clientes ( nome , data_nascimento, cpf_cnpj , 
+            ie, reg_ibama  , cep, uf, cidade, bairro, logradouro,
+             numero,  complemento,  fone,  celular,  email, fisica_juridica)
+            VALUES( '$nome', '$nascimento', '$cpf', 
+       '$inscricao', '$registro',  '$cep','$uf', '$cidade', '$bairro','$logradouro',
+         '$numero',  '$complemento',  '$telefone',  '$celular',  '$email', '$fisica_juridica')");
         }
 
         return json_encode($query);

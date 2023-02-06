@@ -131,8 +131,20 @@ position: absolute;">
                                     <label for="nameWithTitle" class="form-label" >Data de Nascimento</label>
                                     <input type="date"  class="form-control" placeholder="" id = "nascimento" name="nascimento">
                                   </div>
-                              
+
+                                  
+                                  
                                 </div>
+                                <div class = "d-flex my-3">
+                                  <div class="form-check mx-1">
+                                  <input name="fisica_juridica" class="form-check-input" type="radio" value="fisica" id="fisica" checked="">
+                                  <label class="form-check-label" for="fisica"> Pessoa Física </label>
+      </div>
+                                <div class="form-check">
+                                  <input name="fisica_juridica" class="form-check-input mx-1" type="radio" value="juridica" id="juridica">
+                                  <label class="form-check-label" for="juridica"> Pessoa Jurídica </label>
+                                </div>
+      </div>
                                 <div class="row">
                                
                                   <div class="col mb-3">
@@ -285,7 +297,7 @@ data-nome="<?=$cliente['nome']?>"
 data-nascimento="<?=$mes.'/'.$dia.'/'.$ano?> " 
  data-email = "<?=$cliente['email']?>"data-uf="<?=$cliente['uf']?>" 
  data-cidade="<?=$cliente['cidade']?>" data-telefone="<?=$cliente['fone']?>" 
- data-celular="<?=$cliente['celular']?>" data-cpf_cnpj="<?=$cliente['cpf_cnpj']?>">
+ data-celular="<?=$cliente['celular']?>" data-cpf_cnpj="<?=$cliente['cpf_cnpj']?>" data-fisica_juridica="<?=$cliente['fisica_juridica']?>">
                         <td ><strong><?= $cliente['nome']?></strong></td>
                         <!-- var nome_popular = res.nome_popular.replace('Ã©', 'é');
 nome_popular = nome_popular.replace('Ã§', 'ç'); -->
@@ -372,7 +384,7 @@ nome_popular = nome_popular.replace('Ã§', 'ç'); -->
 // };
 
     e.preventDefault();
-    var url = $(this).closest('form').attr('action'),
+    var url = $(this).closest('form').attr('action');
     data = $(this).closest('form').serialize();
 
     $.ajax({
@@ -387,8 +399,7 @@ nome_popular = nome_popular.replace('Ã§', 'ç'); -->
            if(resposta!= '[]'){
             var tbody = JSON.parse(resposta).forEach((res)=> {
             
-// var nome_popular = res.nome_popular.replace('Ã©', 'é');
-// nome_popular = nome_popular.replace('Ã§', 'ç');
+
             $('tbody').append("<tr data-id='"+res.id_cliente+"' data-nome='"+res.nome+"' data-cpf='"+res.cpf_cnpj+"' data-nascimento='"+res.data_nascimento+"' data-email='"+res.email+"' data-uf='"+res.uf+"' data-ncm='"+res.cidade+"' data-fone='"+res.fone+"' data-celular='"+res.celular+"'><td>"+res.nome+"</td><td><strong>"+res.cpf_cnpj+"<strong></td><td><strong>"+res.data_nascimento+"<strong></td><td>"+res.email+"</td><td>"+res.uf+"</td><td>"+res.cidade+"</td><td>"+res.fone+"</td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-edit-alt  me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalCenter'></i> </a> </td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-trash me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalToggle'></i> </a> </td></tr>")});
             $('tbody').html(tbody);
             
@@ -444,57 +455,6 @@ $("#content-excel").val(JSON.stringify(dados));
   });
 
 
-// $('#excel').submit(function(e){
-//   // e.preventDefault();
-//   var dados = {};
-//   var data = $('tbody').find('tr');
-//     delete data.length ;
-//     delete data.prevObject ;
-//   for (var [key, value] of Object.entries(data)) {
-//     dados[key]= {'nome;': value.getAttribute('data-nome')+';', 'cpf_cnpj;': value.getAttribute('data-cpf')+';','data_nascimento;' :  value.getAttribute('data-nascimento')+';' };
-//       } ;
-//       var postData = $(this).serializeArray();
-//       // $("#content-excel").val(dados);
-//       // postData.push(dados);
-//       postData[0].value = dados;
-//       $.ajax({
-//           url: "exportDataExcel?",
-//           type: 'post',
-//           data: postData,
-//           beforeSend: function (jqXHR, settings) {
-//          window.result_url = settings.url + "?" + settings.data;
-//   },
-//           success: function(resposta){
-// //             let r = new Response(1, {
-// //   cache:'no-store'
-// // , redirect:'follow'
-// // , status: 301
-// // , body:'<h1>response</h1>'
-// // });
-
-// // let w;
-// // if (r.status === 301 && !r.ok) {
-//   // w = window.open(URL.createObjectURL(new Blob()),  '_blank');
-//   // w.document.write(result_url);
-// // }
-//             console.log(result_url);
-//            $('.bs-toast').removeClass('d-none');
-//           //  window.location.replace("https://sistema_vendas_comfauna_2.0.test/"+window.result_url);
-//          },
-      
-           
-//       });
-// });
-    // inputs = {};
-    // data =  $('#formEditaEspecies').find('.modal-body').children().children().children('textarea, input');
-    // delete data.length ;
-    // delete data.prevObject ;
-    // for (var [key, value] of Object.entries(data)) {
-    //    var id =  value.getAttribute('id');
-    //    inputs[id] = $('#'+id+'').val();
-    // }
-// }
-
 
 
 
@@ -513,12 +473,15 @@ function clickEdit(){
   $('.bx-edit-alt').click(function(e){
     e.preventDefault;
     var linha = $(this).parent().parent().parent().data();
+  
     for (var [key, value] of Object.entries(linha)) {
-      console.log(value)
         value = value.toString().replace('Ã©', 'é');
         value = value.replace('Ã§', 'ç');
        $('#'+key+'').val(value);
-       if(key == 'nascimento')document.getElementById('nascimento').valueAsDate = new Date(`${value}`)
+       if(key == 'nascimento')document.getElementById('nascimento').valueAsDate = new Date(`${value}`);
+       if(key == 'fisica_juridica')document.querySelector("input[value="+value+"]").setAttribute('checked','checked');
+       
+       
       } 
     
     }) 

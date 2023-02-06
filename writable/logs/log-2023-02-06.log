@@ -284,3 +284,60 @@ in APPPATH\Views\clientes.php on line 285.
  7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
  8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-02-06 21:57:02 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '', cpf_cnpj , 
+            ie, reg_ibama  , cep, uf, cidade, bairro, logradouro' at line 1 in C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO cli...', 0)
+#1 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO cli...')
+#2 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO cli...')
+#3 C:\laragon\www\sistema_vendas_comfauna_2.0\app\Controllers\Vendas.php(58): CodeIgniter\Database\BaseConnection->query('INSERT INTO cli...')
+#4 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(934): App\Controllers\Vendas->EditaClientes()
+#5 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Vendas))
+#6 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\sistema_vendas_comfauna_2.0\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-02-06 21:57:02 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '', cpf_cnpj , 
+            ie, reg_ibama  , cep, uf, cidade, bairro, logradouro' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 APPPATH\Controllers\Vendas.php(58): CodeIgniter\Database\BaseConnection->query('INSERT INTO clientes ( nome , data_nascimento\', cpf_cnpj , 
+            ie, reg_ibama  , cep, uf, cidade, bairro, logradouro,
+             numero,  complemento,  fone,  celula,  email)
+            VALUES( \'Filomena Schwartz\', \'2022-12-12\', \'10769915990\', 
+       \'\', \'\',  \'80045345\',\'PR\', \'Curitiba\', \'Alto da Rua XV\',\'Avenida Visconde de Guarapuava\',
+         \'150\',  \'23\',  \'419914534819\',  \'419914534819\',  \'juliazamiths@gmail.com\')')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Vendas->EditaClientes()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Vendas))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-02-06 21:57:04 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '', cpf_cnpj , 
+            ie, reg_ibama  , cep, uf, cidade, bairro, logradouro' at line 1 in C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO cli...', 0)
+#1 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO cli...')
+#2 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO cli...')
+#3 C:\laragon\www\sistema_vendas_comfauna_2.0\app\Controllers\Vendas.php(58): CodeIgniter\Database\BaseConnection->query('INSERT INTO cli...')
+#4 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(934): App\Controllers\Vendas->EditaClientes()
+#5 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Vendas))
+#6 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\sistema_vendas_comfauna_2.0\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-02-06 21:57:04 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '', cpf_cnpj , 
+            ie, reg_ibama  , cep, uf, cidade, bairro, logradouro' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 APPPATH\Controllers\Vendas.php(58): CodeIgniter\Database\BaseConnection->query('INSERT INTO clientes ( nome , data_nascimento\', cpf_cnpj , 
+            ie, reg_ibama  , cep, uf, cidade, bairro, logradouro,
+             numero,  complemento,  fone,  celula,  email)
+            VALUES( \'Filomena Schwartz\', \'2022-12-12\', \'10769915990\', 
+       \'\', \'\',  \'80045345\',\'PR\', \'Curitiba\', \'Alto da Rua XV\',\'Avenida Visconde de Guarapuava\',
+         \'150\',  \'23\',  \'419914534819\',  \'419914534819\',  \'juliazamiths@gmail.com\')')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Vendas->EditaClientes()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Vendas))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-06 21:57:38 --> Invalid argument supplied for foreach()
+in APPPATH\Controllers\Plantel.php on line 76.
+ 1 APPPATH\Controllers\Plantel.php(76): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argument supplied for foreach()', 'APPPATH\\Controllers\\Plantel.php', 76, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Plantel->exportData2Excel()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Plantel))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

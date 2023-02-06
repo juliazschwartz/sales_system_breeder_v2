@@ -42,6 +42,7 @@ $routes->post('/editaEspecies', 'Plantel::EditaEspecies');
 $routes->post('/excluiEspecies', 'Plantel::ExcluiEspecies');
 $routes->post('/buscaClientes', 'Vendas::BuscaClientes');
 $routes->post('/exportDataExcel', 'Plantel::exportData2Excel');
+$routes->post('/editaClientes', 'Vendas::EditaClientes');
 
 /*
  * --------------------------------------------------------------------

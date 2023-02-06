@@ -222,7 +222,7 @@ position: absolute;">
                                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
                                   Fechar
                                 </button>
-                                <button type="submit" class="btn btn-primary editarEspecie">Cadastrar</button>
+                                <button type="submit" class="btn btn-primary editarCliente">Cadastrar</button>
                               </div>
                             </form>
                             </div>
@@ -268,9 +268,24 @@ position: absolute;">
                             $cliente['nome'] = str_replace('Ã‰','É' ,$cliente['nome']);
                             $cliente['nome'] = str_replace('Ã‡','Ç' ,$cliente['nome']);
                             $cliente['nome'] = str_replace('Ãƒ','Ã' ,$cliente['nome']);
+                            $dia = explode('/', $cliente['data_nascimento'])[0] ?? '';
+                            $mes = explode('/', $cliente['data_nascimento'])[1] ?? '';
+                            $ano = explode('/', $cliente['data_nascimento'])[2] ?? '';
                             
 ?>
-<tr data-id=<?=$cliente['id_cliente']?> data-nome="<?=$cliente['nome']?>" data-nascimento="<?=$cliente['data_nascimento']?>"  data-email = "<?=$cliente['email']?>"data-uf="<?=$cliente['uf']?>" data-cidade="<?=$cliente['cidade']?>" data-telefone="<?=$cliente['fone']?>" data-celular="<?=$cliente['celular']?>" data-cpf="<?=$cliente['cpf_cnpj']?>">
+<tr data-id=<?=$cliente['id_cliente']?> 
+data-numero=<?=$cliente['numero']?> 
+data-cep=<?=$cliente['cep']?> 
+data-logradouro="<?=$cliente['logradouro']?> "
+data-bairro="<?=$cliente['bairro']?>" 
+data-registro="<?=$cliente['reg_ibama']?> "
+data-inscricao="<?=$cliente['ie']?>" 
+data-complemento=<?=$cliente['complemento']?> 
+data-nome="<?=$cliente['nome']?>" 
+data-nascimento="<?=$mes.'/'.$dia.'/'.$ano?> " 
+ data-email = "<?=$cliente['email']?>"data-uf="<?=$cliente['uf']?>" 
+ data-cidade="<?=$cliente['cidade']?>" data-telefone="<?=$cliente['fone']?>" 
+ data-celular="<?=$cliente['celular']?>" data-cpf_cnpj="<?=$cliente['cpf_cnpj']?>">
                         <td ><strong><?= $cliente['nome']?></strong></td>
                         <!-- var nome_popular = res.nome_popular.replace('Ã©', 'é');
 nome_popular = nome_popular.replace('Ã§', 'ç'); -->
@@ -409,7 +424,7 @@ $("#content-excel").val(JSON.stringify(dados));
     //    inputs[id] = $('#'+id+'').val();
     // }
        $.ajax({
-           url: "editaEspecies",
+           url: "editaClientes",
            type: 'post',
            data,
            success: function(resposta){
@@ -499,10 +514,12 @@ function clickEdit(){
     e.preventDefault;
     var linha = $(this).parent().parent().parent().data();
     for (var [key, value] of Object.entries(linha)) {
+      console.log(value)
         value = value.toString().replace('Ã©', 'é');
         value = value.replace('Ã§', 'ç');
        $('#'+key+'').val(value);
-        } 
+       if(key == 'nascimento')document.getElementById('nascimento').valueAsDate = new Date(`${value}`)
+      } 
     
     }) 
 

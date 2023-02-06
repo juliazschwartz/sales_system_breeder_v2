@@ -20,28 +20,37 @@ class Vendas extends BaseController
     public function EditaClientes()		
     {
         $request = \Config\Services::request();
-        $cod = $request->getPost('codigo'); 
         $id = $request->getPost('id'); 
-        $ncm = $request->getPost('ncm'); 
-        $nome_popular = $request->getPost('popular'); 
-        $nome_cientifico = $request->getPost('cientifico'); 
-        $marcacao = $request->getPost('marcacao'); 
-        $base = $request->getPost('base'); 
-        $descricao = $request->getPost('descricao'); 
+        $nome = $request->getPost('nome'); 
+        $nascimento = $request->getPost('nascimento'); 
+        $cpf = $request->getPost('cpf_cnpj'); 
+        $inscricao = $request->getPost('inscricao'); 
+        $registro = $request->getPost('registro'); 
+        $cep = $request->getPost('cep'); 
+        $uf = $request->getPost('uf'); 
+        $cidade = $request->getPost('cidade'); 
+        $bairro = $request->getPost('bairro'); 
+        $logradouro = $request->getPost('logradouro'); 
+        $numero = $request->getPost('numero'); 
+        $complemento = $request->getPost('complemento'); 
+        $telefone = $request->getPost('telefone'); 
+        $celular = $request->getPost('celular'); 
+        $email = $request->getPost('email'); 
       
-        if(empty($cod)){
+        if(empty($nome)){
            return false;
         }
         
         $db = \Config\Database::connect('default',true);
         if(!empty($id)){
-            $query = $db->query("UPDATE especies SET cod = '$cod', ncm='$ncm', nome_popular = '$nome_popular', 
-        nome_cientifico='$nome_cientifico', tipo_marcacao = '$marcacao', desc_nota= '$descricao', base_calculo='$base'
-        WHERE id_especie = '$id'");
+          
+            $query = $db->query("UPDATE clientes SET nome = '$nome', data_nascimento='$nascimento', cpf_cnpj = '$cpf', 
+        ie='$inscricao', reg_ibama = '$registro', cep= '$cep', uf='$uf', cidade= '$cidade', bairro= '$bairro', logradouro= '$logradouro',
+         numero= '$numero',  complemento= '$complemento',  fone= '$telefone',  celular= '$celular',  email= '$email'
+        WHERE id_cliente = '$id'");
     }
-
         else{
-            $query = $db->query("INSERT INTO especies ( cod , ncm, nome_popular, nome_cientifico, tipo_marcacao , desc_nota, base_calculo)
+            $query = $db->query("INSERT INTO especies ( nome , data_nascimento, cpf, inscricao, tipo_marcacao , cep, bao)
             VALUES('$cod','$ncm', '$nome_popular',  '$nome_cientifico', '$marcacao', '$descricao','$base')");
         }
 

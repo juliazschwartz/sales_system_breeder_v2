@@ -5,6 +5,10 @@
 .embreve{
   font-size:10px
 }
+.botao-excel{
+  border: transparent;
+border-radius: 0.375rem;
+}
 .bx-sort{
   cursor:pointer
 }
@@ -15,10 +19,15 @@
   height: 150px;
   z-index: 99;
 }
-
 .app-brand-logo.demo svg {
   width: 22px;
   height: 38px;
+}
+@media (min-width: 576px){
+.modal-clientes {
+  max-width: 60rem;
+  margin: 1.75rem auto;
+}
 }
 
 .app-brand-text.demo {

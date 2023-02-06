@@ -104,14 +104,14 @@ position: absolute;">
                     </form></span>
                     <form id="excel" method="post" action="exportDataExcel">
                     <input type="hidden" id="content-excel" name="content-excel">
-                     <button type="submit"> <img src="/assets/img/excel.png" width=60px class="downloadPlanilha"></img></button>
+                     <button type="submit" class="botao-excel mx-3" > <img src="/assets/img/excel.png" width=60px class="downloadPlanilha"></img></button>
                     </form>
 </div>
 <div class="modal fade " id="modalCenter" tabindex="-1"  aria-hidden="true" role="dialog">
-                          <div class="modal-dialog modal-dialog-centered" role="document">
+                          <div class="modal-dialog modal-clientes modal-dialog-centered" role="document">
                             <div class="modal-content">
                               <div class="modal-header">
-                                <h5 class="modal-title" id="modalCenterTitle">Nova Espécie</h5>
+                                <h5 class="modal-title" id="modalCenterTitle">Novo Cliente</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                               </div>
                               <form id="formEditaEspecies">
@@ -124,51 +124,89 @@ position: absolute;">
                                 </div>
                                 <div class="row">
                                   <div class="col mb-3">
-                                    <label for="nameWithTitle" class="form-label" >Nome Científico</label>
-                                    <input type="text"  class="form-control" id = "cientifico" name="cientifico">
+                                    <label for="nameWithTitle" class="form-label" >Nome</label>
+                                    <input type="text"  class="form-control" id = "nome" name="nome">
                                   </div>
+                                  <div class="col mb-3">
+                                    <label for="nameWithTitle" class="form-label" >Data de Nascimento</label>
+                                    <input type="date"  class="form-control" placeholder="" id = "nascimento" name="nascimento">
+                                  </div>
+                              
                                 </div>
                                 <div class="row">
+                               
                                   <div class="col mb-3">
-                                    <label for="nameWithTitle" class="form-label" >Nome Popular</label>
-                                    <input type="text"  class="form-control" placeholder="" id = "popular" name="popular">
+                                    <label for="nameWithTitle" class="form-label" >CPF</label>
+                                    <input type="text"  class="form-control" placeholder="" id = "cpf_cnpj" name="cpf_cnpj">
+                                  </div>
+                                  <div class="col mb-3">
+                                    <label for="nameWithTitle" class="form-label">Inscrição Estadual</label>
+                                    <input type="text"  class="form-control" placeholder="" id = "inscricao" name = "inscricao">
+                                  </div>
+                                  <div class="col mb-3">
+                                    <label for="nameWithTitle" class="form-label" >Registro (Revenda)</label>
+                                    <input type="text"  class="form-control" placeholder="" id = "Registro no Ibama" name ="Registro no Ibama">
                                   </div>
                                 </div>
                                 
+                             
                                 <div class="row">
                                   <div class="col mb-3">
-                                    <label for="nameWithTitle" class="form-label" >Tipo de Marcação</label>
-                                    <input type="text"  class="form-control" placeholder="" id = "marcacao" name="marcacao">
+                                    <label for="nameWithTitle" class="form-label">CEP</label>
+                                    <input type="text"  class="form-control" placeholder=""  id = "cep" name ="cep">
                                   </div>
-                                </div>
-                                
-                                <div class="row">
                                   <div class="col mb-3">
-                                    <label for="nameWithTitle" class="form-label">Código</label>
-                                    <input type="text"  class="form-control" placeholder="" id = "codigo" name = "codigo">
+                                    <label for="nameWithTitle" class="form-label">UF</label>
+                                    <input type="text"  class="form-control" placeholder=""  id = "uf" name ="uf">
                                   </div>
+                                  
                                 </div>
-                                
                                 <div class="row">
-                                  <div class="col mb-3">
-                                    <label for="nameWithTitle" class="form-label" >NCM</label>
-                                    <input type="text"  class="form-control" placeholder="" id = "ncm" name ="ncm">
-                                  </div>
-                                </div>
-                                
-                                <div class="row">
-                                  <div class="col mb-3">
-                                    <label for="nameWithTitle" class="form-label">Base de Cálculo NCM</label>
-                                    <input type="text"  class="form-control" placeholder=""  id = "base" name ="base">
-                                  </div>
-                                </div>
-                                <div class = "row">
                                 <div class="col mb-3">
-                        <label for="exampleFormControlTextarea1" class="form-label" >Descrição na Nota</label>
-                        <textarea class="form-control" rows="3" id = "descricao"></textarea>
-                      </div>
-</div>
-                                
+                                    <label for="nameWithTitle" class="form-label">Cidade</label>
+                                    <input type="text"  class="form-control" placeholder=""  id = "cidade" name ="cidade">
+                                  </div>
+                                  <div class="col mb-3">
+                                    <label for="nameWithTitle" class="form-label">Bairro</label>
+                                    <input type="text"  class="form-control" placeholder=""  id = "bairro" name ="bairro">
+                                  </div>
+                                </div>
+                            
+                                <div class="row">
+                            
+                                </div>
+                                <div class="row">
+                                <div class="col mb-3">
+                                    <label for="nameWithTitle" class="form-label">Logradouro</label>
+                                    <input type="text"  class="form-control" placeholder=""  id = "logradouro" name ="logradouro">
+                                  </div>
+                                <div class="col mb-3">
+                                  
+                                    <label for="nameWithTitle" class="form-label">Número</label>
+                                    <input type="text"  class="form-control" placeholder=""  id = "numero" name ="numero">
+                                  </div>
+                                  <div class="col mb-3">
+                                    <label for="nameWithTitle" class="form-label">Complemento</label>
+                                    <input type="text"  class="form-control" placeholder=""  id = "complemento" name ="complemento">
+                                  </div>
+                                </div>
+                            
+                                <div class="row">
+                                  <div class="col mb-3">
+                                    <label for="nameWithTitle" class="form-label">Telefone</label>
+                                    <input type="text"  class="form-control" placeholder=""  id = "telefone" name ="telefone">
+                                  </div>
+                                  <div class="col mb-3">
+                                    <label for="nameWithTitle" class="form-label">Celular</label>
+                                    <input type="text"  class="form-control" placeholder=""  id = "celular" name ="celular">
+                                  </div>
+                                  <div class="col mb-3">
+                                    <label for="nameWithTitle" class="form-label">Email</label>
+                                    <input type="text"  class="form-control" placeholder=""  id = "email" name ="email">
+                                  </div>
+                                </div>
+                        
+                               
                                 <!-- <div class="row g-2">
                                   <div class="col mb-0">
                                     <label for="emailWithTitle" class="form-label">Email</label>
@@ -390,6 +428,7 @@ $("#content-excel").val(JSON.stringify(dados));
       });
   });
 
+
 // $('#excel').submit(function(e){
 //   // e.preventDefault();
 //   var dados = {};
@@ -481,6 +520,36 @@ function clickDelete(){
   $(document).ready(function(){
     clickEdit();
     clickDelete();
+    
+  $("#cep").blur(function(){
+				// Remove tudo o que não é número para fazer a pesquisa
+				var cep = this.value.replace(/[^0-9]/, "");
+				
+				// Validação do CEP; caso o CEP não possua 8 números, então cancela
+				// a consulta
+				if(cep.length != 8){
+					return false;
+				}
+				
+				// A url de pesquisa consiste no endereço do webservice + o cep que
+				// o usuário informou + o tipo de retorno desejado (entre "json",
+				// "jsonp", "xml", "piped" ou "querty")
+				var url = "https://viacep.com.br/ws/"+cep+"/json/";
+				
+				// Faz a pesquisa do CEP, tratando o retorno com try/catch para que
+				// caso ocorra algum erro (o cep pode não existir, por exemplo) a
+				// usabilidade não seja afetada, assim o usuário pode continuar//
+				// preenchendo os campos normalmente
+				$.getJSON(url, function(dadosRetorno){
+					try{
+						// Preenche os campos de acordo com o retorno da pesquisa
+						$("#logradouro").val(dadosRetorno.logradouro);
+						$("#bairro").val(dadosRetorno.bairro);
+						$("#cidade").val(dadosRetorno.localidade);
+						$("#uf").val(dadosRetorno.uf);
+					}catch(ex){}
+				});
+			});
     $('.deletarEspecie').click(function(e){
       e.preventDefault;
       var codigo = $(this).data('codigo'); 

@@ -102,7 +102,10 @@ position: absolute;">
                       <input class="form-control me-2 p-2" type="search" placeholder="Buscar" aria-label="Search" name="busca">
                       <button class="btn btn-outline-primary" type="submit">Buscar</button>
                     </form></span>
-                    <img src="/assets/img/excel.png" style="cursor:pointer" width=60px class="downloadPlanilha"></img>
+                    <form id="excel" method="post" action="exportDataExcel">
+                    <input type="hidden" id="content-excel" name="content-excel">
+                     <button type="submit" class="botao-excel mx-3" > <img src="/assets/img/excel.png" width=60px class="downloadPlanilha"></img></button>
+                    </form>
 </div>
 <div class="modal fade " id="modalCenter" tabindex="-1"  aria-hidden="true" role="dialog">
                           <div class="modal-dialog modal-dialog-centered" role="document">
@@ -329,6 +332,14 @@ nome_popular = nome_popular.replace('Ã§', 'ç');
           else $(html).insertAfter('.align-items-baseline');
           clickEdit();
           clickDelete();
+          var dados = {};
+  var data = $('tbody').find('tr');
+    delete data.length ;
+    delete data.prevObject ;
+  for (var [key, value] of Object.entries(data)) {
+    dados[key]= {'codigo;': value.getAttribute('data-codigo')+';', 'nome_cientifico;': value.getAttribute('data-cientifico')+';','nome_popular;' :  value.getAttribute('data-popular')+';' };
+      } ;
+      $("#content-excel").val(JSON.stringify(dados));
        }
    });
 }

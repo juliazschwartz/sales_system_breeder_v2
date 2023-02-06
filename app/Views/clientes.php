@@ -285,14 +285,14 @@ position: absolute;">
                             $ano = explode('/', $cliente['data_nascimento'])[2] ?? '';
                             
 ?>
-<tr data-id=<?=$cliente['id_cliente']?> 
-data-numero=<?=$cliente['numero']?> 
-data-cep=<?=$cliente['cep']?> 
+<tr data-id='<?=$cliente['id_cliente']?>'
+data-numero='<?=$cliente['numero']?>'
+data-cep='<?=$cliente['cep']?>'
 data-logradouro="<?=$cliente['logradouro']?> "
 data-bairro="<?=$cliente['bairro']?>" 
 data-registro="<?=$cliente['reg_ibama']?> "
 data-inscricao="<?=$cliente['ie']?>" 
-data-complemento=<?=$cliente['complemento']?> 
+data-complemento="<?=$cliente['complemento']?>"
 data-nome="<?=$cliente['nome']?>" 
 data-nascimento="<?=$mes.'/'.$dia.'/'.$ano?> " 
  data-email = "<?=$cliente['email']?>"data-uf="<?=$cliente['uf']?>" 
@@ -398,9 +398,9 @@ nome_popular = nome_popular.replace('Ã§', 'ç'); -->
           var html = "<div class='alert alert-dark alert-dismissible m-3' role='alert'> Nenhum Registro Encontrado <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
            if(resposta!= '[]'){
             var tbody = JSON.parse(resposta).forEach((res)=> {
-            
+            var data_nascimento = res.data_nascimento.split("/")[1]+'/'+res.data_nascimento.split("/")[0]+'/'+res.data_nascimento.split("/")[2];
 
-            $('tbody').append("<tr data-id='"+res.id_cliente+"' data-nome='"+res.nome+"' data-cpf='"+res.cpf_cnpj+"' data-nascimento='"+res.data_nascimento+"' data-email='"+res.email+"' data-uf='"+res.uf+"' data-ncm='"+res.cidade+"' data-fone='"+res.fone+"' data-celular='"+res.celular+"'><td>"+res.nome+"</td><td><strong>"+res.cpf_cnpj+"<strong></td><td><strong>"+res.data_nascimento+"<strong></td><td>"+res.email+"</td><td>"+res.uf+"</td><td>"+res.cidade+"</td><td>"+res.fone+"</td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-edit-alt  me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalCenter'></i> </a> </td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-trash me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalToggle'></i> </a> </td></tr>")});
+            $('tbody').append("<tr data-id='"+res.id_cliente+"' data-nome='"+res.nome+"' data-cpf='"+res.cpf_cnpj+"' data-nascimento='"+data_nascimento+"' data-email='"+res.email+"' data-uf='"+res.uf+"' data-ncm='"+res.cidade+"' data-telefone='"+res.fone+"' data-celular='"+res.celular+"' data-registro= '"+res.registro+"' data-cep = '"+res.cep+"' data-logradouro= '"+res.logradouro+"' data-bairro= '"+res.bairro+"' data-numero = '"+res.numero+"'  data-inscricao= '"+res.inscricao+"' data-complemento= '"+res.complemento+"' data-fisica_juridica= '"+res.fisica_juridica+"'><td>"+res.nome+"</td><td><strong>"+res.cpf_cnpj+"<strong></td><td><strong>"+res.data_nascimento+"<strong></td><td>"+res.email+"</td><td>"+res.uf+"</td><td>"+res.cidade+"</td><td>"+res.fone+"</td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-edit-alt  me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalCenter'></i> </a> </td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-trash me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalToggle'></i> </a> </td></tr>")});
             $('tbody').html(tbody);
             
           }
@@ -473,11 +473,11 @@ function clickEdit(){
   $('.bx-edit-alt').click(function(e){
     e.preventDefault;
     var linha = $(this).parent().parent().parent().data();
-  
     for (var [key, value] of Object.entries(linha)) {
-        value = value.toString().replace('Ã©', 'é');
-        value = value.replace('Ã§', 'ç');
-       $('#'+key+'').val(value);
+      value = value.toString().replace('Ã©', 'é');
+      value = value.replace('Ã§', 'ç');
+      $('#'+key+'').val(value);
+      if(key == 'nascimento') console.log(new Date(`${value}`));
        if(key == 'nascimento')document.getElementById('nascimento').valueAsDate = new Date(`${value}`);
        if(key == 'fisica_juridica')document.querySelector("input[value="+value+"]").setAttribute('checked','checked');
        

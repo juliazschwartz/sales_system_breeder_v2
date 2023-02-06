@@ -69,7 +69,7 @@ class Vendas extends BaseController
         if (empty($cod)) {
         }
         $db = \Config\Database::connect('default',true);
-        $especieDeletada = $db->query("DELETE  FROM especies WHERE cod = $cod ");
+        $especieDeletada = $db->query("DELETE  FROM clientes WHERE id_cliente = $cod ");
     
         return json_encode($especieDeletada);
 }

@@ -246,10 +246,10 @@ position: absolute;">
                           <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
                               <div class="modal-header">
-                                <h5 class="modal-title" id="modalToggleLabel">Deletar Espécie</h5>
+                                <h5 class="modal-title" id="modalToggleLabel">Deletar Cliente</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                               </div>
-                              <div class="modal-body">Tem certeza que deseja deletar esse registro de espécie?.</div>
+                              <div class="modal-body">Tem certeza que deseja deletar esse registro de cliente?.</div>
                               <div class="modal-footer">
                                 <button class="btn btn-danger deletarEspecie" data-bs-target="#modalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">
                                   Deletar
@@ -400,7 +400,7 @@ nome_popular = nome_popular.replace('Ã§', 'ç'); -->
             var tbody = JSON.parse(resposta).forEach((res)=> {
             var data_nascimento = res.data_nascimento.split("/")[1]+'/'+res.data_nascimento.split("/")[0]+'/'+res.data_nascimento.split("/")[2];
 
-            $('tbody').append("<tr data-id='"+res.id_cliente+"' data-nome='"+res.nome+"' data-cpf='"+res.cpf_cnpj+"' data-nascimento='"+data_nascimento+"' data-email='"+res.email+"' data-uf='"+res.uf+"' data-ncm='"+res.cidade+"' data-telefone='"+res.fone+"' data-celular='"+res.celular+"' data-registro= '"+res.registro+"' data-cep = '"+res.cep+"' data-logradouro= '"+res.logradouro+"' data-bairro= '"+res.bairro+"' data-numero = '"+res.numero+"'  data-inscricao= '"+res.inscricao+"' data-complemento= '"+res.complemento+"' data-fisica_juridica= '"+res.fisica_juridica+"'><td>"+res.nome+"</td><td><strong>"+res.cpf_cnpj+"<strong></td><td><strong>"+res.data_nascimento+"<strong></td><td>"+res.email+"</td><td>"+res.uf+"</td><td>"+res.cidade+"</td><td>"+res.fone+"</td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-edit-alt  me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalCenter'></i> </a> </td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-trash me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalToggle'></i> </a> </td></tr>")});
+            $('tbody').append("<tr data-id='"+res.id_cliente+"'  data-nome='"+res.nome+"' data-cpf='"+res.cpf_cnpj+"' data-nascimento='"+data_nascimento+"' data-email='"+res.email+"' data-uf='"+res.uf+"' data-cidade='"+res.cidade+"' data-telefone='"+res.fone+"' data-celular='"+res.celular+"' data-registro= '"+res.registro+"' data-cep = '"+res.cep+"' data-logradouro= '"+res.logradouro+"' data-bairro= '"+res.bairro+"' data-numero = '"+res.numero+"'  data-inscricao= '"+res.inscricao+"' data-complemento= '"+res.complemento+"' data-fisica_juridica= '"+res.fisica_juridica+"'><td><strong>"+res.nome+"</strong></td><td><strong>"+res.cpf_cnpj+"<strong></td><td><strong>"+res.data_nascimento+"<strong></td><td>"+res.email+"</td><td>"+res.uf+"</td><td>"+res.cidade+"</td><td>"+res.fone+"</td><td>"+res.celular+"</td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-edit-alt  me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalCenter'></i> </a> </td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-trash me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalToggle'></i> </a> </td></tr>")});
             $('tbody').html(tbody);
             
           }
@@ -490,8 +490,8 @@ function clickEdit(){
 function clickDelete(){
   $('.bx-trash').click(function(e){
     e.preventDefault;
-    var linha = $(this).parent().parent().parent().data('codigo');
-    $('.deletarEspecie').attr('data-codigo',linha)
+    var linha = $(this).parent().parent().parent().data('id');
+    $('.deletarEspecie').attr('data-id',linha)
     
     }) 
 
@@ -532,9 +532,9 @@ function clickDelete(){
 			});
     $('.deletarEspecie').click(function(e){
       e.preventDefault;
-      var codigo = $(this).data('codigo'); 
+      var codigo = $(this).data('id'); 
       $.ajax({
-           url: "excluiEspecies",
+           url: "excluiClientes",
            type: 'post',
            data : {'codigo':codigo},
            success: function(resposta){

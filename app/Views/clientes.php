@@ -386,28 +386,30 @@ $('.downloadPlanilha').click(function(){
     dados[key]= {'nome;': value.getAttribute('data-nome')+';', 'cpf_cnpj;': value.getAttribute('data-cpf')+';','data_nascimento;' :  value.getAttribute('data-nascimento')+';' };
       } ;
       $.ajax({
-          url: "exportDataExcel?"+dados,
-          type: 'get',
+          url: "exportDataExcel?",
+          type: 'post',
           data: dados,
           beforeSend: function (jqXHR, settings) {
          window.result_url = settings.url + "?" + settings.data;
   },
           success: function(resposta){
+//             let r = new Response(1, {
+//   cache:'no-store'
+// , redirect:'follow'
+// , status: 301
+// , body:'<h1>response</h1>'
+// });
+
+// let w;
+// if (r.status === 301 && !r.ok) {
+  // w = window.open(URL.createObjectURL(new Blob()),  '_blank');
+  // w.document.write(result_url);
+// }
             console.log(result_url);
            $('.bs-toast').removeClass('d-none');
-           window.location.replace("https://sistema_vendas_comfauna_2.0.test/"+window.result_url);
-          //  window.location.replace("https://sistema_vendas_comfauna_2.0.test/exportDataExcel?0%5Bnome%3B%5D=ACACIA%20CHIQUITTI%3B&0%5Bcpf_cnpj%3B%5D=069.038.919-19%3B&0%5Bdata_nascimento%3B%5D=09%2F01%2F1989%3B&1%5Bnome%3B%5D=ADAN%20LUIZ%20BERLESI%3B&1%5Bcpf_cnpj%3B%5D=054.410.709-86%3B&1%5Bdata_nascimento%3B%5D=10%2F09%2F1985%3B&2%5Bnome%3B%5D=ADELSON%20DE%20OLIVEIRA%3B&2%5Bcpf_cnpj%3B%5D=816.234.459-49%3B&2%5Bdata_nascimento%3B%5D=01%2F01%2F1973%3B&3%5Bnome%3B%5D=ADEMIR%20SOUZA%20DO%20AMPARO%3B&3%5Bcpf_cnpj%3B%5D=045.243.969-85%3B&3%5Bdata_nascimento%3B%5D=09%2F10%2F1981%3B&4%5Bnome%3B%5D=ADENIR%20ANA%20PEGORARO%3B&4%5Bcpf_cnpj%3B%5D=822.638.099-53%3B&4%5Bdata_nascimento%3B%5D=21%2F04%2F1954%3B&5%5Bnome%3B%5D=ADILEUZA%20FAUSTINO%20DA%20SILVA%20%3B&5%5Bcpf_cnpj%3B%5D=041.781.679-01%3B&5%5Bdata_nascimento%3B%5D=10%2F06%2F1954%3B&6%5Bnome%3B%5D=ADILSON%20MARCELO%20CANTELLI%3B&6%5Bcpf_cnpj%3B%5D=045.598.219-84%3B&6%5Bdata_nascimento%3B%5D=23%2F01%2F1985%3B&7%5Bnome%3B%5D=ADRIANA%20DE%20F%C3%83%C2%81TIMA%20KRICHAK%3B&7%5Bcpf_cnpj%3B%5D=021.519.909-07%3B&7%5Bdata_nascimento%3B%5D=10%2F09%2F1976%3B&8%5Bnome%3B%5D=AFRANIO%20FERNANDES%20ROCHA%20%3B&8%5Bcpf_cnpj%3B%5D=725.794.636-15%3B&8%5Bdata_nascimento%3B%5D=04%2F07%2F1969%3B&9%5Bnome%3B%5D=AGRO%20AVES%20COMERCIO%20E%20REPRESENTA%C3%87OES%20LTDA%20ME%3B&9%5Bcpf_cnpj%3B%5D=79.526.059%2F0001-78%3B&9%5Bdata_nascimento%3B%5D=%3B");
-           
-          //  if(resposta=='true'){
-          //   //  setTimeout(reload, 1000);
-          //  }
-          //  else {
-          //  errorMessage('Ops.Não foi possível salvar as alterações. Certifique-se que o campo de código da espécie esteja preenchido.');
-          //  }
+          //  window.location.replace("https://sistema_vendas_comfauna_2.0.test/"+window.result_url);
          },
-        //  error: function(resposta){
-        //  errorMessage('Ops.Não foi possível salvar as alterações por erro interno do sistema. Entre em contato com o desenvolvedor');
-        //  }
+      
            
       });
 });

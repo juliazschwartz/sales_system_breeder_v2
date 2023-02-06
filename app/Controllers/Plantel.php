@@ -65,14 +65,9 @@ public function filterData(&$str){
 
 public function exportData2Excel(){
     
-    // $request = \Config\Services::request();
-    // $data = $request->getPost(); 
-    $data = $_GET;
-   
-    $this->downloadExcel($data);
-}
-
-public function downloadExcel($data){
+    $request = \Config\Services::request();
+    $data = $request->getPost(); 
+    // $data = $_GET;
     header('Content-Type: text/csv; charset=utf-8');
     // $fileName = "codexworld_export_data-" . date('Ymd'); 
     header('Content-Disposition: attachment; filename=csv_export.csv');
@@ -89,5 +84,6 @@ public function downloadExcel($data){
         } 
      
 }
+
 
 }

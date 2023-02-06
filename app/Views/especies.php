@@ -95,13 +95,14 @@ position: absolute;">
 
               <!-- Striped Rows -->
               <div class="card">
-                <div class = "d-flex align-items-baseline "><h5 class="card-header"><button type="button" class="btn btn-primary nova_especie" data-bs-toggle="modal" data-bs-target="#modalCenter">Nova Espécie</button></h5>
+                <div class = "d-flex align-items-center "><h5 class="card-header"><button type="button" class="btn btn-primary nova_especie" data-bs-toggle="modal" data-bs-target="#modalCenter">Nova Espécie</button></h5>
                
                 <span class = "w-75 mx-2">
                   <form class="d-flex" id="formBuscaEspecies" method="post">
                       <input class="form-control me-2 p-2" type="search" placeholder="Buscar" aria-label="Search" name="busca">
                       <button class="btn btn-outline-primary" type="submit">Buscar</button>
                     </form></span>
+                    <img src="/assets/img/excel.png" style="cursor:pointer" width=60px class="downloadPlanilha"></img>
 </div>
 <div class="modal fade " id="modalCenter" tabindex="-1"  aria-hidden="true" role="dialog">
                           <div class="modal-dialog modal-dialog-centered" role="document">
@@ -430,5 +431,32 @@ function clickDelete(){
       $('.nova_especie').click(function(){
           document.getElementById('formEditaEspecies').reset();
       })
+
+
+      $('.downloadPlanilha').click(function(){
+  var dados = {};
+  var data = $('tbody').find('tr');
+    delete data.length ;
+    delete data.prevObject ;
+  for (var [key, value] of Object.entries(data)) {
+    dados[key]= {'codigo;': value.getAttribute('data-codigo')+';', 'nome_cientifico;': value.getAttribute('data-cientifico')+';','nome_popular;' :  value.getAttribute('data-popular')+';'
+      ,'marcacao;' :  value.getAttribute('data-marcacao')+';', 'ncm' : value.getAttribute('data-ncm')+';', 'base_calculo' : value.getAttribute('data-base')+';' };
+      } ;
+      $.ajax({
+          url: "exportDataExcel?"+dados,
+          type: 'get',
+          data: dados,
+          beforeSend: function (jqXHR, settings) {
+         window.result_url = settings.url + "?" + settings.data;
+  },
+          success: function(resposta){
+            console.log(result_url);
+           $('.bs-toast').removeClass('d-none');
+           window.location.replace("https://sistema_vendas_comfauna_2.0.test/"+window.result_url);
+         },
+      
+           
+      });
+});
   })
   </script>

@@ -107,8 +107,35 @@ position: absolute;">
                      <button type="submit" class="botao-excel mx-3" > <img src="/assets/img/excel.png" width=60px class="downloadPlanilha"></img></button>
                     </form>
 </div>
+<div class="modal fade " id="modalHistorico" tabindex="-1"  aria-hidden="true" role="dialog">
+<div class="modal-dialog modal-lg modal-dialog-centered "  role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel3">Histórico Vendas</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                            <div class="">
+                <div class="table-responsive text-nowrap">
+                  <table class="table">
+                  
+                    <tbody class="table-border-bottom-0">
+                      
+                      
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+                            </div>
+                      
+                          </div>
+                        </div>
+</div>
+
+
+
 <div class="modal fade " id="modalCenter" tabindex="-1"  aria-hidden="true" role="dialog">
-                          <div class="modal-dialog modal-clientes modal-dialog-centered" role="document">
+                          <div class="modal-dialog modal-lg modal-clientes modal-dialog-centered" role="document">
                             <div class="modal-content">
                               <div class="modal-header">
                                 <h5 class="modal-title" id="modalCenterTitle">Novo Cliente</h5>
@@ -318,6 +345,10 @@ nome_popular = nome_popular.replace('Ã§', 'ç'); -->
                         <a class="text-center" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modalToggle"
                                 ><i class="bx bx-trash me-1 icone-tabela"></i> </a
                               ></td>
+                        <td>  
+                        <a class="text-center historicoCliente" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modalHistorico"
+                                ><i class='bx bx-history' style="font-size: 25px;"></i></a
+                              ></td>
                       </tr>
                       <?php
                         }
@@ -376,6 +407,32 @@ nome_popular = nome_popular.replace('Ã§', 'ç'); -->
 
 
 <script>
+
+function historico(){
+  $('.historicoCliente').click(function(){
+    var cpf = $(this).parent().parent().data('cpf_cnpj');
+    $.ajax({
+        url: "historicoClientes",
+        type: 'post',
+        data: {data:cpf},
+        success: function(resposta){
+          var html = "<div class='alert alert-dark alert-dismissible m-3' role='alert'> Nenhum Registro Encontrado <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
+           if(resposta!= '[]'){ 
+             $('#modalHistorico').find('tbody').html('');
+
+            var tbody = JSON.parse(resposta).forEach((res)=> {
+            $('#modalHistorico').find('tbody').append("<tr ><td><strong>"+res.data_pedido+"</strong></td><td><strong>"+res.valor_total+"<strong></td><td><strong>"+res.status+"<strong></td><td>"+res.forma_pagamento+"</td></tr>")
+          
+          });
+        
+       
+       }
+      }
+   });
+   
+      })
+      
+}
   $('#formBuscaEspecies').submit(function(e)
   {
 //     var mapObj = {
@@ -400,13 +457,16 @@ nome_popular = nome_popular.replace('Ã§', 'ç'); -->
             var tbody = JSON.parse(resposta).forEach((res)=> {
             var data_nascimento = res.data_nascimento.split("/")[1]+'/'+res.data_nascimento.split("/")[0]+'/'+res.data_nascimento.split("/")[2];
 
-            $('tbody').append("<tr data-id='"+res.id_cliente+"'  data-nome='"+res.nome+"' data-cpf='"+res.cpf_cnpj+"' data-nascimento='"+data_nascimento+"' data-email='"+res.email+"' data-uf='"+res.uf+"' data-cidade='"+res.cidade+"' data-telefone='"+res.fone+"' data-celular='"+res.celular+"' data-registro= '"+res.registro+"' data-cep = '"+res.cep+"' data-logradouro= '"+res.logradouro+"' data-bairro= '"+res.bairro+"' data-numero = '"+res.numero+"'  data-inscricao= '"+res.inscricao+"' data-complemento= '"+res.complemento+"' data-fisica_juridica= '"+res.fisica_juridica+"'><td><strong>"+res.nome+"</strong></td><td><strong>"+res.cpf_cnpj+"<strong></td><td><strong>"+res.data_nascimento+"<strong></td><td>"+res.email+"</td><td>"+res.uf+"</td><td>"+res.cidade+"</td><td>"+res.fone+"</td><td>"+res.celular+"</td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-edit-alt  me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalCenter'></i> </a> </td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-trash me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalToggle'></i> </a> </td></tr>")});
-            $('tbody').html(tbody);
+            $('tbody').append("<tr data-id='"+res.id_cliente+"'  data-nome='"+res.nome+"' data-cpf_cnpj='"+res.cpf_cnpj+"' data-nascimento='"+data_nascimento+"' data-email='"+res.email+"' data-uf='"+res.uf+"' data-cidade='"+res.cidade+"' data-telefone='"+res.fone+"' data-celular='"+res.celular+"' data-registro= '"+res.registro+"' data-cep = '"+res.cep+"' data-logradouro= '"+res.logradouro+"' data-bairro= '"+res.bairro+"' data-numero = '"+res.numero+"'  data-inscricao= '"+res.inscricao+"' data-complemento= '"+res.complemento+"' data-fisica_juridica= '"+res.fisica_juridica+"'><td><strong>"+res.nome+"</strong></td><td><strong>"+res.cpf_cnpj+"<strong></td><td><strong>"+res.data_nascimento+"<strong></td><td>"+res.email+"</td><td>"+res.uf+"</td><td>"+res.cidade+"</td><td>"+res.fone+"</td><td>"+res.celular+"</td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-edit-alt  me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalCenter'></i> </a> </td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-trash me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalToggle'></i> </a> </td><td><a class='text-center historicoCliente' href='javascript:void(0);' data-bs-toggle='modal' data-bs-target='#modalHistorico'><i class='bx bx-history' style='font-size: 25px;'></i></a></td></tr>")
+          
+          });
+            
             
           }
           else $(html).insertAfter('.align-items-baseline');
           clickEdit();
           clickDelete();
+          historico();
           var dados = {};
   var data = $('tbody').find('tr');
     delete data.length ;
@@ -417,9 +477,10 @@ nome_popular = nome_popular.replace('Ã§', 'ç'); -->
 $("#content-excel").val(JSON.stringify(dados));
        }
    });
+   
 
 }
-  )
+  );
 
 
   $('#formEditaEspecies').submit(function(e){
@@ -453,10 +514,6 @@ $("#content-excel").val(JSON.stringify(dados));
             
       });
   });
-
-
-
-
 
   function reload(){
     window.location.reload(true);
@@ -500,6 +557,7 @@ function clickDelete(){
   $(document).ready(function(){
     clickEdit();
     clickDelete();
+    historico();
     
   $("#cep").blur(function(){
 				// Remove tudo o que não é número para fazer a pesquisa
@@ -549,14 +607,27 @@ function clickDelete(){
           error: function(resposta){
           errorMessage('Ops.Não foi possível deletar o registro por erro interno do sistema. Entre em contato com o desenvolvedor');
           }
-          
       });
-    
-      
       }) 
 
       $('.nova_especie').click(function(){
-          document.getElementById('formEditaEspecies').reset();
+        $.ajax({
+           url: "editaClientes",
+           type: 'post',
+           data,
+           success: function(resposta){
+            $('.bs-toast').removeClass('d-none');
+            if(resposta=='true'){
+              setTimeout(reload, 1000);
+            }
+            else {
+            errorMessage('Ops.Não foi possível salvar as alterações. Certifique-se que o campo de código da espécie esteja preenchido.');
+            }
+          },
+          error: function(resposta){
+          errorMessage('Ops.Não foi possível salvar as alterações por erro interno do sistema. Entre em contato com o desenvolvedor');
+          }
+      });
       })
   })
   </script>

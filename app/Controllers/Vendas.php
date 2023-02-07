@@ -73,5 +73,26 @@ class Vendas extends BaseController
     
         return json_encode($especieDeletada);
 }
+    public function historicoClientes()		
+    {
+        $request = \Config\Services::request();
+        $cpf = $request->getPost('data'); 
+        $db = \Config\Database::connect('default',true);
+       
+        $especieDeletada = $db->query("SELECT os.data_pedido, os.valor_total, os.status, os.forma_pagamento, nfe.status 
+        FROM os
+        INNER JOIN nfe 
+        ON os.id_os = nfe.id_os
+        WHERE os.cpf_cnpj = '$cpf'
+        ")->getResultArray();
+        // var_dump("SELECT os.data_pedido, os.valor_total, os.status, os.forma_pagamento, nfe.status 
+        // FROM os
+        // INNER JOIN nfe 
+        // ON os.id_os = nfe.id_os
+        // WHERE os.cpf_cnpj = $cpf
+        // ");
+        // die();
+        return json_encode($especieDeletada);
+}
 
 }

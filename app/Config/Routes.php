@@ -45,6 +45,7 @@ $routes->post('/exportDataExcel', 'Plantel::exportData2Excel');
 $routes->post('/editaClientes', 'Vendas::EditaClientes');
 $routes->post('/excluiClientes', 'Vendas::ExcluiClientes');
 $routes->post('/historicoClientes', 'Vendas::historicoClientes');
+$routes->post('/buscaEstoque', 'Plantel::buscaEstoque');
 
 /*
  * --------------------------------------------------------------------

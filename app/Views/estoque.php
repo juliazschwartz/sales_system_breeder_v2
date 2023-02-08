@@ -96,7 +96,22 @@ position: absolute;">
 
               <!-- Striped Rows -->
               <div class="card">
-                <div class = "d-flex align-items-center "><h5 class="card-header"><button type="button" class="btn btn-primary nova_especie" data-bs-toggle="modal" data-bs-target="#modalCenter">Nova Espécie</button></h5>
+                <div class = "d-flex align-items-center mb-3">
+                <div class="col-md mx-3">
+                          <div class="form-check mt-3">
+                            <input class="form-check-input" type="checkbox"  id="defaultCheck1" checked="" value="disponivel">
+                            <label class="form-check-label" for="defaultCheck1"> Disponíveis </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox"id="defaultCheck2" checked="" value="reservado">
+                            <label class="form-check-label" for="defaultCheck2"> Reservados </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="defaultCheck3" checked=""  value="vendido">
+                            <label class="form-check-label" for="defaultCheck3"> Vendidos </label>
+                          </div>
+                   
+                        </div>
                
                 <span class = "w-75 mx-2">
                   <form class="d-flex" id="formBuscaEspecies" method="post">
@@ -217,7 +232,7 @@ position: absolute;">
                         <th>Espécie <a class='bx bx-sort' href="?par=nome_cientifico&order=<?=$order?>" ></a></th>
                         <th>Sexo <a class='bx bx-sort' href="?par=sexo&order=<?=$order?>" ></a></th></th>
                         <th>Marcação <a class='bx bx-sort' href="?par=numeracao&order=<?=$order?>" ></a></th></th>
-                        <th>Data Nascimento </a></th></th>
+                        <th>Data Nascimento</a></th></th>
                         <th>Status</th>
                         <th>Preço de Compra <a class='bx bx-sort' href="?par=valor_un&order=<?=$order?>" ></a></th>
                         <th></th>
@@ -226,8 +241,10 @@ position: absolute;">
                     </thead>
                     <tbody class="table-border-bottom-0">
                         <?php foreach($animais as $animal){
+                            // $animal['status'] == 'vendido' ? $classe = "d-none" : $classe = '';
                             
 ?>
+
 <tr data-nome_cientifico=<?=$animal['nome_cientifico']?> data-sexo="<?=$animal['sexo']?>" data-numeracao="<?=$animal['numeracao']?>" data-nascimento="<?=$animal['nascimento']?>" data-status="<?=$animal['status']?>" data-valor_un="<?=$animal['valor_un']?>">
                         <td><?= $animal['nome_cientifico']?></td>
                         <td><strong><?= utf8_decode($animal['sexo'])?><strong></td>
@@ -315,7 +332,7 @@ position: absolute;">
     var url = $(this).closest('form').attr('action'),
     data = $(this).closest('form').serialize();
     $.ajax({
-        url: "buscaEspecies",
+        url: "buscaEstoque",
         type: 'post',
         data: data,
         success: function(resposta){
@@ -330,7 +347,7 @@ var nome_popular = res.nome_popular.replace('Ã©', 'é');
 nome_popular = nome_popular.replace('Ã§', 'ç');
 
 
-            $('tbody').append("<tr <tr data-id='"+res.id_especie+"' data-codigo='"+res.cod+"' data-cientifico='"+res.nome_cientifico+"' data-popular='"+res.nome_popular+"' data-descricao='"+res.nome_descricao+"' data-ncm='"+res.ncm+"' data-marcacao='"+res.marcacao+"' data-base='"+res.base_calculo+"'>><td>"+res.cod+"</td><td><strong>"+res.nome_cientifico+"<strong></td><td><strong>"+nome_popular+"<strong></td><td>indefinido</td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-edit-alt  me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalCenter'></i> </a> </td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-trash me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalToggle'></i> </a> </td></tr>")});
+            $('tbody').append("<tr <tr ><td>"+res.nome_cientifico+"</td><td>"+res.sexo+"</td><td><strong>"+res.numeracao+"</strong></td><td>"+res.data_nascimento+"</td><td><strong>"+res.status+"</strong></td><td>"+res.valor_un+"</td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-edit-alt  me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalCenter'></i> </a> </td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-trash me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalToggle'></i> </a> </td></tr>")});
             $('tbody').html(tbody);
             
           }

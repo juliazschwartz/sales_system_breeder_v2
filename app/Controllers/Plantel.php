@@ -89,10 +89,25 @@ public function BuscaEstoque()
 {
     $request = \Config\Services::request();
     $busca = $request->getPost('busca'); 
+
     if (empty($busca)) {
     }
     $db = \Config\Database::connect('default',true);
-    $especiesEncontradas = $db->query("SELECT * FROM especies WHERE cod like '%$busca%' OR nome_cientifico like '%$busca%' OR nome_popular like '%$busca%' ")->getResultArray();
+
+    $especiesEncontradas = $db->query("SELECT * FROM especies INNER JOIN produto_final ON especies.id_especie = produto_final.id_categoria_especie
+      WHERE sexo like '%$busca%' OR nome_cientifico like '%$busca%' OR numeracao like '%$busca%'")->getResultArray();
+    return json_encode($especiesEncontradas);
+}
+public function filtraEstoque()		
+{
+    $request = \Config\Services::request();
+    $busca = $request->getPost('busca'); 
+
+    if (empty($busca)) {
+    }
+    $db = \Config\Database::connect('default',true);
+    $especiesEncontradas = $db->query("SELECT * FROM produto_final
+      WHERE status ='$busca' ")->getResultArray();
     return json_encode($especiesEncontradas);
 }
 

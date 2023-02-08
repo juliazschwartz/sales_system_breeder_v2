@@ -79,12 +79,13 @@ class Vendas extends BaseController
         $cpf = $request->getPost('data'); 
         $db = \Config\Database::connect('default',true);
        
-        $especieDeletada = $db->query("SELECT os.data_pedido, os.valor_total, os.status, os.forma_pagamento, nfe.status 
+        $especieDeletada = $db->query("SELECT os.id_os, os.data_pedido, os.valor_total, os.status, os.forma_pagamento, nfe.status 
         FROM os
         INNER JOIN nfe 
         ON os.id_os = nfe.id_os
         WHERE os.cpf_cnpj = '$cpf'
         ")->getResultArray();
+        
         // var_dump("SELECT os.data_pedido, os.valor_total, os.status, os.forma_pagamento, nfe.status 
         // FROM os
         // INNER JOIN nfe 

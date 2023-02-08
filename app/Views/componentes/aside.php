@@ -136,6 +136,13 @@
                 <div data-i18n="Boxicons"></div>
               </a>
             </li>
+            <li class="menu-item" id="nfe">
+              <a href="nfe" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-purchase-tag"></i>Anúncios
+              
+                <div data-i18n="Boxicons"></div>
+              </a>
+            </li>
 
             <!-- Forms & Tables -->
             <li class="menu-header small text-uppercase"><span class="menu-header-text">Controle de Usuários</span></li>

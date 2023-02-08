@@ -1,0 +1,529 @@
+CRITICAL - 2023-02-08 12:32:45 --> Undefined variable: especies
+in APPPATH\Views\estoque.php on line 225.
+ 1 APPPATH\Views\estoque.php(225): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: especies', 'APPPATH\\Views\\estoque.php', 225, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\estoque.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('estoque', [], true)
+ 5 APPPATH\Controllers\Home.php(89): view('estoque')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->estoque()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-08 13:12:43 --> Undefined variable: db
+in APPPATH\Controllers\Home.php on line 88.
+ 1 APPPATH\Controllers\Home.php(88): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: db', 'APPPATH\\Controllers\\Home.php', 88, [])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->estoque()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-02-08 13:13:03 --> mysqli_sql_exception: Unknown column 'especie.nome_cientifico' in 'field list' in C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php(295): mysqli->query(' select especie...', 0)
+#1 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute(' select especie...')
+#2 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery(' select especie...')
+#3 C:\laragon\www\sistema_vendas_comfauna_2.0\app\Controllers\Home.php(89): CodeIgniter\Database\BaseConnection->query(' select especie...')
+#4 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(934): App\Controllers\Home->estoque()
+#5 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\sistema_vendas_comfauna_2.0\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-02-08 13:13:03 --> Unknown column 'especie.nome_cientifico' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 APPPATH\Controllers\Home.php(89): CodeIgniter\Database\BaseConnection->query(' select especie.nome_cientifico, produto_final.sexo, 
+        produto_final.numeracao,produto_final.nascimento,produto_final.status,
+        produto_final.valor_un
+        from produto_final
+        INNER JOIN especies
+        ON especies.id_especie = produto_final.id_categoria_especie')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->estoque()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-08 13:13:24 --> Undefined index: id_especie
+in APPPATH\Views\estoque.php on line 227.
+ 1 APPPATH\Views\estoque.php(227): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: id_especie', 'APPPATH\\Views\\estoque.php', 227, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\estoque.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('estoque', [], true)
+ 5 APPPATH\Controllers\Home.php(97): view('estoque', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->estoque()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-08 13:18:26 --> syntax error, unexpected '<'
+in APPPATH\Views\estoque.php on line 227.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('estoque', [], true)
+ 3 APPPATH\Controllers\Home.php(97): view('estoque', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->estoque()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-08 13:18:43 --> Undefined variable: paginacao
+in APPPATH\Views\componentes\pagination.php on line 15.
+ 1 APPPATH\Views\componentes\pagination.php(15): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: paginacao', 'APPPATH\\Views\\componentes\\pagination.php', 15, [...])
+ 2 APPPATH\Views\estoque.php(263): include('APPPATH\\Views\\componentes\\pagination.php')
+ 3 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\estoque.php')
+ 4 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('estoque', [], true)
+ 6 APPPATH\Controllers\Home.php(97): view('estoque', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->estoque()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-08 14:00:47 --> Undefined index: data_nascimento
+in APPPATH\Views\estoque.php on line 233.
+ 1 APPPATH\Views\estoque.php(233): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: data_nascimento', 'APPPATH\\Views\\estoque.php', 233, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\estoque.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('estoque', [], true)
+ 5 APPPATH\Controllers\Home.php(97): view('estoque', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->estoque()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-08 14:05:34 --> Undefined variable: page
+in APPPATH\Controllers\Home.php on line 93.
+ 1 APPPATH\Controllers\Home.php(93): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: page', 'APPPATH\\Controllers\\Home.php', 93, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->estoque()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-08 14:12:51 --> Undefined variable: limit
+in APPPATH\Views\estoque.php on line 4.
+ 1 APPPATH\Views\estoque.php(4): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: limit', 'APPPATH\\Views\\estoque.php', 4, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\estoque.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('estoque', [], true)
+ 5 APPPATH\Controllers\Home.php(106): view('estoque', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->estoque()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-08 14:12:57 --> Undefined variable: limite
+in APPPATH\Views\estoque.php on line 4.
+ 1 APPPATH\Views\estoque.php(4): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: limite', 'APPPATH\\Views\\estoque.php', 4, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\estoque.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('estoque', [], true)
+ 5 APPPATH\Controllers\Home.php(106): view('estoque', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->estoque()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-02-08 14:32:03 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')) asc LIMIT 10 OFFSET 0' at line 6 in C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php(295): mysqli->query(' select especie...', 0)
+#1 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute(' select especie...')
+#2 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery(' select especie...')
+#3 C:\laragon\www\sistema_vendas_comfauna_2.0\app\Controllers\Home.php(114): CodeIgniter\Database\BaseConnection->query(' select especie...')
+#4 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(934): App\Controllers\Home->estoque()
+#5 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\sistema_vendas_comfauna_2.0\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-02-08 14:32:03 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')) asc LIMIT 10 OFFSET 0' at line 6
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 APPPATH\Controllers\Home.php(114): CodeIgniter\Database\BaseConnection->query(' select especies.nome_cientifico, produto_final.sexo, 
+        produto_final.numeracao,produto_final.nascimento,produto_final.status,
+        produto_final.valor_un
+        from produto_final
+        INNER JOIN especies
+        ON especies.id_especie = produto_final.id_categoria_especie  ORDER BY TRIM(cast(numeracao)) asc LIMIT 10 OFFSET 0')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->estoque()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-02-08 14:33:38 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')) asc LIMIT 10 OFFSET 0' at line 6 in C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php(295): mysqli->query(' select especie...', 0)
+#1 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute(' select especie...')
+#2 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery(' select especie...')
+#3 C:\laragon\www\sistema_vendas_comfauna_2.0\app\Controllers\Home.php(114): CodeIgniter\Database\BaseConnection->query(' select especie...')
+#4 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(934): App\Controllers\Home->estoque()
+#5 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\sistema_vendas_comfauna_2.0\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-02-08 14:33:38 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')) asc LIMIT 10 OFFSET 0' at line 6
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 APPPATH\Controllers\Home.php(114): CodeIgniter\Database\BaseConnection->query(' select especies.nome_cientifico, produto_final.sexo, 
+        produto_final.numeracao,produto_final.nascimento,produto_final.status,
+        produto_final.valor_un
+        from produto_final
+        INNER JOIN especies
+        ON especies.id_especie = produto_final.id_categoria_especie  ORDER BY TRIM(cast(numeracao)) asc LIMIT 10 OFFSET 0')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->estoque()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-02-08 14:33:39 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')) asc LIMIT 10 OFFSET 0' at line 6 in C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php(295): mysqli->query(' select especie...', 0)
+#1 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute(' select especie...')
+#2 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery(' select especie...')
+#3 C:\laragon\www\sistema_vendas_comfauna_2.0\app\Controllers\Home.php(114): CodeIgniter\Database\BaseConnection->query(' select especie...')
+#4 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(934): App\Controllers\Home->estoque()
+#5 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\sistema_vendas_comfauna_2.0\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-02-08 14:33:39 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')) asc LIMIT 10 OFFSET 0' at line 6
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 APPPATH\Controllers\Home.php(114): CodeIgniter\Database\BaseConnection->query(' select especies.nome_cientifico, produto_final.sexo, 
+        produto_final.numeracao,produto_final.nascimento,produto_final.status,
+        produto_final.valor_un
+        from produto_final
+        INNER JOIN especies
+        ON especies.id_especie = produto_final.id_categoria_especie  ORDER BY TRIM(cast(numeracao)) asc LIMIT 10 OFFSET 0')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->estoque()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-02-08 14:33:39 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')) asc LIMIT 10 OFFSET 0' at line 6 in C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php(295): mysqli->query(' select especie...', 0)
+#1 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute(' select especie...')
+#2 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery(' select especie...')
+#3 C:\laragon\www\sistema_vendas_comfauna_2.0\app\Controllers\Home.php(114): CodeIgniter\Database\BaseConnection->query(' select especie...')
+#4 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(934): App\Controllers\Home->estoque()
+#5 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\sistema_vendas_comfauna_2.0\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-02-08 14:33:39 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')) asc LIMIT 10 OFFSET 0' at line 6
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 APPPATH\Controllers\Home.php(114): CodeIgniter\Database\BaseConnection->query(' select especies.nome_cientifico, produto_final.sexo, 
+        produto_final.numeracao,produto_final.nascimento,produto_final.status,
+        produto_final.valor_un
+        from produto_final
+        INNER JOIN especies
+        ON especies.id_especie = produto_final.id_categoria_especie  ORDER BY TRIM(cast(numeracao)) asc LIMIT 10 OFFSET 0')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->estoque()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-02-08 14:33:39 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')) asc LIMIT 10 OFFSET 0' at line 6 in C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php(295): mysqli->query(' select especie...', 0)
+#1 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute(' select especie...')
+#2 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery(' select especie...')
+#3 C:\laragon\www\sistema_vendas_comfauna_2.0\app\Controllers\Home.php(114): CodeIgniter\Database\BaseConnection->query(' select especie...')
+#4 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(934): App\Controllers\Home->estoque()
+#5 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\sistema_vendas_comfauna_2.0\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-02-08 14:33:39 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')) asc LIMIT 10 OFFSET 0' at line 6
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 APPPATH\Controllers\Home.php(114): CodeIgniter\Database\BaseConnection->query(' select especies.nome_cientifico, produto_final.sexo, 
+        produto_final.numeracao,produto_final.nascimento,produto_final.status,
+        produto_final.valor_un
+        from produto_final
+        INNER JOIN especies
+        ON especies.id_especie = produto_final.id_categoria_especie  ORDER BY TRIM(cast(numeracao)) asc LIMIT 10 OFFSET 0')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->estoque()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-02-08 14:33:39 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')) asc LIMIT 10 OFFSET 0' at line 6 in C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php(295): mysqli->query(' select especie...', 0)
+#1 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute(' select especie...')
+#2 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery(' select especie...')
+#3 C:\laragon\www\sistema_vendas_comfauna_2.0\app\Controllers\Home.php(114): CodeIgniter\Database\BaseConnection->query(' select especie...')
+#4 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(934): App\Controllers\Home->estoque()
+#5 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\sistema_vendas_comfauna_2.0\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-02-08 14:33:39 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')) asc LIMIT 10 OFFSET 0' at line 6
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 APPPATH\Controllers\Home.php(114): CodeIgniter\Database\BaseConnection->query(' select especies.nome_cientifico, produto_final.sexo, 
+        produto_final.numeracao,produto_final.nascimento,produto_final.status,
+        produto_final.valor_un
+        from produto_final
+        INNER JOIN especies
+        ON especies.id_especie = produto_final.id_categoria_especie  ORDER BY TRIM(cast(numeracao)) asc LIMIT 10 OFFSET 0')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->estoque()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-02-08 14:33:47 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')) asc LIMIT 10 OFFSET 0' at line 6 in C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php(295): mysqli->query(' select especie...', 0)
+#1 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute(' select especie...')
+#2 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery(' select especie...')
+#3 C:\laragon\www\sistema_vendas_comfauna_2.0\app\Controllers\Home.php(114): CodeIgniter\Database\BaseConnection->query(' select especie...')
+#4 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(934): App\Controllers\Home->estoque()
+#5 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\sistema_vendas_comfauna_2.0\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-02-08 14:33:47 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')) asc LIMIT 10 OFFSET 0' at line 6
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 APPPATH\Controllers\Home.php(114): CodeIgniter\Database\BaseConnection->query(' select especies.nome_cientifico, produto_final.sexo, 
+        produto_final.numeracao,produto_final.nascimento,produto_final.status,
+        produto_final.valor_un
+        from produto_final
+        INNER JOIN especies
+        ON especies.id_especie = produto_final.id_categoria_especie  ORDER BY TRIM(cast(numeracao)) asc LIMIT 10 OFFSET 0')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->estoque()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-02-08 14:33:55 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1) asc LIMIT 10 OFFSET 0' at line 6 in C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php(295): mysqli->query(' select especie...', 0)
+#1 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute(' select especie...')
+#2 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery(' select especie...')
+#3 C:\laragon\www\sistema_vendas_comfauna_2.0\app\Controllers\Home.php(114): CodeIgniter\Database\BaseConnection->query(' select especie...')
+#4 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(934): App\Controllers\Home->estoque()
+#5 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\sistema_vendas_comfauna_2.0\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-02-08 14:33:55 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1) asc LIMIT 10 OFFSET 0' at line 6
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 APPPATH\Controllers\Home.php(114): CodeIgniter\Database\BaseConnection->query(' select especies.nome_cientifico, produto_final.sexo, 
+        produto_final.numeracao,produto_final.nascimento,produto_final.status,
+        produto_final.valor_un
+        from produto_final
+        INNER JOIN especies
+        ON especies.id_especie = produto_final.id_categoria_especie  ORDER BY TRIM(valor_un 1) asc LIMIT 10 OFFSET 0')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->estoque()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-08 14:35:47 --> syntax error, unexpected '}'
+in APPPATH\Controllers\Home.php on line 97.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Home.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 4 [internal function]: spl_autoload_call('App\\Controllers\\Home')
+ 5 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\Home', true)
+ 6 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-08 14:36:01 --> syntax error, unexpected '}'
+in APPPATH\Controllers\Home.php on line 97.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Home.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 4 [internal function]: spl_autoload_call('App\\Controllers\\Home')
+ 5 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\Home', true)
+ 6 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-08 14:36:09 --> syntax error, unexpected '}'
+in APPPATH\Controllers\Home.php on line 97.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Home.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 4 [internal function]: spl_autoload_call('App\\Controllers\\Home')
+ 5 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\Home', true)
+ 6 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-08 14:36:11 --> syntax error, unexpected '}'
+in APPPATH\Controllers\Home.php on line 97.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Home.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 4 [internal function]: spl_autoload_call('App\\Controllers\\Home')
+ 5 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\Home', true)
+ 6 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-08 14:36:23 --> Undefined variable: limit
+in APPPATH\Controllers\Home.php on line 98.
+ 1 APPPATH\Controllers\Home.php(98): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: limit', 'APPPATH\\Controllers\\Home.php', 98, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->estoque()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-08 14:36:45 --> syntax error, unexpected '$animais' (T_VARIABLE)
+in APPPATH\Controllers\Home.php on line 113.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Home.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 4 [internal function]: spl_autoload_call('App\\Controllers\\Home')
+ 5 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\Home', true)
+ 6 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-08 16:32:24 --> Invalid argument supplied for foreach()
+in APPPATH\Controllers\Plantel.php on line 76.
+ 1 APPPATH\Controllers\Plantel.php(76): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argument supplied for foreach()', 'APPPATH\\Controllers\\Plantel.php', 76, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Plantel->exportData2Excel()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Plantel))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-08 16:32:30 --> Invalid argument supplied for foreach()
+in APPPATH\Controllers\Plantel.php on line 76.
+ 1 APPPATH\Controllers\Plantel.php(76): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argument supplied for foreach()', 'APPPATH\\Controllers\\Plantel.php', 76, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Plantel->exportData2Excel()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Plantel))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-08 16:45:42 --> A non-numeric value encountered
+in APPPATH\Controllers\Home.php on line 77.
+ 1 APPPATH\Controllers\Home.php(77): CodeIgniter\Debug\Exceptions->errorHandler(2, 'A non-numeric value encountered', 'APPPATH\\Controllers\\Home.php', 77, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->clientes()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-08 16:48:48 --> syntax error, unexpected '}'
+in APPPATH\Controllers\Home.php on line 68.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Home.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 4 [internal function]: spl_autoload_call('App\\Controllers\\Home')
+ 5 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\Home', true)
+ 6 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-02-08 16:49:08 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'asc  LIMIT 10 OFFSET 0' at line 1 in C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT * FROM c...', 0)
+#1 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM c...')
+#2 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM c...')
+#3 C:\laragon\www\sistema_vendas_comfauna_2.0\app\Controllers\Home.php(82): CodeIgniter\Database\BaseConnection->query('SELECT * FROM c...')
+#4 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(934): App\Controllers\Home->clientes()
+#5 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\sistema_vendas_comfauna_2.0\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-02-08 16:49:08 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'asc  LIMIT 10 OFFSET 0' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 APPPATH\Controllers\Home.php(82): CodeIgniter\Database\BaseConnection->query('SELECT * FROM clientes ORDER BY  asc  LIMIT 10 OFFSET 0')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->clientes()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-08 16:55:27 --> Undefined index: nascimento
+in APPPATH\Views\estoque.php on line 231.
+ 1 APPPATH\Views\estoque.php(231): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: nascimento', 'APPPATH\\Views\\estoque.php', 231, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\estoque.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('estoque', [], true)
+ 5 APPPATH\Controllers\Home.php(122): view('estoque', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->estoque()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-02-08 16:55:45 --> mysqli_sql_exception: FUNCTION produto_final.date does not exist. Check the 'Function Name Parsing and Resolution' section in the Reference Manual in C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php(295): mysqli->query(' select especie...', 0)
+#1 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute(' select especie...')
+#2 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery(' select especie...')
+#3 C:\laragon\www\sistema_vendas_comfauna_2.0\app\Controllers\Home.php(118): CodeIgniter\Database\BaseConnection->query(' select especie...')
+#4 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(934): App\Controllers\Home->estoque()
+#5 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\sistema_vendas_comfauna_2.0\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-02-08 16:55:45 --> FUNCTION produto_final.date does not exist. Check the 'Function Name Parsing and Resolution' section in the Reference Manual
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 APPPATH\Controllers\Home.php(118): CodeIgniter\Database\BaseConnection->query(' select especies.nome_cientifico, produto_final.sexo, 
+        produto_final.numeracao,produto_final.date(nascimento),produto_final.status,
+        produto_final.valor_un
+        from produto_final
+        INNER JOIN especies
+        ON especies.id_especie = produto_final.id_categoria_especie  ORDER BY id_produto  LIMIT 10 OFFSET 0')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->estoque()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-02-08 16:56:01 --> Undefined index: nascimento
+in APPPATH\Views\estoque.php on line 231.
+ 1 APPPATH\Views\estoque.php(231): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: nascimento', 'APPPATH\\Views\\estoque.php', 231, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\estoque.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('estoque', [], true)
+ 5 APPPATH\Controllers\Home.php(122): view('estoque', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->estoque()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-02-08 17:40:55 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%Y %M %e %H:%i:%s’),produto_final.status,
+        produto_final.valor_un
+     ' at line 2 in C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php(295): mysqli->query(' select especie...', 0)
+#1 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute(' select especie...')
+#2 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery(' select especie...')
+#3 C:\laragon\www\sistema_vendas_comfauna_2.0\app\Controllers\Home.php(118): CodeIgniter\Database\BaseConnection->query(' select especie...')
+#4 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(934): App\Controllers\Home->estoque()
+#5 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\sistema_vendas_comfauna_2.0\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-02-08 17:40:55 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%Y %M %e %H:%i:%s’),produto_final.status,
+        produto_final.valor_un
+     ' at line 2
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 APPPATH\Controllers\Home.php(118): CodeIgniter\Database\BaseConnection->query(' select especies.nome_cientifico, produto_final.sexo, 
+        produto_final.numeracao,  DATE_FORMAT(produto_final.nascimento,’%a, %Y %M %e %H:%i:%s’),produto_final.status,
+        produto_final.valor_un
+        from produto_final 
+        INNER JOIN especies
+        ON especies.id_especie = produto_final.id_categoria_especie  ORDER BY nascimento desc LIMIT 10 OFFSET 0')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->estoque()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-02-08 17:41:08 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%a, %Y %M %e %H:%i:%s),produto_final.status,
+        produto_final.valor_un
+    ' at line 2 in C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php(295): mysqli->query(' select especie...', 0)
+#1 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute(' select especie...')
+#2 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery(' select especie...')
+#3 C:\laragon\www\sistema_vendas_comfauna_2.0\app\Controllers\Home.php(118): CodeIgniter\Database\BaseConnection->query(' select especie...')
+#4 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(934): App\Controllers\Home->estoque()
+#5 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\sistema_vendas_comfauna_2.0\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-02-08 17:41:08 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%a, %Y %M %e %H:%i:%s),produto_final.status,
+        produto_final.valor_un
+    ' at line 2
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 APPPATH\Controllers\Home.php(118): CodeIgniter\Database\BaseConnection->query(' select especies.nome_cientifico, produto_final.sexo, 
+        produto_final.numeracao,  DATE_FORMAT(produto_final.nascimento,%a, %Y %M %e %H:%i:%s),produto_final.status,
+        produto_final.valor_un
+        from produto_final 
+        INNER JOIN especies
+        ON especies.id_especie = produto_final.id_categoria_especie  ORDER BY nascimento desc LIMIT 10 OFFSET 0')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->estoque()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-02-08 17:44:20 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%Y %M %e %H:%i:%s’),produto_final.status,
+        produto_final.valor_un
+     ' at line 2 in C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\MySQLi\Connection.php(295): mysqli->query(' select especie...', 0)
+#1 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute(' select especie...')
+#2 C:\laragon\www\sistema_vendas_comfauna_2.0\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery(' select especie...')
+#3 C:\laragon\www\sistema_vendas_comfauna_2.0\app\Controllers\Home.php(118): CodeIgniter\Database\BaseConnection->query(' select especie...')
+#4 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(934): App\Controllers\Home->estoque()
+#5 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\laragon\www\sistema_vendas_comfauna_2.0\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\sistema_vendas_comfauna_2.0\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-02-08 17:44:20 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%Y %M %e %H:%i:%s’),produto_final.status,
+        produto_final.valor_un
+     ' at line 2
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 APPPATH\Controllers\Home.php(118): CodeIgniter\Database\BaseConnection->query(' select especies.nome_cientifico, produto_final.sexo, 
+        produto_final.numeracao,  DATE_FORMAT(produto_final.nascimento,’%a, %Y %M %e %H:%i:%s’),produto_final.status,
+        produto_final.valor_un
+        from produto_final 
+        INNER JOIN especies
+        ON especies.id_especie = produto_final.id_categoria_especie  ORDER BY id_produto  LIMIT 10 OFFSET 0')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->estoque()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

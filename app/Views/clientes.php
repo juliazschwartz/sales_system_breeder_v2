@@ -18,7 +18,7 @@ include 'componentes/order.php';
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Plantel - Espécies</title>
+    <title>Loja - Clientes</title>
 
     <meta name="description" content="" />
 
@@ -87,7 +87,7 @@ position: absolute;">
            
 
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Plantel /</span> Espécies</h4>
+              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Loja /</span> Clientes</h4>
               
 
  
@@ -117,7 +117,7 @@ position: absolute;">
                             <div class="modal-body">
                             <div class="">
                 <div class="table-responsive text-nowrap">
-                  <table class="table">
+                  <table class="table table-bordered">
                   
                     <tbody class="table-border-bottom-0">
                       
@@ -235,10 +235,10 @@ position: absolute;">
                                     <label for="nameWithTitle" class="form-label">Telefone</label>
                                     <input type="text"  class="form-control" placeholder=""  id = "telefone" name ="telefone">
                                   </div>
-                                  <div class="col mb-3">
+                                  <!-- <div class="col mb-3">
                                     <label for="nameWithTitle" class="form-label">Celular</label>
                                     <input type="text"  class="form-control" placeholder=""  id = "celular" name ="celular">
-                                  </div>
+                                  </div> -->
                                   <div class="col mb-3">
                                     <label for="nameWithTitle" class="form-label">Email</label>
                                     <input type="text"  class="form-control" placeholder=""  id = "email" name ="email">
@@ -297,7 +297,7 @@ position: absolute;">
                         <th >UF</th></th>
                         <th>Cidade</th>
                         <th>Telefone</th>
-                        <th>Celular</th>
+                        <!-- <th>Celular</th> -->
                         <th></th>
                         <th></th>
                       </tr>
@@ -334,7 +334,7 @@ nome_popular = nome_popular.replace('Ã§', 'ç'); -->
                         <td style = "padding: 0 33px;"><?= utf8_decode($cliente['uf'])?></td>
                         <td><?= utf8_decode($cliente['cidade'])?></td>
                         <td><?= utf8_decode($cliente['fone'])?></td>
-                        <td><?= utf8_decode($cliente['celular'])?></td>
+                       
                         
                         <td>
                         <a class="text-center" href="javascript:void(0);"
@@ -421,16 +421,16 @@ function historico(){
              $('#modalHistorico').find('tbody').html('');
 
             var tbody = JSON.parse(resposta).forEach((res)=> {
-            $('#modalHistorico').find('tbody').append("<tr ><td><strong>"+res.data_pedido+"</strong></td><td><strong>"+res.valor_total+"<strong></td><td><strong>"+res.status+"<strong></td><td>"+res.forma_pagamento+"</td></tr>")
-          
+              res.status == 'nfe_emitida' ?  classe = 'success' :  classe = 'danger';
+              res.forma_pagamento == 'avista' ?  res.forma_pagamento = 'à vista' : res.forma_pagamento = res.forma_pagamento;
+            $('#modalHistorico').find('tbody').append("<tr data-id_os = "+res.id_os+"><td><strong>"+res.data_pedido+"</strong></td><td><strong>R$ "+res.valor_total+"<strong></td><td><span class='badge bg-label-"+classe+" me-1'>"+res.status+"</span></td><td>"+res.forma_pagamento+"</td><td>Visualizar danfe</td></tr>")
           });
-        
-       
        }
       }
    });
    
       })
+      
       
 }
   $('#formBuscaEspecies').submit(function(e)
@@ -457,7 +457,7 @@ function historico(){
             var tbody = JSON.parse(resposta).forEach((res)=> {
             var data_nascimento = res.data_nascimento.split("/")[1]+'/'+res.data_nascimento.split("/")[0]+'/'+res.data_nascimento.split("/")[2];
 
-            $('tbody').append("<tr data-id='"+res.id_cliente+"'  data-nome='"+res.nome+"' data-cpf_cnpj='"+res.cpf_cnpj+"' data-nascimento='"+data_nascimento+"' data-email='"+res.email+"' data-uf='"+res.uf+"' data-cidade='"+res.cidade+"' data-telefone='"+res.fone+"' data-celular='"+res.celular+"' data-registro= '"+res.registro+"' data-cep = '"+res.cep+"' data-logradouro= '"+res.logradouro+"' data-bairro= '"+res.bairro+"' data-numero = '"+res.numero+"'  data-inscricao= '"+res.inscricao+"' data-complemento= '"+res.complemento+"' data-fisica_juridica= '"+res.fisica_juridica+"'><td><strong>"+res.nome+"</strong></td><td><strong>"+res.cpf_cnpj+"<strong></td><td><strong>"+res.data_nascimento+"<strong></td><td>"+res.email+"</td><td>"+res.uf+"</td><td>"+res.cidade+"</td><td>"+res.fone+"</td><td>"+res.celular+"</td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-edit-alt  me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalCenter'></i> </a> </td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-trash me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalToggle'></i> </a> </td><td><a class='text-center historicoCliente' href='javascript:void(0);' data-bs-toggle='modal' data-bs-target='#modalHistorico'><i class='bx bx-history' style='font-size: 25px;'></i></a></td></tr>")
+            $('tbody').append("<tr data-id='"+res.id_cliente+"'  data-nome='"+res.nome+"' data-cpf_cnpj='"+res.cpf_cnpj+"' data-nascimento='"+data_nascimento+"' data-email='"+res.email+"' data-uf='"+res.uf+"' data-cidade='"+res.cidade+"' data-telefone='"+res.fone+"' data-registro= '"+res.registro+"' data-cep = '"+res.cep+"' data-logradouro= '"+res.logradouro+"' data-bairro= '"+res.bairro+"' data-numero = '"+res.numero+"'  data-inscricao= '"+res.inscricao+"' data-complemento= '"+res.complemento+"' data-fisica_juridica= '"+res.fisica_juridica+"'><td><strong>"+res.nome+"</strong></td><td><strong>"+res.cpf_cnpj+"<strong></td><td><strong>"+res.data_nascimento+"<strong></td><td>"+res.email+"</td><td>"+res.uf+"</td><td>"+res.cidade+"</td><td>"+res.fone+"</td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-edit-alt  me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalCenter'></i> </a> </td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-trash me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalToggle'></i> </a> </td><td><a class='text-center historicoCliente' href='javascript:void(0);' data-bs-toggle='modal' data-bs-target='#modalHistorico'><i class='bx bx-history' style='font-size: 25px;'></i></a></td></tr>")
           
           });
             

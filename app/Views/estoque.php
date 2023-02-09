@@ -347,7 +347,8 @@ var nome_popular = res.nome_popular.replace('Ã©', 'é');
 nome_popular = nome_popular.replace('Ã§', 'ç');
 
 
-            $('tbody').append("<tr <tr ><td>"+res.nome_cientifico+"</td><td>"+res.sexo+"</td><td><strong>"+res.numeracao+"</strong></td><td>"+res.data_nascimento+"</td><td><strong>"+res.status+"</strong></td><td>"+res.valor_un+"</td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-edit-alt  me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalCenter'></i> </a> </td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-trash me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalToggle'></i> </a> </td></tr>")});
+            $('tbody').append("<tr <tr ><td>"+res.nome_cientifico+"</td><td>"+res.sexo+"</td><td><strong>"+res.numeracao+"</strong></td><td>"+res.data_nascimento+"</td><td><strong>"+res.status+"</strong></td><td>"+res.valor_un+"</td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-edit-alt  me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalCenter'></i> </a> </td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-trash me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalToggle'></i> </a> </td></tr>")
+          });
             $('tbody').html(tbody);
             
           }
@@ -408,24 +409,25 @@ nome_popular = nome_popular.replace('Ã§', 'ç');
     delete checked.prevObject ;
    for (var [key, value] of Object.entries(checked)) {
     checados[key]= {valor: value.value}
-
    }
-   console.log(checados);
     $.ajax({
            url: "filtraEstoque",
            type: 'post',
            data : checados,
            success: function(resposta){
             $('.bs-toast').removeClass('d-none');
-            if(resposta=='true'){
-              setTimeout(reload, 1000);
-            }
-            else {
-            errorMessage('Ops.Não foi deletar o registro. Tente novamente ou entre em contato com o desenvolvedor');
-            }
+            console.log(resposta.length);
+            $('tbody').html('');
+            var tbody = JSON.parse(resposta).forEach((res)=> {
+              // console.log(res);
+            // var nome_popular = res.nome_popular.replace('Ã©', 'é');
+            // nome_popular = nome_popular.replace('Ã§', 'ç');
+                        $('tbody').append("<tr <tr ><td>"+res.nome_cientifico+"</td><td>"+res.sexo+"</td><td><strong>"+res.numeracao+"</strong></td><td>"+res.data_nascimento+"</td><td><strong>"+res.status+"</strong></td><td>"+res.valor_un+"</td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-edit-alt  me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalCenter'></i> </a> </td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-trash me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalToggle'></i> </a> </td></tr>")
+                      });
+                        $('tbody').html(tbody);
           },
           error: function(resposta){
-          errorMessage('Ops.Não foi possível deletar o registro por erro interno do sistema. Entre em contato com o desenvolvedor');
+          errorMessage('Ops.Não foi possível filtrar por erro interno do sistema. Entre em contato com o desenvolvedor');
           }
           
       });

@@ -102,12 +102,19 @@ public function filtraEstoque()
 {
     $request = \Config\Services::request();
     $busca = $request->getPost(); 
-   
-    if (empty($busca)) {
+    $lista = [];
+    foreach($busca as $b){
+    $lista[] = $b['valor'];
     }
+   $lista =  implode("'OR status= '", $lista); 
+   
+    if (empty($busca)) {}
     $db = \Config\Database::connect('default',true);
-    $especiesEncontradas = $db->query("SELECT * FROM produto_final
-      WHERE status ='$busca' ")->getResultArray();
+ 
+    $especiesEncontradas = $db->query("SELECT * , especies.nome_cientifico FROM produto_final
+    INNER JOIN especies ON especies.id_especie = produto_final.id_categoria_especie
+    WHERE status ='$lista'") ->getResultArray();
+    
     return json_encode($especiesEncontradas);
 }
 

@@ -47,6 +47,7 @@ $routes->post('/excluiClientes', 'Vendas::ExcluiClientes');
 $routes->post('/historicoClientes', 'Vendas::historicoClientes');
 $routes->post('/buscaEstoque', 'Plantel::buscaEstoque');
 $routes->post('/filtraEstoque', 'Plantel::filtraEstoque');
+$routes->post('/buscaVendas', 'Vendas::BuscaVendas');
 
 /*
  * --------------------------------------------------------------------

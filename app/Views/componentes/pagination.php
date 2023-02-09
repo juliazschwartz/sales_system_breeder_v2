@@ -1,5 +1,6 @@
-<?php $active = $_GET['page'] ?? 1 ;
-$order = $_GET['order'] ?? 'DESC';
+<?php 
+$active = $_GET['page'] ?? 1 ;
+$order = $_GET['order'] ?? '';
 $par = $_GET['par'] ?? '';
 ?>
 <nav aria-label="Page navigation" style="align-self: center;">

@@ -96,4 +96,18 @@ class Vendas extends BaseController
         return json_encode($especieDeletada);
 }
 
+public function BuscaVendas()		
+{
+    $request = \Config\Services::request();
+    $busca = $request->getPost('busca'); 
+    if (empty($busca)) {
+    }
+    $db = \Config\Database::connect('default',true);
+    $especiesEncontradas = $db->query("SELECT * FROM os 
+    WHERE cliente like '%$busca%' OR cpf_cnpj like '%$busca%' 
+    
+    ")->getResultArray();
+  return json_encode($especiesEncontradas);
+}
+
 }

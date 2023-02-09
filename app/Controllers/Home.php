@@ -57,7 +57,7 @@ class Home extends BaseController
     public function clientes()
     {
         $par = 'id_cliente';
-        $order = 'asc';
+        $order = 'desc';
         $page = 1;
       
         if(!empty($_GET['order'])){
@@ -129,7 +129,32 @@ class Home extends BaseController
     }
     public function vendas()
     {
-        return view('vendas');
+        $par = 'id_os';
+        $order = 'desc';
+        $page = 1;
+      
+        if(!empty($_GET['order'])){
+            $order = $_GET['order'];
+            $par = $_GET['par'];
+            // $order = "ORDER BY $par $order"
+            if($par == 'nome') $par = "TRIM($par)";
+        };
+        if(!empty($_GET['page'])){
+            $page = $_GET['page'];
+        };
+        $db = \Config\Database::connect('default',true);
+        $count = $db->query("SELECT COUNT(id_os) as count FROM os")->getResultArray();
+        $limit = 10;
+        $total = $count[0]['count'] ;
+        $pages = ceil((int)$total / $limit);
+        $offset = ($page - 1)  * $limit;
+        $start = $offset + 1;
+        $end = min(($offset + $limit), $total);
+      
+        $os = ['os' => $db->query("SELECT * FROM os ORDER BY $par $order  LIMIT $limit OFFSET $offset")->getResultArray(), 'paginacao'=>[
+            'limit'=>$limit, 'total'=>$total, 'pages'=>$pages, 'page'=> $page, 'offset'=> $offset]];
+       
+        return view('vendas',$os);
     }
     public function nfe()
     {

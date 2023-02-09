@@ -101,8 +101,8 @@ public function BuscaEstoque()
 public function filtraEstoque()		
 {
     $request = \Config\Services::request();
-    $busca = $request->getPost('busca'); 
-
+    $busca = $request->getPost(); 
+   
     if (empty($busca)) {
     }
     $db = \Config\Database::connect('default',true);

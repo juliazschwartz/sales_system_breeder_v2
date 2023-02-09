@@ -99,15 +99,15 @@ position: absolute;">
                 <div class = "d-flex align-items-center mb-3">
                 <div class="col-md mx-3">
                           <div class="form-check mt-3">
-                            <input class="form-check-input" type="checkbox"  id="defaultCheck1" checked="" value="disponivel">
+                            <input class="form-check-input" type="checkbox"  id="defaultCheck1" checked="" value="disponivel" oninput="filtraEstoque()">
                             <label class="form-check-label" for="defaultCheck1"> Disponíveis </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox"id="defaultCheck2" checked="" value="reservado">
+                            <input class="form-check-input" type="checkbox"id="defaultCheck2" checked="" value="reservado" oninput="filtraEstoque()">
                             <label class="form-check-label" for="defaultCheck2"> Reservados </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="defaultCheck3" checked=""  value="vendido">
+                            <input class="form-check-input" type="checkbox" id="defaultCheck3" checked=""  value="vendido" oninput="filtraEstoque()">
                             <label class="form-check-label" for="defaultCheck3"> Vendidos </label>
                           </div>
                    
@@ -399,6 +399,40 @@ nome_popular = nome_popular.replace('Ã§', 'ç');
             
       });
   });
+
+
+  function filtraEstoque(){
+   var checked =  $('.form-check').find('input:checked');
+   var checados = {};
+   delete checked.length ;
+    delete checked.prevObject ;
+   for (var [key, value] of Object.entries(checked)) {
+    checados[key]= {valor: value.value}
+
+   }
+   console.log(checados);
+    $.ajax({
+           url: "filtraEstoque",
+           type: 'post',
+           data : checados,
+           success: function(resposta){
+            $('.bs-toast').removeClass('d-none');
+            if(resposta=='true'){
+              setTimeout(reload, 1000);
+            }
+            else {
+            errorMessage('Ops.Não foi deletar o registro. Tente novamente ou entre em contato com o desenvolvedor');
+            }
+          },
+          error: function(resposta){
+          errorMessage('Ops.Não foi possível deletar o registro por erro interno do sistema. Entre em contato com o desenvolvedor');
+          }
+          
+      });
+}
+
+
+  
   function reload(){
     window.location.reload(true);
   }
@@ -490,5 +524,7 @@ function clickDelete(){
            
       });
 });
+
+
   })
   </script>

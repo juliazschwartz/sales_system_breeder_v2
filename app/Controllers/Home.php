@@ -57,7 +57,7 @@ class Home extends BaseController
     public function clientes()
     {
         $par = 'id_cliente';
-        $order = 'desc';
+        $order = 'asc';
         $page = 1;
       
         if(!empty($_GET['order'])){
@@ -87,7 +87,7 @@ class Home extends BaseController
     public function estoque()
     {
         $par = 'id_produto';
-        $order = '';
+        $order = 'asc';
         $page = 1;
         
         if(!empty($_GET['order'])){

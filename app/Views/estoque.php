@@ -342,12 +342,10 @@ position: absolute;">
           var html = "<div class='alert alert-dark alert-dismissible m-3' role='alert'> Nenhum Registro Encontrado <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
            if(resposta!= '[]'){
             var tbody = JSON.parse(resposta).forEach((res)=> {
-            
-var nome_popular = res.nome_popular.replace('Ã©', 'é');
-nome_popular = nome_popular.replace('Ã§', 'ç');
-
-
-            $('tbody').append("<tr <tr ><td>"+res.nome_cientifico+"</td><td>"+res.sexo+"</td><td><strong>"+res.numeracao+"</strong></td><td>"+res.data_nascimento+"</td><td><strong>"+res.status+"</strong></td><td>"+res.valor_un+"</td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-edit-alt  me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalCenter'></i> </a> </td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-trash me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalToggle'></i> </a> </td></tr>")
+            var nome_popular = res.nome_popular.replace('Ã©', 'é');
+            nome_popular = nome_popular.replace('Ã§', 'ç');
+            var sexo = res.sexo.replace('Ãª', 'ê');
+            $('tbody').append("<tr <tr ><td>"+res.nome_cientifico+"</td><td>"+sexo+"</td><td><strong>"+res.numeracao+"</strong></td><td>"+res.nascimento+"</td><td><strong>"+res.status+"</strong></td><td>"+res.valor_un+"</td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-edit-alt  me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalCenter'></i> </a> </td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-trash me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalToggle'></i> </a> </td></tr>")
           });
             $('tbody').html(tbody);
             
@@ -365,8 +363,7 @@ nome_popular = nome_popular.replace('Ã§', 'ç');
       $("#content-excel").val(JSON.stringify(dados));
        }
    });
-}
-  )
+});
 
 
   $('#formEditaEspecies').submit(function(e){
@@ -415,20 +412,27 @@ nome_popular = nome_popular.replace('Ã§', 'ç');
            type: 'post',
            data : checados,
            success: function(resposta){
-            $('.bs-toast').removeClass('d-none');
-            console.log(resposta.length);
+            // $('.bs-toast').removeClass('d-none');
+            // console.log(resposta.length);
             $('tbody').html('');
             var tbody = JSON.parse(resposta).forEach((res)=> {
-              // console.log(res);
-            // var nome_popular = res.nome_popular.replace('Ã©', 'é');
-            // nome_popular = nome_popular.replace('Ã§', 'ç');
-                        $('tbody').append("<tr <tr ><td>"+res.nome_cientifico+"</td><td>"+res.sexo+"</td><td><strong>"+res.numeracao+"</strong></td><td>"+res.data_nascimento+"</td><td><strong>"+res.status+"</strong></td><td>"+res.valor_un+"</td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-edit-alt  me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalCenter'></i> </a> </td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-trash me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalToggle'></i> </a> </td></tr>")
+              console.log(res);
+            var sexo = res.sexo.replace('Ãª', 'ê');
+                        $('tbody').append("<tr <tr ><td>"+res.nome_cientifico+"</td><td>"+sexo+"</td><td><strong>"+res.numeracao+"</strong></td><td>"+res.nascimento+"</td><td><strong>"+res.status+"</strong></td><td>"+res.valor_un+"</td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-edit-alt  me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalCenter'></i> </a> </td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-trash me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalToggle'></i> </a> </td></tr>")
                       });
                         $('tbody').html(tbody);
+                        var data = $('tbody').find('tr');
+    delete data.length ;
+    delete data.prevObject ;
+  for (var [key, value] of Object.entries(data)) {
+    dados[key]= {'codigo;': value.getAttribute('data-codigo')+';', 'nome_cientifico;': value.getAttribute('data-cientifico')+';','nome_popular;' :  value.getAttribute('data-popular')+';' };
+      } ;
+      $("#content-excel").val(JSON.stringify(dados));
           },
-          error: function(resposta){
-          errorMessage('Ops.Não foi possível filtrar por erro interno do sistema. Entre em contato com o desenvolvedor');
-          }
+          
+          // error: function(resposta){
+          // errorMessage('Ops.Não foi possível filtrar por erro interno do sistema. Entre em contato com o desenvolvedor');
+          // }
           
       });
 }

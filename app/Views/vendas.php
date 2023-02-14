@@ -155,7 +155,7 @@ position: absolute;">
                           <div class="modal-dialog modal-lg modal-clientes modal-dialog-centered" role="document">
                             <div class="modal-content">
                               <div class="modal-header">
-                                <h5 class="modal-title" id="modalCenterTitle">Novo Cliente</h5>
+                                <h5 class="modal-title" id="modalCenterTitle">Nova Venda</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                               </div>
                               <form id="formEditaEspecies">
@@ -167,99 +167,26 @@ position: absolute;">
                                   </div>
                                 </div>
                                 <div class="row">
-                                  <div class="col mb-3">
-                                    <label for="nameWithTitle" class="form-label" >Nome</label>
-                                    <input type="text"  class="form-control" id = "nome" name="nome">
-                                  </div>
-                                  <div class="col mb-3">
-                                    <label for="nameWithTitle" class="form-label" >Data de Nascimento</label>
-                                    <input type="date"  class="form-control" placeholder="" id = "nascimento" name="nascimento">
-                                  </div>
+                                <div class="col mb-3">
+                        <label for="defaultSelect" class="form-label">Selecione o Cliente</label>
+                        <select id="defaultSelect" class="form-select">
+                          <?php foreach($clientes as $cliente){
+                            ?>
+                          <option value="<?=$cliente['nome']?>"><?=$cliente['nome']?></option>
+                          <?php } ?>
+                        </select>
+                      </div>
+                                <div class="col mb-3">
+                        <label for="defaultSelect" class="form-label">Selecione o destino</label>
+
+                        <select id="defaultSelect" class="form-select">
+                          <option value="0">Cliente Final</option>
+                          <option value="1">Cliente Revenda</option>
+                        </select>
+                      </div>
+                                
 
                                   
-                                  
-                                </div>
-                                <div class = "d-flex my-3">
-                                  <div class="form-check mx-1">
-                                  <input name="fisica_juridica" class="form-check-input" type="radio" value="fisica" id="fisica" checked="">
-                                  <label class="form-check-label" for="fisica"> Pessoa Física </label>
-      </div>
-                                <div class="form-check">
-                                  <input name="fisica_juridica" class="form-check-input mx-1" type="radio" value="juridica" id="juridica">
-                                  <label class="form-check-label" for="juridica"> Pessoa Jurídica </label>
-                                </div>
-      </div>
-                                <div class="row">
-                               
-                                  <div class="col mb-3">
-                                    <label for="nameWithTitle" class="form-label" >CPF</label>
-                                    <input type="text"  class="form-control" placeholder="" id = "cpf_cnpj" name="cpf_cnpj">
-                                  </div>
-                                  <div class="col mb-3">
-                                    <label for="nameWithTitle" class="form-label">Inscrição Estadual</label>
-                                    <input type="text"  class="form-control" placeholder="" id = "inscricao" name = "inscricao">
-                                  </div>
-                                  <div class="col mb-3">
-                                    <label for="nameWithTitle" class="form-label" >Registro (Revenda)</label>
-                                    <input type="text"  class="form-control" placeholder="" id = "Registro no Ibama" name ="Registro no Ibama">
-                                  </div>
-                                </div>
-                                
-                             
-                                <div class="row">
-                                  <div class="col mb-3">
-                                    <label for="nameWithTitle" class="form-label">CEP</label>
-                                    <input type="text"  class="form-control" placeholder=""  id = "cep" name ="cep">
-                                  </div>
-                                  <div class="col mb-3">
-                                    <label for="nameWithTitle" class="form-label">UF</label>
-                                    <input type="text"  class="form-control" placeholder=""  id = "uf" name ="uf">
-                                  </div>
-                                  
-                                </div>
-                                <div class="row">
-                                <div class="col mb-3">
-                                    <label for="nameWithTitle" class="form-label">Cidade</label>
-                                    <input type="text"  class="form-control" placeholder=""  id = "cidade" name ="cidade">
-                                  </div>
-                                  <div class="col mb-3">
-                                    <label for="nameWithTitle" class="form-label">Bairro</label>
-                                    <input type="text"  class="form-control" placeholder=""  id = "bairro" name ="bairro">
-                                  </div>
-                                </div>
-                            
-                                <div class="row">
-                            
-                                </div>
-                                <div class="row">
-                                <div class="col mb-3">
-                                    <label for="nameWithTitle" class="form-label">Logradouro</label>
-                                    <input type="text"  class="form-control" placeholder=""  id = "logradouro" name ="logradouro">
-                                  </div>
-                                <div class="col mb-3">
-                                  
-                                    <label for="nameWithTitle" class="form-label">Número</label>
-                                    <input type="text"  class="form-control" placeholder=""  id = "numero" name ="numero">
-                                  </div>
-                                  <div class="col mb-3">
-                                    <label for="nameWithTitle" class="form-label">Complemento</label>
-                                    <input type="text"  class="form-control" placeholder=""  id = "complemento" name ="complemento">
-                                  </div>
-                                </div>
-                            
-                                <div class="row">
-                                  <div class="col mb-3">
-                                    <label for="nameWithTitle" class="form-label">Telefone</label>
-                                    <input type="text"  class="form-control" placeholder=""  id = "telefone" name ="telefone">
-                                  </div>
-                                  <!-- <div class="col mb-3">
-                                    <label for="nameWithTitle" class="form-label">Celular</label>
-                                    <input type="text"  class="form-control" placeholder=""  id = "celular" name ="celular">
-                                  </div> -->
-                                  <div class="col mb-3">
-                                    <label for="nameWithTitle" class="form-label">Email</label>
-                                    <input type="text"  class="form-control" placeholder=""  id = "email" name ="email">
-                                  </div>
                                 </div>
                         
                                
@@ -312,6 +239,7 @@ position: absolute;">
                         <th>Valor Total  <a class='bx bx-sort' href="?par=valor_total&order=<?=$order?>"></th>
                         <th >Status</th></th>
                         <th>Forma de Pagamento</th>
+                        <th>Operador</th>
                         <th></th>
                       </tr>
                     </thead>
@@ -331,6 +259,7 @@ data-forma_pagamento="<?=$venda['forma_pagamento']?>">
                         <td style = "padding: 0 33px;"><?= utf8_decode($venda['valor_total'])?></td>
                         <td><span class="badge <?=$classe?>"><?= utf8_decode($venda['status'])?></span></td>
                         <td><?= $forma_pagamento?></td>
+                        <td class = "operador"><?= $venda['operador']?></td>
                        
                         
                         <td>

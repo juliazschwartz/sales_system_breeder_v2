@@ -235,7 +235,7 @@ position: absolute;">
                         <th>Data Nascimento</a></th></th>
                         <th>Status</th>
                         <th>Preço de Compra <a class='bx bx-sort' href="?par=valor_un&order=<?=$order?>" ></a></th>
-                        <th></th>
+                 
                         <th></th>
                       </tr>
                     </thead>
@@ -252,13 +252,13 @@ position: absolute;">
                         <td><strong><?= utf8_decode($animal['nascimento'])?><strong></td>
                         <td><strong><?= utf8_decode($animal['status'])?><strong></td>
                         <td><strong><?= utf8_decode($animal['valor_un'])?><strong></td>
-                        
-                        <td>
+                     
+                        <!-- <td>
                         <a class="text-center" href="javascript:void(0);"
                                 ><i class="bx bx-edit-alt me-1 icone-tabela" data-bs-toggle="modal" data-bs-target="#modalCenter"></i> </a  >
-                        </td>
+                        </td> -->
 
-                        <td>  
+                        <td>
                         <a class="text-center" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modalToggle"
                                 ><i class="bx bx-trash me-1 icone-tabela"></i> </a
                               ></td>
@@ -418,7 +418,7 @@ position: absolute;">
             var tbody = JSON.parse(resposta).forEach((res)=> {
               console.log(res);
             var sexo = res.sexo.replace('Ãª', 'ê');
-                        $('tbody').append("<tr <tr ><td>"+res.nome_cientifico+"</td><td>"+sexo+"</td><td><strong>"+res.numeracao+"</strong></td><td>"+res.nascimento+"</td><td><strong>"+res.status+"</strong></td><td>"+res.valor_un+"</td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-edit-alt  me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalCenter'></i> </a> </td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-trash me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalToggle'></i> </a> </td></tr>")
+                        $('tbody').append("<tr <tr ><td>"+res.nome_cientifico+"</td><td>"+sexo+"</td><td><strong>"+res.numeracao+"</strong></td><td>"+res.nascimento+"</td><td><strong>"+res.status+"</strong></td><td>"+res.valor_un+"</td></tr>")
                       });
                         $('tbody').html(tbody);
                         var data = $('tbody').find('tr');
@@ -450,19 +450,19 @@ position: absolute;">
     $('.toast-body').text(mensagem);
   }
   
-function clickEdit(){
-  $('.bx-edit-alt').click(function(e){
-    e.preventDefault;
-    var linha = $(this).parent().parent().parent().data();
-    for (var [key, value] of Object.entries(linha)) {
-        value = value.toString().replace('Ã©', 'é');
-        value = value.replace('Ã§', 'ç');
-       $('#'+key+'').val(value);
-        } 
+// function clickEdit(){
+//   $('.bx-edit-alt').click(function(e){
+//     e.preventDefault;
+//     var linha = $(this).parent().parent().parent().data();
+//     for (var [key, value] of Object.entries(linha)) {
+//         value = value.toString().replace('Ã©', 'é');
+//         value = value.replace('Ã§', 'ç');
+//        $('#'+key+'').val(value);
+//         } 
     
-    }) 
+//     }) 
 
-  }
+//   }
 function clickDelete(){
   $('.bx-trash').click(function(e){
     e.preventDefault;

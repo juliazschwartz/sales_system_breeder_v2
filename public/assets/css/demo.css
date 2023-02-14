@@ -2,6 +2,13 @@
 * demo.css
 * File include item demo only specific css only
 ******************************************************************************/
+
+.operador{
+  text-transform: uppercase;
+font-weight: bold;
+color: blue!important;
+}
+
 .embreve{
   font-size:10px
 }

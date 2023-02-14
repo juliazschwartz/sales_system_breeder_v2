@@ -1,9 +1,7 @@
 <?php
 namespace App\Controllers;
 use App\Controllers\BaseController;
-ini_set('display_errors', '1');
-ini_set('display_startup_errors', '1');
-error_reporting(E_ALL);
+
 
 
 class Home extends BaseController
@@ -137,7 +135,8 @@ class Home extends BaseController
             $order = $_GET['order'];
             $par = $_GET['par'];
             // $order = "ORDER BY $par $order"
-            if($par == 'nome') $par = "TRIM($par)";
+            if($par == 'cliente') $par = "TRIM($par)";
+            if($par == 'valor_total') $par='valor_total +1';
         };
         if(!empty($_GET['page'])){
             $page = $_GET['page'];

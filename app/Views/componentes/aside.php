@@ -197,6 +197,7 @@
 
         <script>
           var active = "<?=$active?>".split('/')[1];
-          console.log(document.getElementById(active).classList.add('active'));
+          active = active.split('?')[0];
+          document.getElementById(active).classList.add('active');
 
         </script>

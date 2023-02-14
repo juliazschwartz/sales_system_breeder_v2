@@ -289,10 +289,10 @@ position: absolute;">
                   <table class="table table-striped">
                     <thead>
                       <tr>
-                        <th>Cliente<a class='bx bx-sort' href="?par=nome&order=<?=$order?>"></a></th>
+                        <th>Cliente<a class='bx bx-sort' href="?par=cliente&order=<?=$order?>"></a></th>
                         <th>CPF/CNPJ</th></th>
-                        <th>Data Pedido</th></th>
-                        <th>Valor Total</th></th>
+                        <th>Data Pedido <a class='bx bx-sort' href="?par=id_os&order=<?=$order?>"></a></th></th>
+                        <th>Valor Total  <a class='bx bx-sort' href="?par=valor_total&order=<?=$order?>"></th>
                         <th >Status</th></th>
                         <th>Forma de Pagamento</th>
                         <th></th>

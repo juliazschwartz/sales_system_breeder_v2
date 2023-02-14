@@ -150,7 +150,7 @@ class Home extends BaseController
         $start = $offset + 1;
         $end = min(($offset + $limit), $total);
       
-        $os = ['os' => $db->query("SELECT * FROM os ORDER BY $par $order  LIMIT $limit OFFSET $offset")->getResultArray(), 'paginacao'=>[
+        $os = ['os' => $db->query("SELECT * FROM os  where tipo = 0 ORDER BY $par $order LIMIT $limit OFFSET $offset")->getResultArray(), 'paginacao'=>[
             'limit'=>$limit, 'total'=>$total, 'pages'=>$pages, 'page'=> $page, 'offset'=> $offset]];
        
         return view('vendas',$os);

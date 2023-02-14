@@ -95,7 +95,24 @@ position: absolute;">
 
               <!-- Striped Rows -->
               <div class="card">
-                <div class = "d-flex align-items-center "><h5 class="card-header"><button type="button" class="btn btn-primary nova_especie" data-bs-toggle="modal" data-bs-target="#modalCenter">Nov Cliente</button></h5>
+              <div class="col-md mx-3">
+                          <div class="form-check mt-3">
+                            <input class="form-check-input" type="checkbox" id="defaultCheck1" checked="" value="Venda Finalizada" oninput="filtraEstoque()">
+                            <label class="form-check-label" for="defaultCheck1"> Vendas Finalizadas </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="defaultCheck2" checked="" value="Venda incompleta" oninput="filtraEstoque()">
+                            <label class="form-check-label" for="defaultCheck2"> Vendas Incompletas </label>
+                          </div>
+                   
+                        </div>
+                <div class = "d-flex align-items-center ">
+           
+                
+                
+                  <h5 class="card-header">
+            
+                <button type="button" class="btn btn-primary nova_especie" data-bs-toggle="modal" data-bs-target="#modalCenter">Nova Venda</button></h5>
                
                 <span class = "w-75 mx-2">
                   <form class="d-flex" id="formBuscaEspecies" method="post">
@@ -300,10 +317,7 @@ position: absolute;">
                     </thead>
                     <tbody class="table-border-bottom-0">
                         <?php foreach($os as $venda){
-                            if($venda['status'] == 'Venda Finalizada' ||  $venda['status'] == 'Compra Finalizada' ) $classe = 'bg-success';
-                            
-                            else $classe ='bg-warning';
-                           
+                            $venda['status'] == 'Venda Finalizada'? $classe = 'bg-success' :  $classe ='bg-warning';
                             utf8_decode($venda['forma_pagamento']) == 'avista' ? $forma_pagamento = 'à vista' : $forma_pagamento =  utf8_decode($venda['forma_pagamento']);
 ?>
 <tr data-id='<?=$venda['id_os']?>' data-cliente='<?=$venda['cliente']?>' data-cpf_cnpj='<?=$venda['cpf_cnpj']?>' data-data_pedido="<?=$venda['data_pedido']?> "
@@ -328,10 +342,7 @@ data-forma_pagamento="<?=$venda['forma_pagamento']?>">
                         <a class="text-center" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modalToggle"
                                 ><i class="bx bx-trash me-1 icone-tabela"></i> </a
                               ></td>
-                        <td>  
-                        <a class="text-center historicoCliente" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modalHistorico"
-                                ><i class='bx bx-history' style="font-size: 25px;"></i></a
-                              ></td>
+                        
                       </tr>
                       <?php
                         }
@@ -390,32 +401,70 @@ data-forma_pagamento="<?=$venda['forma_pagamento']?>">
 
 
 <script>
-
-function historico(){
-  $('.historicoCliente').click(function(){
-    var cpf = $(this).parent().parent().data('cpf_cnpj');
+function filtraEstoque(){
+   var checked =  $('.col-md').find('.form-check').find('input:checked');
+   var checados = {};
+   delete checked.length ;
+    delete checked.prevObject ;
+   for (var [key, value] of Object.entries(checked)) {
+    checados[key]= {valor: value.value}
+   }
     $.ajax({
-        url: "historicoClientes",
-        type: 'post',
-        data: {data:cpf},
-        success: function(resposta){
-          var html = "<div class='alert alert-dark alert-dismissible m-3' role='alert'> Nenhum Registro Encontrado <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
-           if(resposta!= '[]'){ 
-             $('#modalHistorico').find('tbody').html('');
-
+           url: "filtraVendas",
+           type: 'post',
+           data : checados,
+           success: function(resposta){
+            // $('.bs-toast').removeClass('d-none');
+            // console.log(resposta.length);
+            $('tbody').html('');
             var tbody = JSON.parse(resposta).forEach((res)=> {
-              res.status == 'nfe_emitida' ?  classe = 'success' :  classe = 'danger';
+              res.status == 'Venda Finalizada'?  classe = 'success' :  classe = 'danger';
               res.forma_pagamento == 'avista' ?  res.forma_pagamento = 'à vista' : res.forma_pagamento = res.forma_pagamento;
-            $('#modalHistorico').find('tbody').append("<tr data-id_os = "+res.id_os+"><td><strong>"+res.cliente+"</strong></td><td><strong>R$ "+res.cpf_cnpj+"<strong></td><td><span class='badge bg-label-"+classe+" me-1'>"+res.data_pedido+"</span></td><td>"+res.valor_total+"</td><td>"+res.status+"</td></tr>")
-          });
-       }
-      }
-   });
-   
-      })
-      
-      
+
+            $('tbody').append("<tr><td><strong>"+res.cliente+"</strong></td><td><strong>"+res.cpf_cnpj+"<strong></td><td><strong>"+res.data_pedido+"<strong></td><td>"+res.valor_total+"</td><td><span class='badge bg-"+classe+"'>"+res.status+"</span></td><td>"+res.forma_pagamento+"</td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-edit-alt  me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalCenter'></i> </a> </td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-trash me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalToggle'></i> </a> </td></tr>")
+                      });
+                        $('tbody').html(tbody);
+                        var data = $('tbody').find('tr');
+    delete data.length ;
+    delete data.prevObject ;
+  for (var [key, value] of Object.entries(data)) {
+    dados[key]= {'codigo;': value.getAttribute('data-codigo')+';', 'nome_cientifico;': value.getAttribute('data-cientifico')+';','nome_popular;' :  value.getAttribute('data-popular')+';' };
+      } ;
+      $("#content-excel").val(JSON.stringify(dados));
+          },
+          
+          // error: function(resposta){
+          // errorMessage('Ops.Não foi possível filtrar por erro interno do sistema. Entre em contato com o desenvolvedor');
+          // }
+          
+      });
 }
+
+// function historico(){
+//   $('.historicoCliente').click(function(){
+//     var cpf = $(this).parent().parent().data('cpf_cnpj');
+//     $.ajax({
+//         url: "historicoClientes",
+//         type: 'post',
+//         data: {data:cpf},
+//         success: function(resposta){
+//           var html = "<div class='alert alert-dark alert-dismissible m-3' role='alert'> Nenhum Registro Encontrado <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
+//            if(resposta!= '[]'){ 
+//              $('#modalHistorico').find('tbody').html('');
+
+//             var tbody = JSON.parse(resposta).forEach((res)=> {
+//               res.status == 'nfe_emitida' ?  classe = 'success' :  classe = 'danger';
+//               res.forma_pagamento == 'avista' ?  res.forma_pagamento = 'à vista' : res.forma_pagamento = res.forma_pagamento;
+//             $('#modalHistorico').find('tbody').append("<tr data-id_os = "+res.id_os+"><td><strong>"+res.cliente+"</strong></td><td><strong>R$ "+res.cpf_cnpj+"<strong></td><td><span class='badge bg-label-"+classe+" me-1'>"+res.data_pedido+"</span></td><td>"+res.valor_total+"</td><td>"+res.status+"</td></tr>")
+//           });
+//        }
+//       }
+//    });
+   
+//       })
+      
+      
+// }
   $('#formBuscaEspecies').submit(function(e)
   {
 //     var mapObj = {
@@ -439,10 +488,10 @@ function historico(){
            if(resposta!= '[]'){
             var tbody = JSON.parse(resposta).forEach((res)=> {
     
-              res.status == 'Venda Finalizada' || res.status == 'Compra Finalizada' ?  classe = 'success' :  classe = 'danger';
+              res.status == 'Venda Finalizada'?  classe = 'success' :  classe = 'danger';
               res.forma_pagamento == 'avista' ?  res.forma_pagamento = 'à vista' : res.forma_pagamento = res.forma_pagamento;
 
-            $('tbody').append("<tr><td><strong>"+res.cliente+"</strong></td><td><strong>"+res.cpf_cnpj+"<strong></td><td><strong>"+res.data_pedido+"<strong></td><td>"+res.valor_total+"</td><td><span class='badge bg-"+classe+"'>"+res.status+"</span></td><td>"+res.forma_pagamento+"</td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-edit-alt  me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalCenter'></i> </a> </td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-trash me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalToggle'></i> </a> </td><td><a class='text-center historicoCliente' href='javascript:void(0);' data-bs-toggle='modal' data-bs-target='#modalHistorico'><i class='bx bx-history' style='font-size: 25px;'></i></a></td></tr>")
+            $('tbody').append("<tr><td><strong>"+res.cliente+"</strong></td><td><strong>"+res.cpf_cnpj+"<strong></td><td><strong>"+res.data_pedido+"<strong></td><td>"+res.valor_total+"</td><td><span class='badge bg-"+classe+"'>"+res.status+"</span></td><td>"+res.forma_pagamento+"</td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-edit-alt  me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalCenter'></i> </a> </td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-trash me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalToggle'></i> </a> </td></tr>")
           
           });
             

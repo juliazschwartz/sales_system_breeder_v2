@@ -95,7 +95,7 @@ position: absolute;">
 
               <!-- Striped Rows -->
               <div class="card">
-                <div class = "d-flex align-items-center "><h5 class="card-header"><button type="button" class="btn btn-primary nova_especie" data-bs-toggle="modal" data-bs-target="#modalCenter">Novo Cliente</button></h5>
+                <div class = "d-flex align-items-center "><h5 class="card-header"><button type="button" class="btn btn-primary nova_especie" data-bs-toggle="modal" data-bs-target="#modalCenter">Novo cliente</button></h5>
                
                 <span class = "w-75 mx-2">
                   <form class="d-flex" id="formBuscaEspecies" method="post">

@@ -104,10 +104,26 @@ public function BuscaVendas()
     }
     $db = \Config\Database::connect('default',true);
     $especiesEncontradas = $db->query("SELECT * FROM os 
-    WHERE cliente like '%$busca%' OR cpf_cnpj like '%$busca%' 
+    WHERE cliente like '%$busca%'  AND tipo =0 OR cpf_cnpj like '%$busca%' AND tipo =0 
     
     ")->getResultArray();
   return json_encode($especiesEncontradas);
+}
+
+public function filtraVendas(){
+    $request = \Config\Services::request();
+    $busca = $request->getPost(); 
+    $lista = [];
+    foreach($busca as $b){
+    $lista[] = $b['valor'];
+    }
+   $lista =  implode("'OR status= '", $lista); 
+   
+    if (empty($busca)) {}
+    $db = \Config\Database::connect('default',true);
+    $osEncontradas = $db->query("SELECT *  FROM os
+    WHERE status ='$lista'") ->getResultArray();
+    return json_encode($osEncontradas);
 }
 
 }

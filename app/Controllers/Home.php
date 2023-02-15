@@ -150,9 +150,11 @@ class Home extends BaseController
         $start = $offset + 1;
         $end = min(($offset + $limit), $total);
       
-        $os = ['os' => $db->query("SELECT * FROM os  where tipo = 0 ORDER BY $par $order LIMIT $limit OFFSET $offset")->getResultArray(), 'paginacao'=>[
-            'limit'=>$limit, 'total'=>$total, 'pages'=>$pages, 'page'=> $page, 'offset'=> $offset],'clientes' =>  $db->query("SELECT nome FROM clientes ORDER BY id_cliente DESC")->getResultArray()];
-       
+        $os = ['os' => $db->query("SELECT * FROM os  where tipo = 0 ORDER BY $par $order LIMIT $limit OFFSET $offset")->getResultArray(), 
+               'paginacao'=> [ 'limit'=>$limit, 'total'=>$total, 'pages'=>$pages, 'page'=> $page, 'offset'=> $offset],
+               'clientes' =>  $db->query("SELECT nome FROM clientes ORDER BY id_cliente DESC")->getResultArray(),
+               'exemplares' => $db->query("SELECT produto_final.id_produto, especies.nome_cientifico, produto_final.valor_un, produto_final.numeracao FROM especies INNER JOIN produto_final ON especies.id_especie=produto_final.id_categoria_especie ORDER BY id_produto DESC")->getResultArray()
+        ];
         return view('vendas',$os);
     }
     public function nfe()

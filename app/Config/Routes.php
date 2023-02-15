@@ -49,6 +49,7 @@ $routes->post('/buscaEstoque', 'Plantel::buscaEstoque');
 $routes->post('/filtraEstoque', 'Plantel::filtraEstoque');
 $routes->post('/filtraVendas', 'Vendas::filtraVendas');
 $routes->post('/buscaVendas', 'Vendas::BuscaVendas');
+$routes->post('/buscaPrecoExemplar', 'Vendas::buscaPrecoExemplar');
 
 /*
  * --------------------------------------------------------------------

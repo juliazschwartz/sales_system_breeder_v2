@@ -125,5 +125,13 @@ public function filtraVendas(){
     WHERE status ='$lista'") ->getResultArray();
     return json_encode($osEncontradas);
 }
+public function buscaPrecoExemplar(){
+    $request = \Config\Services::request();
+    $id_os = $request->getPost('id_produto'); 
+    $db = \Config\Database::connect('default',true);
+    $osEncontradas = $db->query("SELECT valor_un FROM produto_final
+    WHERE id_produto ='$id_os'") ->getResultArray();
+    return json_encode($osEncontradas);
+}
 
 }

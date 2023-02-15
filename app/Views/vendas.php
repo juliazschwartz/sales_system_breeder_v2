@@ -184,10 +184,37 @@ position: absolute;">
                           <option value="1">Cliente Revenda</option>
                         </select>
                       </div>
-                                
+                      <div class="col mb-3"> 
+                                <label for="defaultSelect" class="form-label">Frete por conta do:</label>
+                                <select id="defaultSelect" class="form-select">
+                                <option value="0">Emitente</option>
+                          <option value="1">Destinatário</option>
+                         
+                        </select>
 
-                                  
+                          </div>
                                 </div>
+
+                                <div class="row">
+                               
+                                <div class="col mb-3"> 
+                                <label for="defaultSelect" class="form-label" >Exemplar</label>
+                                <select id="selectExemplar" class="form-select" >
+                                <?php foreach($exemplares as $exemplar){
+                            ?>
+                          <option value="<?=$exemplar['id_produto']?>"><?=$exemplar['nome_cientifico'].'-'.$exemplar['numeracao']?></option>
+                          <?php } ?>
+                     
+                        </select>
+
+                          </div>
+                        
+                          <div class="col mb-3">
+                                    <label for="nameWithTitle" class="form-label">Preço do Exemplar</label>
+                                    <input type="text" class="form-control" placeholder="" id="inscricao" name="inscricao">
+                                  </div>
+                        
+                          </div>
                         
                                
                                 <!-- <div class="row g-2">
@@ -330,6 +357,7 @@ data-forma_pagamento="<?=$venda['forma_pagamento']?>">
 
 
 <script>
+       
 function filtraEstoque(){
    var checked =  $('.col-md').find('.form-check').find('input:checked');
    var checados = {};
@@ -394,6 +422,18 @@ function filtraEstoque(){
       
       
 // }
+$('#selectExemplar').change(function(){
+          var id_produto = $(this).val();
+        $.ajax({
+            				type:'POST',
+            				url:'buscaPrecoExemplar',
+            				data:{'id_produto': id_produto},
+            				dataType:'html',
+            				success:function(txt){
+                    								$('#inscricao').val(JSON.parse(txt)[0].valor_un);
+                									}
+       						 })
+        });
   $('#formBuscaEspecies').submit(function(e)
   {
 //     var mapObj = {
@@ -521,6 +561,8 @@ function clickDelete(){
     clickEdit();
     clickDelete();
     historico();
+
+
     
   $("#cep").blur(function(){
 				// Remove tudo o que não é número para fazer a pesquisa
@@ -592,5 +634,10 @@ function clickDelete(){
           }
       });
       })
+
+     
+      
+
+
   })
   </script>

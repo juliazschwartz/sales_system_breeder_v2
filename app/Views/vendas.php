@@ -211,7 +211,7 @@ position: absolute;">
                         
                           <div class="col mb-3">
                                     <label for="nameWithTitle" class="form-label">Preço do Exemplar</label>
-                                    <input type="text" class="form-control" placeholder="" id="inscricao" name="preco_exemplarf" onkeypress="return(MascaraMoeda(this,'',',',event))">
+                                    <input type="text" class="form-control" placeholder="" id="inscricao" name="preco_exemplar" onkeypress="return(MascaraMoeda(this,'',',',event))">
                                   </div>
                                   <div class="col mb-3">
                                   <button type="submit" class="btn btn-primary editarCliente" style="margin-top:30px">incluir</button>         
@@ -223,7 +223,7 @@ position: absolute;">
                               <div class="table-inclusos modal-body">
                                 <h5 class = "modal-header">Exemplares Inclusos</h5>
                               <div class="table-responsive ">
-                  <table class="table table-hover">
+                  <table class="table table-hover inclusos_table">
                     <thead>
                       <tr>
                         <th>Espécie</th>
@@ -275,7 +275,7 @@ position: absolute;">
                           </div>
                         </div>
                 <div class="table-responsive " style ="font-size:12px">
-                  <table class="table table-striped">
+                  <table class="table table-striped table-vendas">
                     <thead>
                       <tr>
                         <th>Cliente<a class='bx bx-sort' href="?par=cliente&order=<?=$order?>"></a></th>
@@ -396,10 +396,10 @@ function filtraEstoque(){
               res.status == 'Venda Finalizada'?  classe = 'success' :  classe = 'danger';
               res.forma_pagamento == 'avista' ?  res.forma_pagamento = 'à vista' : res.forma_pagamento = res.forma_pagamento;
 
-            $('tbody').append("<tr><td><strong>"+res.cliente+"</strong></td><td><strong>"+res.cpf_cnpj+"<strong></td><td><strong>"+res.data_pedido+"<strong></td><td>"+res.valor_total+"</td><td><span class='badge bg-"+classe+"'>"+res.status+"</span></td><td>"+res.forma_pagamento+"</td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-edit-alt  me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalCenter'></i> </a> </td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-trash me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalToggle'></i> </a> </td></tr>")
+            $('.table-vendas').find('tbody').append("<tr><td><strong>"+res.cliente+"</strong></td><td><strong>"+res.cpf_cnpj+"<strong></td><td><strong>"+res.data_pedido+"<strong></td><td>"+res.valor_total+"</td><td><span class='badge bg-"+classe+"'>"+res.status+"</span></td><td>"+res.forma_pagamento+"</td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-edit-alt  me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalCenter'></i> </a> </td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-trash me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalToggle'></i> </a> </td></tr>")
                       });
                         $('tbody').html(tbody);
-                        var data = $('tbody').find('tr');
+                        var data =  $('.table-vendas').find('tbody').find('tr');
     delete data.length ;
     delete data.prevObject ;
   for (var [key, value] of Object.entries(data)) {
@@ -516,7 +516,7 @@ $('#selectExemplar').change(function(){
         data: data,
         success: function(resposta){
           // var tbody = "<tr><td></td><td><strong><strong></td> <td><strong><strong></td><td>Indefinido</td><td>Indefinido</td><td><a class='text-center' href='javascript:void(0);'><i class='bx bx-edit-alt me-1 icone-tabela'></i> </a  ></td> <td>  <a class='text-center' href='javascript:void(0);'><i class='bx bx-trash me-1 icone-tabela'></i> </a></td></tr>"
-          $('tbody').html('');
+          $('.table-vendas').find('tbody').html('');
           
           var html = "<div class='alert alert-dark alert-dismissible m-3' role='alert'> Nenhum Registro Encontrado <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
            if(resposta!= '[]'){
@@ -525,7 +525,7 @@ $('#selectExemplar').change(function(){
               res.status == 'Venda Finalizada'?  classe = 'success' :  classe = 'danger';
               res.forma_pagamento == 'avista' ?  res.forma_pagamento = 'à vista' : res.forma_pagamento = res.forma_pagamento;
 
-            $('tbody').append("<tr><td><strong>"+res.cliente+"</strong></td><td><strong>"+res.cpf_cnpj+"<strong></td><td><strong>"+res.data_pedido+"<strong></td><td>"+res.valor_total+"</td><td><span class='badge bg-"+classe+"'>"+res.status+"</span></td><td>"+res.forma_pagamento+"</td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-edit-alt  me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalCenter'></i> </a> </td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-trash me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalToggle'></i> </a> </td></tr>")
+            $('.table-vendas').find('tbody').append("<tr><td><strong>"+res.cliente+"</strong></td><td><strong>"+res.cpf_cnpj+"<strong></td><td><strong>"+res.data_pedido+"<strong></td><td>"+res.valor_total+"</td><td><span class='badge bg-"+classe+"'>"+res.status+"</span></td><td>"+res.forma_pagamento+"</td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-edit-alt  me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalCenter'></i> </a> </td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-trash me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalToggle'></i> </a> </td></tr>")
           
           });
             
@@ -554,14 +554,7 @@ $("#content-excel").val(JSON.stringify(dados));
   $('#formIniciaVenda').submit(function(e){
     e.preventDefault();
     data = $(this).closest('form').serialize();
-    // inputs = {};
-    // data =  $('#formEditaEspecies').find('.modal-body').children().children().children('textarea, input');
-    // delete data.length ;
-    // delete data.prevObject ;
-    // for (var [key, value] of Object.entries(data)) {
-    //    var id =  value.getAttribute('id');
-    //    inputs[id] = $('#'+id+'').val();
-    // }
+   
        $.ajax({
            url: "novaVenda",
            type: 'post',
@@ -569,7 +562,8 @@ $("#content-excel").val(JSON.stringify(dados));
            success: function(resposta){
             $('.bs-toast').removeClass('d-none');
             if(resposta=='true'){
-              // setTimeout(reload, 1000);
+            $('.inclusos_table').find('tbody').append("<tr><td><strong>"+res.cliente+"</strong></td><td><strong>"+res.cpf_cnpj+"<strong></td><td><strong>"+res.data_pedido+"<strong></td><td>"+res.valor_total+"</td><td><span class='badge bg-"+classe+"'>"+res.status+"</span></td><td>"+res.forma_pagamento+"</td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-edit-alt  me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalCenter'></i> </a> </td><td><a class='text-center'href='javascript:void(0);'><i class='bx bx-trash me-1 icone-tabela' data-bs-toggle='modal' data-bs-target='#modalToggle'></i> </a> </td></tr>")
+
             }
             else {
             errorMessage('Ops.Não foi possível salvar as alterações. Certifique-se que o campo de código da espécie esteja preenchido.');

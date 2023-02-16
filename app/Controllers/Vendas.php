@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controllers;
+use App\Controllers\BaseController;
 
 class Vendas extends BaseController
 {
@@ -152,10 +153,24 @@ public function novaVenda(){
             // $query = $db->query("UPDATE os SET cliente = '$cliente', tipo_cliente='$tipo_cliente', frete = '$frete', status='$fisica_juridica' WHERE id_os = '$id'");
     }
         else{
-       
+            // cadastra na tabela os
             $query = $db->query("INSERT INTO os ( cliente , tipo_cliente, frete , 
             valor_total, status)
             VALUES( '$cliente', '$tipo_cliente', '$frete', '$preco_exemplar', 'venda_incompleta')");
+
+            // recupera o id desse cadastro
+            $order = $db->query("SELECT * FROM os order by id_os DESC LIMIT 1")->getResultArray();
+            $id_os = $order[0]['id_os'];
+        
+            // busca na tabela produto_final as informações do exemplar
+            $info_exemplar = $db->query("SELECT * FROM produto_final WHERE id_produto = '$exemplar'")->getResultArray();
+            $id_especie = $info_exemplar[0]['id_categoria_especie'];
+            $anilha = $info_exemplar[0]['numeracao'];
+
+            // cadastra na tabela produtos_os as informações obtidas das duas tabelas
+            $query = $db->query("INSERT INTO produtos_os ( id_os , produto, quantidade , 
+            valor_total, preco_un, n_anilha, id_especie)
+            VALUES( '$id_os', '$exemplar', '1', '$preco_exemplar', '$preco_exemplar', '$anilha', '$id_especie' )");
         }
 
         return json_encode($query);

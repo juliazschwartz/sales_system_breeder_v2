@@ -158,7 +158,7 @@ position: absolute;">
                                 <h5 class="modal-title" id="modalCenterTitle">Nova Venda</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                               </div>
-                              <form id="formEditaEspecies">
+                              <form id="formIniciaVenda">
                               <div class="modal-body">
                                 <div class="row d-none">
                                   <div class="col mb-3">
@@ -169,7 +169,7 @@ position: absolute;">
                                 <div class="row">
                                 <div class="col mb-3">
                         <label for="defaultSelect" class="form-label">Selecione o Cliente</label>
-                        <select id="defaultSelect" class="form-select">
+                        <select id="cliente" class="form-select" name="cliente">
                           <?php foreach($clientes as $cliente){
                             ?>
                           <option value="<?=$cliente['nome']?>"><?=$cliente['nome']?></option>
@@ -179,14 +179,14 @@ position: absolute;">
                                 <div class="col mb-3">
                         <label for="defaultSelect" class="form-label">Selecione o destino</label>
 
-                        <select id="defaultSelect" class="form-select">
+                        <select id="tipo_cliente" class="form-select" name="tipo_cliente">
                           <option value="0">Cliente Final</option>
                           <option value="1">Cliente Revenda</option>
                         </select>
                       </div>
                       <div class="col mb-3"> 
                                 <label for="defaultSelect" class="form-label">Frete por conta do:</label>
-                                <select id="defaultSelect" class="form-select">
+                                <select id="frete" class="form-select" name="frete">
                                 <option value="0">Emitente</option>
                           <option value="1">Destinatário</option>
                          
@@ -199,7 +199,7 @@ position: absolute;">
                                
                                 <div class="col mb-3"> 
                                 <label for="defaultSelect" class="form-label" >Exemplar</label>
-                                <select id="selectExemplar" class="form-select" >
+                                <select id="selectExemplar" class="form-select" name="exemplar">
                                 <?php foreach($exemplares as $exemplar){
                             ?>
                           <option value="<?=$exemplar['id_produto']?>"><?=$exemplar['nome_cientifico'].'-'.$exemplar['numeracao']?></option>
@@ -211,28 +211,46 @@ position: absolute;">
                         
                           <div class="col mb-3">
                                     <label for="nameWithTitle" class="form-label">Preço do Exemplar</label>
-                                    <input type="text" class="form-control" placeholder="" id="inscricao" name="inscricao" onkeypress="return(MascaraMoeda(this,'',',',event))">
+                                    <input type="text" class="form-control" placeholder="" id="inscricao" name="preco_exemplarf" onkeypress="return(MascaraMoeda(this,'',',',event))">
                                   </div>
+                                  <div class="col mb-3">
+                                  <button type="submit" class="btn btn-primary editarCliente" style="margin-top:30px">incluir</button>         
                         
                           </div>
+                          </div>
                         
-                               
-                                <!-- <div class="row g-2">
-                                  <div class="col mb-0">
-                                    <label for="emailWithTitle" class="form-label">Email</label>
-                                    <input type="text" id="emailWithTitle" class="form-control" placeholder="xxxx@xxx.xx">
-                                  </div>
-                                  <div class="col mb-0">
-                                    <label for="dobWithTitle" class="form-label">DOB</label>
-                                    <input type="text" id="dobWithTitle" class="form-control" placeholder="DD / MM / YY">
-                                  </div>
-                                </div> -->
                               </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
-                                  Fechar
-                                </button>
-                                <button type="submit" class="btn btn-primary editarCliente">Cadastrar</button>
+                              <div class="table-inclusos modal-body">
+                                <h5 class = "modal-header">Exemplares Inclusos</h5>
+                              <div class="table-responsive ">
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th>Espécie</th>
+                        <th>Identificação</th>
+                        <th>Quantidade</th>
+                        <th>Preço</th>
+                        <th></th>
+                    </thead>
+                    <tbody class="table-border-bottom-0">
+                      <tr>
+                        <td><strong></strong></td>
+                        <td><strong></strong></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr class="table-success">
+                        <td>
+                          <strong>TOTAL:</strong>
+                        </td>
+                        <td id="valor_total">
+                        </td>
+              
+                      </tr>
+                 
+                    </tbody>
+                  </table>
+                </div>
                               </div>
                             </form>
                             </div>
@@ -533,10 +551,9 @@ $("#content-excel").val(JSON.stringify(dados));
   );
 
 
-  $('#formEditaEspecies').submit(function(e){
+  $('#formIniciaVenda').submit(function(e){
     e.preventDefault();
     data = $(this).closest('form').serialize();
-  
     // inputs = {};
     // data =  $('#formEditaEspecies').find('.modal-body').children().children().children('textarea, input');
     // delete data.length ;
@@ -546,13 +563,13 @@ $("#content-excel").val(JSON.stringify(dados));
     //    inputs[id] = $('#'+id+'').val();
     // }
        $.ajax({
-           url: "editaClientes",
+           url: "novaVenda",
            type: 'post',
            data,
            success: function(resposta){
             $('.bs-toast').removeClass('d-none');
             if(resposta=='true'){
-              setTimeout(reload, 1000);
+              // setTimeout(reload, 1000);
             }
             else {
             errorMessage('Ops.Não foi possível salvar as alterações. Certifique-se que o campo de código da espécie esteja preenchido.');

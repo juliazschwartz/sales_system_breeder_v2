@@ -133,5 +133,32 @@ public function buscaPrecoExemplar(){
     WHERE id_produto ='$id_os'") ->getResultArray();
     return json_encode($osEncontradas);
 }
+public function novaVenda(){
+    $request = \Config\Services::request();
+        $id = $request->getPost('id'); 
+        $cliente = $request->getPost('cliente'); 
+        $tipo_cliente = $request->getPost('tipo_cliente'); 
+        $frete = $request->getPost('frete'); 
+        $exemplar = $request->getPost('exemplar'); 
+        $preco_exemplar = $request->getPost('preco_exemplar'); 
+     
+        if(empty($cliente)){
+           return false;
+        }
+        
+        $db = \Config\Database::connect('default',true);
+        if(!empty($id)){
+          
+            // $query = $db->query("UPDATE os SET cliente = '$cliente', tipo_cliente='$tipo_cliente', frete = '$frete', status='$fisica_juridica' WHERE id_os = '$id'");
+    }
+        else{
+       
+            $query = $db->query("INSERT INTO os ( cliente , tipo_cliente, frete , 
+            valor_total, status)
+            VALUES( '$cliente', '$tipo_cliente', '$frete', '$preco_exemplar', 'venda_incompleta')");
+        }
+
+        return json_encode($query);
+}
 
 }
